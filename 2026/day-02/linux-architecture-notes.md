@@ -1,7 +1,7 @@
 Day 02 - Linux Architecture, Processes and systemd
 
-Goal of todays task is to understand how Linux woks under the hood
-====================================================================
+Goal of todays task is to understand how Linux works under the hood
+
 
 What is Linux?
 
@@ -20,25 +20,8 @@ What is Linux?
 	Applications never talk directly to hardware.
 	They talk to the kernel, and the kernel talks to the hardware.
 
-Kernel Architecture
-============================================================================================
 
-      
-   Applications/users      
-           |
-           |
-       	 Shell
-    (Commands, Scripts)
-           |
-           |
-         Kernel
- (Process mgmt,file sys,memory mgmt)
-	   |
-           |
-        Hardware          
-    (CPU, RAM, Disk, NIC)
-===================================================================================================
-
+   
 Why Linux for devops?
 
 	*Open Source        free to use and modify and community support available.
@@ -47,7 +30,7 @@ Why Linux for devops?
 	*Server OS          most servers run on Linux
 
 	Its is a multi user, multi tasking programming language.
-===============================================================================================
+
 What is User Space in Linux?
 	User Space = Where users & applications live
 	Kernel Space = Where the kernel lives
@@ -70,7 +53,7 @@ What is User Space in Linux?
             |
           Hardware             
  
-===============================================================================================
+
 
 What is init in Linux ?
 
@@ -95,7 +78,8 @@ What is init in Linux ?
 	Stop services on shutdown
 
 	Bring system to usable state
-===============================================================================================
+
+
 systemd 
 
 	🔹 What is it?
@@ -126,7 +110,7 @@ systemd
 		.timer		Cron replacement
 		.mount		Mount points
 		.socket		Socket-based activation
-================================================================================================
+
 
 
 Process Creation & Management (Linux)
