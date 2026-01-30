@@ -1,4 +1,5 @@
 🧭 Linux File System & Navigation — Essential Commands
+
 📁 Navigation Basics
 
 pwd — Show current working directory
@@ -30,6 +31,7 @@ tree — Display directory structure (visual)
 
 
 📄 File Operations 
+
 touch file — Create empty file
 
 cp file dest — Copy file
@@ -78,7 +80,9 @@ kill PID — Gracefully stop a process (SIGTERM)
 
 kill -9 PID — Force kill (SIGKILL) ⚠️
 
-🌐 Linux Networking Troubleshooting 
+
+🌐 Linux Networking Troubleshooting
+
 
 ip a — Check IP address & interface status
 
