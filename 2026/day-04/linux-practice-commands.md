@@ -10,7 +10,7 @@ Snapshot of the process commands i practiced today.
 <img width="917" height="524" alt="proc-4" src="https://github.com/user-attachments/assets/526ae2e5-f5d0-4790-a0b8-13181da8306f" />
 <img width="929" height="587" alt="ps-aux" src="https://github.com/user-attachments/assets/b2703261-ab8a-469f-8b90-a042f6c526d5" />
 
-Snapshot oh health check commands
+Snapshot of health check commands
 
 <img width="1344" height="592" alt="atop" src="https://github.com/user-attachments/assets/9b655199-b2b8-441f-80e7-95d207191ce8" />
 <img width="1296" height="597" alt="htop" src="https://github.com/user-attachments/assets/7f0555f5-fa23-45dc-a39e-eab79e8dedc2" />
