@@ -101,3 +101,12 @@ google/, custom-app/
 
 I would use this when ?
 I install custom or third-party applications outside system defaults.
+
+Hands-on task:
+
+<img width="1323" height="690" alt="day7-task" src="https://github.com/user-attachments/assets/c27d30cd-10f2-407f-ac50-db4b4358a9b9" />
+
+Day 07 – Scenario-Based Practice
+
+Scenario 1: Service Not Starting
+
