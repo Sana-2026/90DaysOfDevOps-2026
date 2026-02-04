@@ -110,3 +110,30 @@ Day 07 – Scenario-Based Practice
 
 Scenario 1: Service Not Starting
 
+🚨 Runbook: myapp failed after reboot
+
+1️⃣ Check service status
+
+systemctl status myapp → Checks whether the service is running and shows the failure reason.
+
+
+2️⃣ Check logs from current boot
+
+journalctl -u myapp -b -n 50 → Shows the last 50 log entries for myapp from the current boot.
+
+
+3️⃣ Verify service starts on reboot
+
+systemctl is-enabled myapp → Verifies whether the service is configured to start on reboot.
+
+
+4️⃣ Check config / dependencies
+
+myapp --config-test → Validates the application configuration for errors.
+
+
+5️⃣ (Optional) Try restart
+
+systemctl restart myapp → Attempts to restart the service after checks.
+
+
