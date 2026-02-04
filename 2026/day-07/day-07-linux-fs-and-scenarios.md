@@ -67,7 +67,8 @@ Random temp files or folders
 I would use this when?
 I need quick temporary storage (files here may be deleted after reboot).
 
-🔹 Additional Directories (Good to Know)
+🔹 Additional Directories
+
 /bin
 
 What it contains:
