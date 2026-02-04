@@ -137,3 +137,32 @@ myapp --config-test → Validates the application configuration for errors.
 systemctl restart myapp → Attempts to restart the service after checks.
 
 
+Scenario 2: High CPU Usage
+
+1️⃣ Quick live CPU view
+
+top, htop → See CPU usage in real time.
+
+<img width="999" height="682" alt="scenario-2-day7-top" src="https://github.com/user-attachments/assets/4e1b20af-7475-48c2-9e61-1cc6b2a585fa" />
+<img width="1377" height="745" alt="scenario-2-day7" src="https://github.com/user-attachments/assets/d3c3ff98-6123-4365-abde-71c1aaa1f9bf" />
+
+2️⃣ List top CPU-consuming processes
+
+ps aux --sort=-%cpu | head -10  → Shows top 10 CPU hogs.
+
+<img width="1344" height="334" alt="all-proc" src="https://github.com/user-attachments/assets/ed328bb2-881d-4b6b-88b1-9619833d8726" />
+
+3️⃣ Check CPU cores & load
+
+uptime → Confirms system load vs CPU capacity.
+
+<img width="645" height="119" alt="uptime" src="https://github.com/user-attachments/assets/61c78ee0-fe20-4392-839c-0ed37318d031" />
+
+
+
+
+
+
+
+
+
