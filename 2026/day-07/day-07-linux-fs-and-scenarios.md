@@ -160,6 +160,45 @@ uptime → Confirms system load vs CPU capacity.
 
 
 
+ Scenario 4: File Permissions Issue
+
+  Problem:
+  A script at /home/user/backup.sh is not executing.
+  Running ./backup.sh returns: Permission denied.
+
+👉 Reason: The file does not have execute (x) permission.
+
+
+✅ Step 1: Check current permissions
+
+    ls -l /home/user/backup.sh
+
+    -rw-r--r--  backup.sh
+
+    🔴 No x means the script is not executable.
+
+
+✅ Step 2: Add execute permission
+
+    chmod +x /home/user/backup.sh
+
+This allows the file to be executed as a script.
+
+✅ Step 3: Verify permissions again
+
+   ls -l /home/user/backup.sh
+   
+   -rwxr-xr-x  backup.sh
+   
+  🟢 x is now present — script is executable.
+
+  ✅ Step 4: Run the script
+  
+    ./backup.sh
+
+🔑 Key DevOps Takeaway
+
+Linux won’t run a script unless it has execute permission.
 
 
 
