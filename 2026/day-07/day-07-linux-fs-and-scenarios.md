@@ -160,6 +160,7 @@ uptime → Confirms system load vs CPU capacity.
 
 
 
+ 
  Scenario 4: File Permissions Issue
 
   Problem:
