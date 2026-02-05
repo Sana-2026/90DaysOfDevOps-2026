@@ -16,7 +16,8 @@ Day 08 – Cloud Server Setup: Docker, Nginx & Web DeploymentDay 08 – Cloud Se
   
 ⚠️ Challenges Faced
 
-Website not loading on public IP → Fixed by opening port 80 in the security group
+- Website not loading on public IP → Fixed by opening port 80 in the security group
+- Permission denied while reading logs → Used sudo to access log files
 
 🎯 What I Learned:
 
@@ -33,12 +34,17 @@ Website not loading on public IP → Fixed by opening port 80 in the security gr
 📌 Steps Followed :-
 
 Step 1: Create a Cloud Instance and security group settings :
+Instance Creation:
 
 <img width="1152" height="576" alt="aws-instance-creation-1" src="https://github.com/user-attachments/assets/d59f61b3-ecf0-49ae-abb9-d83e5a8b5f83" />4
 <img width="1152" height="571" alt="aws-instance-creation-2" src="https://github.com/user-attachments/assets/a10b68ee-e9ce-4000-8f09-e6128359d481" />
 <img width="1147" height="569" alt="aws-instance-key-pair-creation" src="https://github.com/user-attachments/assets/da7344de-9125-41b8-8b41-6328c1e4710b" />
+
+Security group settings:
+
 <img width="1165" height="580" alt="aws-security-group-settings" src="https://github.com/user-attachments/assets/91ae0f41-d258-41bb-a1a3-06b21d445c3d" />
 <img width="1364" height="496" alt="security-group-inboundrules" src="https://github.com/user-attachments/assets/91897879-48cc-4cec-9ef1-6edb164101ed" />
+<img width="1354" height="511" alt="aws-addinbound-rule" src="https://github.com/user-attachments/assets/d7fd3925-0c8e-42b2-8102-fe57d1debfcd" />
 
 Step 2: Connect via SSH
 <img width="1348" height="220" alt="ssh-day8" src="https://github.com/user-attachments/assets/14d54dfd-301c-47ce-85d2-5b23186358da" />
