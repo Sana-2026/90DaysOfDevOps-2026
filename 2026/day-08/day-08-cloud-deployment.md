@@ -17,7 +17,10 @@ Day 08 – Cloud Server Setup: Docker, Nginx & Web DeploymentDay 08 – Cloud Se
 ⚠️ Challenges Faced
 
 - Website not loading on public IP → Fixed by opening port 80 in the security group
-- Permission denied while reading logs → Used sudo to access log files
+- Hit permission denied while reading logs → Used sudo to access log files
+- Encountered a permission denied error while extracting logs. Resolved it by updating file ownership from root →ubuntu before using SCP.
+
+ 
 
 🎯 What I Learned:
 
