@@ -74,3 +74,39 @@ Open browser and visit: http://<your-instance-ip>
 <img width="994" height="657" alt="welcome-nginx" src="https://github.com/user-attachments/assets/ad1e6c90-c17a-4a7e-915a-83a12c5b57c9" />
 
 Step 5 : Extract Nginx Logs 
+
+1️⃣ View logs on the server
+
+sudo tail -n 20 /var/log/nginx/access.log
+
+2️⃣ Extract logs into a file
+
+sudo cp /var/log/nginx/access.log /home/ubuntu/nginx-logs.txt
+
+<img width="1088" height="117" alt="copy-logs-local" src="https://github.com/user-attachments/assets/91b6f943-1869-4e75-95b2-c30bbab3d545" />
+
+3️⃣ Download logs to your local system
+
+ scp -i batch-10-superkey.pem ubuntu@ec2-44-246-242-10.us-west-2.compute.amazonaws.com:~/nginx-logs.txt .
+ 
+<img width="918" height="91" alt="permissiondenied-while-down-logs" src="https://github.com/user-attachments/assets/ca499254-eba8-4c9e-8d5f-e182154c275b" />
+
+To fix the permission issue for log files run below command
+
+sudo chown ubuntu:ubuntu /home/ubuntu/nginx-logs.txt
+
+<img width="932" height="224" alt="chg-own-log-files" src="https://github.com/user-attachments/assets/b8d57a61-b3b5-4d4b-a21b-a671449493a3" />
+
+or to fix the permission issue we can directly create the file as ubuntu using following command
+
+sudo -u ubuntu cp /var/log/nginx/access.log /home/ubuntu/nginx-logs.txt
+
+snapshot of Logs on local machine
+<img width="1341" height="393" alt="nginx-logs-local" src="https://github.com/user-attachments/assets/8edab40a-53be-46b9-b9e9-db8cd840ac95" />
+
+
+
+
+
+
+
