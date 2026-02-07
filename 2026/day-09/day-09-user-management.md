@@ -1,4 +1,4 @@
-# Day 09 Challenge Linux User & Group Management Challenge
+# Day 09  Linux User & Group Management Challenge
 
 ## Users & Groups Created
 - Users: tokyo, berlin, professor, nairobi
