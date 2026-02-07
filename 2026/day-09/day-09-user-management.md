@@ -76,10 +76,13 @@ sudo chmod 775 /opt/team-workspace
 
 ## What I Learned
 1️⃣ User & group management in Linux
-You learned how to create users with home directories, create custom groups, and safely add users to multiple groups without breaking existing access.
+
+ Learned how to create users with home directories, create custom groups, and safely add users to multiple groups without breaking existing access.
 
 2️⃣ Group-based permissions for collaboration
-You practiced setting group ownership (chown / chgrp) and permissions (chmod 775) to build shared workspaces where teams can collaborate securely.
+
+Practiced setting group ownership (chown / chgrp) and permissions (chmod 775) to build shared workspaces where teams can collaborate securely.
 
 3️⃣ Verify like a real sysadmin
-You didn’t just configure — you verified using id, /etc/passwd, /etc/group, and real permission tests (sudo -u user touch file).
+
+I didn’t just configure —  verified using id, /etc/passwd, /etc/group, and real permission tests (sudo -u user touch file).
