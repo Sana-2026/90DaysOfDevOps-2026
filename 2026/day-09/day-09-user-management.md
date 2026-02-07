@@ -19,32 +19,59 @@
 
 ## Commands Used
 sudo useradd -m tokyo
+
 sudo useradd -m berlin
+
 sudo useradd -m professor
+
 cat /etc/passwd
+
 getent group developers
+
 getent group admins
+
 sudo usermod -aG developers,admins berlin
+
 sudo usermod -aG developers tokyo
+
 sudo usermod -aG admins professor
+
 id tokyo
+
 id berlin
+
 id professor
+
 sudo mkdir /opt/dev-project
+
 sudo -u tokyo touch /opt/dev-project/tokyo.txt
+
 sudo -u berlin touch /opt/dev-project/berlin.txt
-sudo chown :developers /opt/dev-project          
+
+sudo chown :developers /opt/dev-project  
+
 sudo chmod 775 /opt/dev-project
+
 sudo -u tokyo touch /opt/dev-project/tokyo.txt
+
 sudo -u berlin touch /opt/dev-project/berlin.txt
+
 sudo groupadd project-team
+
 sudo usermod -aG project-team nairobi
+
 sudo usermod -aG project-team tokyo
+
 sudo mkdir /opt/team-workspace
+
 ls -ld /opt/team-workspace
+
 sudo -u nairobi touch /opt/team-workspace/nairobi.txt
+
 ls -l /opt/team-workspace
+
 sudo chgrp project-team /opt/team-workspace
+
 sudo chmod 775 /opt/team-workspace
 
 ## What I Learned
