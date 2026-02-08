@@ -7,6 +7,7 @@ Day 10 – File Permissions & File Operations
 - script.sh
 
 Task 1: Create Files
+
 <img width="1066" height="648" alt="echo-redirection-operators" src="https://github.com/user-attachments/assets/d6e38312-0257-4161-8a6e-15e331631e65" />
 
 <img width="860" height="505" alt="first-scripr-run" src="https://github.com/user-attachments/assets/4ae5e781-9ba5-479c-8310-c4acf7a3ffca" />
@@ -14,6 +15,7 @@ Task 1: Create Files
 Task 2: Read Files
 
 <img width="789" height="412" alt="head-tail-to view-contentsoffile" src="https://github.com/user-attachments/assets/0ebfa9b2-fd5f-465e-86d3-6f60dfc5ce8e" />
+
 <img width="851" height="701" alt="vim-scrippt" src="https://github.com/user-attachments/assets/bd266e80-7e18-432e-81d3-3816e5a5fc19" />
 
 
@@ -60,14 +62,24 @@ Task 4: Modify Permissions
 
 
 2. Set devops.txt to read-only (remove write for all)
+   
 3. Set notes.txt to 640 (owner: rw, group: r, others: none)
 
-<img width="909" height="563" alt="task4-prt2" src="https://github.com/user-attachments/assets/d79ffebb-3f2f-4971-a729-c625f4e82adb" />
+<img width="795" height="427" alt="task4" src="https://github.com/user-attachments/assets/0e4dd44f-f538-4ba1-b40e-9da5dc9ec5a4" />
+
 
 4. Create directory project/ with permissions 755
+5. 
    <img width="909" height="563" alt="task4-prt2" src="https://github.com/user-attachments/assets/7bab6999-79e1-4192-b9c2-f4092a436b02" />
 
 Task 5: Test Permissions 
+
+   1. Try writing to a read-only file - what happens?
+   2. Try executing a file without execute permission
+   3. 
+<img width="1153" height="427" alt="task5" src="https://github.com/user-attachments/assets/bac65605-57f7-4370-bad6-ffc92f19dbb1" />
+
+
 
 
 
