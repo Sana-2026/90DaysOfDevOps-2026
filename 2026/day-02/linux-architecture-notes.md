@@ -68,10 +68,10 @@
 
 	👉 If init dies → system dies
 
-🔹 ### Boot flow
+### Boot flow
 	BIOS → GRUB → Kernel → init (PID 1) → Services → Login
 
-🔹 ### Job of init
+### Job of init
 	
 	Start system services
 
@@ -115,7 +115,7 @@
 
 ## Process Creation & Management (Linux)
 
-🔹 ### What is a process?
+### What is a process?
 
 	A process = running program
 
@@ -131,7 +131,7 @@
 
 	👉 Everything starts from PID 1 (systemd)
 
-🔹 ### Process states 
+### Process states 
 
 	State	Meaning
 	R	Running
