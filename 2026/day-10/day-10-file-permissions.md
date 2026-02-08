@@ -81,5 +81,38 @@ Task 5: Test Permissions
 
 
 
+## Commands Used
 
+📝 File & Script Practice
+   echo "This is my first note" > notes.txt
+   cat > notes.txt
+   vim script.sh
+   chmod +x script.sh
+   ./script.sh
+   ls -l
+
+📄 Viewing File Content
+
+   head -n 5 /etc/passwd
+   head -10 /etc/passwd
+
+📁 Making directory and changing permission
+
+   mkdir project && chmod 755 project
+   mkdir -m 755 project
+
+## What I Learned
+
+
+1️⃣ Different ways to create and read files in Linux
+I practiced creating files using touch, cat, echo, and vim, and learned how to view file contents using cat, head, tail, and read-only mode in vim.
+
+2️⃣ How Linux file permissions actually work
+I understood the permission format rwxrwxrwx, how it maps to owner, group, and others, and how numeric values (4, 2, 1) translate into real access control.
+
+3️⃣ Modifying permissions changes system behavior
+By using chmod, I saw how making a script executable allows it to run, and how removing write or execute permissions immediately restricts actions like editing or running files.
+
+4️⃣ Errors are part of learning permissions
+Testing access helped me understand permission-denied errors when writing to read-only files or executing files without execute permission, which reflects real-world Linux security behavior.
 
