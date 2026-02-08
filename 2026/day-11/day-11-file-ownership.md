@@ -5,7 +5,6 @@ Day 11 – File Ownership Challenge (chown & chgrp)
 <img width="925" height="698" alt="files-dir" src="https://github.com/user-attachments/assets/4bcbd1c5-b591-4f39-ae57-a1af395460d2" />
 
 ## Ownership Changes
-
 Task 1: Understanding Ownership
 
 <img width="894" height="578" alt="task1" src="https://github.com/user-attachments/assets/e326bccb-3f6d-4644-84e5-4e964861158c" />
