@@ -73,13 +73,13 @@ Task 4: Modify Permissions
 
 4. Create directory project/ with permissions 755
 
-   <img width="909" height="563" alt="task4-prt2" src="https://github.com/user-attachments/assets/7bab6999-79e1-4192-b9c2-f4092a436b02" />
+<img width="909" height="563" alt="task4-prt2" src="https://github.com/user-attachments/assets/7bab6999-79e1-4192-b9c2-f4092a436b02" />
 
 Task 5: Test Permissions 
 
    1. Try writing to a read-only file - what happens?
    2. Try executing a file without execute permission
-   3. 
+      
 <img width="1153" height="427" alt="task5" src="https://github.com/user-attachments/assets/bac65605-57f7-4370-bad6-ffc92f19dbb1" />
 
 
