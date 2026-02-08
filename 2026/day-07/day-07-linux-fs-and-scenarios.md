@@ -1,18 +1,18 @@
-Day 07 – Linux File System Hierarchy & Scenario-Based Practice
+# Day 07 – Linux File System Hierarchy & Scenario-Based Practice
 
-🔹 Core Directories 
-/ (root)
+## 🔹 Core Directories 
+## / (root)
 
-What it contains:
+### What it contains:
 The top-level directory. Every file and folder in Linux starts from here.
 
 Example (ls -l /):
 You’ll see folders like bin, etc, home, var, usr
 
-I would use this when ?
+### I would use this when ?
 I want to understand the overall system structure or navigate to any directory.
 
-/home
+##/home
 
 What it contains:
 Home directories for normal users (documents, downloads, projects).
