@@ -1,16 +1,16 @@
-Day 02 - Linux Architecture, Processes and systemd
+# Day 02 - Linux Architecture, Processes and systemd
 
-Goal of todays task is to understand how Linux works under the hood
+## Goal of todays task is to understand how Linux works under the hood
 
 
-What is Linux?
+### What is Linux?
 
 	Linux is an open source operating system developed by Linus Torvalds in 1991.
 	Its a Unix based, shell programming language with CLI interface.
 
 	Linux = Kernel + Tools
 
-	What is Kernel?
+### What is Kernel?
 
 	The kernel is the core (heart) of Linux.
 	It is the first program loaded when Linux starts and it controls everything in the system.
@@ -22,7 +22,7 @@ What is Linux?
 
 
    
-Why Linux for devops?
+### Why Linux for devops?
 
 	*Open Source        free to use and modify and community support available.
 	*Fast and stable    can run for longer periods without any reboot.
@@ -31,7 +31,7 @@ Why Linux for devops?
 
 	Its is a multi user, multi tasking programming language.
 
-What is User Space in Linux?
+### What is User Space in Linux?
 	User Space = Where users & applications live
 	Kernel Space = Where the kernel lives
 
@@ -55,7 +55,7 @@ What is User Space in Linux?
  
 
 
-What is init in Linux ?
+### What is init in Linux ?
 
 
 	init = first user-space process
@@ -68,10 +68,10 @@ What is init in Linux ?
 
 	👉 If init dies → system dies
 
-🔹 Boot flow
+🔹 ### Boot flow
 	BIOS → GRUB → Kernel → init (PID 1) → Services → Login
 
-🔹 Job of init
+🔹 ### Job of init
 	
 	Start system services
 
@@ -80,7 +80,7 @@ What is init in Linux ?
 	Bring system to usable state
 
 
-systemd 
+### systemd 
 
 	🔹 What is it?
 
@@ -113,9 +113,9 @@ systemd
 
 
 
-Process Creation & Management (Linux)
+## Process Creation & Management (Linux)
 
-🔹 What is a process?
+🔹 ### What is a process?
 
 	A process = running program
 
@@ -123,7 +123,7 @@ Process Creation & Management (Linux)
 
 	Created & managed by the kernel
 
-How a process is created (3 steps)
+### How a process is created (3 steps)
 
 	1️ fork()  → copy of parent process
 	2️ exec()  → load new program into memory
@@ -131,7 +131,7 @@ How a process is created (3 steps)
 
 	👉 Everything starts from PID 1 (systemd)
 
-🔹 Process states 
+🔹 ### Process states 
 
 	State	Meaning
 	R	Running
@@ -141,7 +141,7 @@ How a process is created (3 steps)
 	Z	Zombie (dead, not cleaned)
 
 
-Process management commands
+### Process management commands
 
 	ps aux          # list processes
 	top / htop      # live view
