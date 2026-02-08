@@ -1,6 +1,6 @@
-Inspection & Troubleshooting ssh Service- Step-by-Step for DevOps Beginners
+# Inspection & Troubleshooting ssh Service- Step-by-Step for DevOps Beginners
 
-🔍 Step 1: Check if the service is running
+## Step 1: Check if the service is running
 
 systemctl status ssh
 
@@ -13,14 +13,14 @@ Service name
 Last few logs
 
 
-📄 Step 2: Check service logs
+## Step 2: Check service logs
 
 journalctl -u ssh -n 20
 
 👉 Shows last 20 logs
 
 
-📄 Step 3:See how the service is started
+## Step 3:See how the service is started
 
 systemctl cat ssh
 
@@ -30,7 +30,7 @@ Start command
 
 Config file location
 
-🔍 Step 4: Check if service starts on boot
+## Step 4: Check if service starts on boot
 
 systemctl is-enabled ssh
 
@@ -40,7 +40,7 @@ enabled → starts automatically
 
 disabled → manual start
 
-📄 Step 5 : Confirm process is running
+## Step 5 : Confirm process is running
 
 pgrep -a ssh
 
