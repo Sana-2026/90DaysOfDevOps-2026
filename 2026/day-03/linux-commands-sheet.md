@@ -1,6 +1,6 @@
-🧭 Linux File System & Navigation — Essential Commands
+# Day 03 Linux File System & Navigation — Essential Commands
 
-📁 Navigation Basics
+## Navigation Basics
 
 pwd — Show current working directory
 
@@ -19,7 +19,7 @@ cd ~ — Go to home directory
 cd - — Switch to previous directory
 
 
-📂 Directory Operations
+## Directory Operations
 
 mkdir dir — Create a directory
 
@@ -30,7 +30,7 @@ rmdir dir — Delete empty directory
 tree — Display directory structure (visual)
 
 
-📄 File Operations 
+## File Operations 
 
 touch file — Create empty file
 
@@ -45,7 +45,7 @@ rm file — Delete file
 rm -r dir — Delete directory recursively
 
 
-📖 Viewing File Contents
+##  Viewing File Contents
 
 cat file — View file content
 
@@ -58,7 +58,7 @@ tail file — Last 10 lines
 tail -f logfile — Live log monitoring 🔥
 
 
-⚙️ Linux Process Management — Essential Commands
+## Linux Process Management — Essential Commands
 
 ps — Show processes of current shell
 
@@ -67,21 +67,21 @@ ps -e — Show all running processes
 ps aux — Detailed view (CPU, memory, user, PID) 
 
 
-📊 Real-time Monitoring
+## Real-time Monitoring
 
 top — Live process monitoring (CPU, RAM)
 
 htop — Interactive & user-friendly top (recommended)
 
 
-🔪 Process Control 
+## Process Control 
 
 kill PID — Gracefully stop a process (SIGTERM)
 
 kill -9 PID — Force kill (SIGKILL) ⚠️
 
 
-🌐 Linux Networking Troubleshooting
+## Linux Networking Troubleshooting
 
 
 ip a — Check IP address & interface status
