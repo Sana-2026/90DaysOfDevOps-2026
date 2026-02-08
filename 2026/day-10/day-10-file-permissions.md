@@ -28,29 +28,46 @@ total 8
 -rw-rw-r-- 1 ubuntu ubuntu  71 Feb  8 13:06 notes.txt
 -rwxrwxr-x 1 ubuntu ubuntu 139 Feb  8 13:17 script.sh
 
-
-
 📄 devops.txt
 
-Permissions: -rw-rw-r--
-
-User type	            Read	Write	Execute
-Owner (ubuntu)	       ✅	    ✅	  ❌
-Group (ubuntu)	       ✅	    ✅	  ❌
-Others	               ✅	    ❌	  ❌
-
-👉 It’s a normal text file. Anyone can read, only owner & group can edit.
-
+Its permissions are -rw-rw-r--.
+This means the owner (ubuntu) can read and write the file.
+Users in the ubuntu group can also read and write it.
+Everyone else on the system can only read the file and cannot modify or execute it.
+It’s a normal text file, so execution is not allowed for anyone.
 
 📄 notes.txt
-Permissions: -rw-rw-r--
 
-User type	            Read	Write	Execute
-Owner (ubuntu)	        ✅	    ✅	  ❌
-Group (ubuntu)	        ✅	    ✅	  ❌
-Others	                ✅	    ❌	  ❌
+This file also has permissions -rw-rw-r--.
+The owner and the group both have permission to read and write the file.
+Other users can read the file but cannot change it or run it.
+This is typical and correct for notes or configuration text files.
 
-👉 It’s a normal text file. Anyone can read, only owner & group can edit.4
+📜 script.sh
+
+The permissions are -rwxrwxr-x.
+The owner can read, write, and execute the script.
+The group can also read, write, and execute it.
+Other users are allowed to read and execute the script but cannot modify it.
+Because the execute permission is set, this file can be run as a program.
+
+
+Task 4: Modify Permissions
+
+1. Make script.sh executable → run it with ./script.sh
+   
+<img width="860" height="505" alt="first-scripr-run" src="https://github.com/user-attachments/assets/50c3f604-f1f0-408b-b0fe-dc201c27f664" />
+
+
+2. Set devops.txt to read-only (remove write for all)
+3. Set notes.txt to 640 (owner: rw, group: r, others: none)
+
+<img width="909" height="563" alt="task4-prt2" src="https://github.com/user-attachments/assets/d79ffebb-3f2f-4971-a729-c625f4e82adb" />
+
+4. Create directory project/ with permissions 755
+   <img width="909" height="563" alt="task4-prt2" src="https://github.com/user-attachments/assets/7bab6999-79e1-4192-b9c2-f4092a436b02" />
+
+Task 5: Test Permissions 
 
 
 
