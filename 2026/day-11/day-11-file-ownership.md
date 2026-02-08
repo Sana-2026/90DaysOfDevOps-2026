@@ -48,34 +48,34 @@ Task 6: Practice Challenge
 
 ## Commands Used
 
-# View ownership
+### View ownership
 ls -l filename
 ls -l heist-project
 
-# Change owner only
+### Change owner only
 sudo chown newowner filename
 sudo chown berlin devops-file.txt
 
-# Change group only
+### Change group only
 sudo chgrp newgroup filename
 sudo chgrp professor:heist-team project-config.yaml
 
-# Change both owner and group
+### Change both owner and group
 sudo chown owner:group filename
 sudo chown nairobi:vault-team bank-heist/escape-plan.txt
 
-# Recursive change (directories)
+### Recursive change (directories)
 sudo chown -R owner:group directory/
 sudo chown -R professor:planners heist-project/
 
 
-# Change only group with chown
+### Change only group with chown
 sudo chown :groupname filename
 sudo chown :heist-team team-notes.txt
 
 
 
-What I learned 👇
+## What I learned 👇
 
 - Difference between user (owner) and group ownership
 
