@@ -76,6 +76,7 @@ sudo chown :groupname filename
 sudo chown :heist-team team-notes.txt
 
 
+
 What I learned 👇
 
 - Difference between user (owner) and group ownership
