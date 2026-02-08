@@ -26,8 +26,11 @@ Task 3: Understand Permissions
 
 ubuntu@ip-172-31-62-245:~/Day10$ ls -l
 total 8
+
 -rw-rw-r-- 1 ubuntu ubuntu   0 Feb  7 19:15 devops.txt
+
 -rw-rw-r-- 1 ubuntu ubuntu  71 Feb  8 13:06 notes.txt
+
 -rwxrwxr-x 1 ubuntu ubuntu 139 Feb  8 13:17 script.sh
 
 📄 devops.txt
