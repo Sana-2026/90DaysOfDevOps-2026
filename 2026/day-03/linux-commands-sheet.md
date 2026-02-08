@@ -109,3 +109,13 @@ lsof -i :80 — Who is using port 80?
 curl http://localhost:8080 — Test HTTP response
 
 curl -I google.com — Check headers only
+
+## Why This Matters for DevOps
+Real production issues are solved at the command line.
+
+The faster you can inspect logs and network issues, the faster you can:
+
+Restore service
+Reduce downtime
+Gain trust as an operator
+
