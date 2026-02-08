@@ -5,7 +5,7 @@
 <img width="925" height="698" alt="files-dir" src="https://github.com/user-attachments/assets/4bcbd1c5-b591-4f39-ae57-a1af395460d2" />
 
 ## Ownership Changes
-Task 1: Understanding Ownership
+### Task 1: Understanding Ownership
 <img width="894" height="578" alt="task1" src="https://github.com/user-attachments/assets/e326bccb-3f6d-4644-84e5-4e964861158c" />
 
 
@@ -17,28 +17,28 @@ Group → A collection of users allowed to access the file for teamwork.
 👉 Group = multiple users
 
 
-Task 2: Basic chown Operations 
+### Task 2: Basic chown Operations 
 
 <img width="992" height="316" alt="task2" src="https://github.com/user-attachments/assets/0d0be3b3-1260-4134-9bb8-ed373c674e0a" />
 
 
-Task 3: Basic chgrp Operations
+### Task 3: Basic chgrp Operations
 
 <img width="775" height="337" alt="task3-part2" src="https://github.com/user-attachments/assets/fb7a63df-a698-44a8-99eb-237b01a4076b" />
 
 <img width="775" height="337" alt="task3-part2" src="https://github.com/user-attachments/assets/5a1c90f2-d32f-4738-9dfc-004f8d0a2bfc" />
 
-Task 4: Combined Owner & Group Change
+### Task 4: Combined Owner & Group Change
 
 <img width="1095" height="541" alt="task4" src="https://github.com/user-attachments/assets/63c428d9-5a90-4700-9a90-99c774274548" />
 
-Task 5: Recursive Ownership
+### Task 5: Recursive Ownership
 
 <img width="1043" height="690" alt="task5" src="https://github.com/user-attachments/assets/8cc1b22e-cf62-4d72-8e82-a21ca97ccf74" />
 
 <img width="1023" height="421" alt="task5-part2" src="https://github.com/user-attachments/assets/f15e6a6d-2667-4384-b8eb-82de4e171e07" />
 
-Task 6: Practice Challenge
+### Task 6: Practice Challenge
 
 <img width="946" height="678" alt="task6" src="https://github.com/user-attachments/assets/f5a5f00d-9b28-495c-b563-e9e17884694e" />
 
