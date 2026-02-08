@@ -46,7 +46,7 @@ pgrep -a ssh
 
 👉 Confirms the actual process exists
 
-🔍 Step 6: Restart the service
+## Step 6: Restart the service
 
 systemctl restart ssh
 
