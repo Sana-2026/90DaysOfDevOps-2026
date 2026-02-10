@@ -66,6 +66,23 @@ pvcreate → vgcreate → lvcreate
 
 ### Task 6: Extend the Volume
 
+<img width="1350" height="698" alt="lvextend" src="https://github.com/user-attachments/assets/e461e6d4-fde0-4186-ba9d-929019d00f04" />
+
+<img width="1345" height="235" alt="resize2fs" src="https://github.com/user-attachments/assets/8f9ed375-590a-4ec0-ba70-ccd624922a40" />
+
+
+### 🔍 What I learned:
+
+✔️ Why LVM is better than traditional disk partitioning
+✔️ Understood LVM components: PV → VG → LV
+✔️ Created Physical Volumes using pvcreate
+✔️ Created Volume Groups using vgcreate
+✔️ Created Logical Volumes using lvcreate
+✔️ Formatted volumes with mkfs.ext4
+✔️ Extended disk size using lvextend + resize2fs
+✔️ Verified storage using lsblk, pvs, vgs, lvs, df -h
+
+
 
 
 
