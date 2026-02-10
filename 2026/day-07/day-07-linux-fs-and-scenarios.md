@@ -155,7 +155,7 @@ myapp --config-test → Validates the application configuration for errors.
 systemctl restart myapp → Attempts to restart the service after checks.
 
 
-Scenario 2: High CPU Usage
+#### Scenario 2: High CPU Usage
 
 1️⃣ Quick live CPU view
 
@@ -179,7 +179,7 @@ uptime → Confirms system load vs CPU capacity.
 
 
  
- Scenario 4: File Permissions Issue
+ #### Scenario 3: File Permissions Issue
 
   Problem:
   A script at /home/user/backup.sh is not executing.
