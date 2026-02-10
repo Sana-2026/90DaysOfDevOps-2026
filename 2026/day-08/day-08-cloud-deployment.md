@@ -1,6 +1,6 @@
-Day 08 – Cloud Server Setup: Docker, Nginx & Web DeploymentDay 08 – Cloud Server Setup: Docker, Nginx & Web Deployment
+# Day 08 – Cloud Server Setup: Docker, Nginx & Web DeploymentDay 08 – Cloud Server Setup: Docker, Nginx & Web Deployment
 
-✅ Commands Used
+## ✅ Commands Used
 
 - ssh -i your-key.pem ubuntu@<your-instance-ip>
 
@@ -14,7 +14,7 @@ Day 08 – Cloud Server Setup: Docker, Nginx & Web DeploymentDay 08 – Cloud Se
   
 - scp -i your-key.pem ubuntu@<your-instance-ip>:~/nginx-logs.txt .
   
-⚠️ Challenges Faced
+## ⚠️ Challenges Faced
 
 - Website not loading on public IP → Fixed by opening port 80 in the security group
 - Hit permission denied while reading logs → Used sudo to access log files
@@ -22,7 +22,7 @@ Day 08 – Cloud Server Setup: Docker, Nginx & Web DeploymentDay 08 – Cloud Se
 
  
 
-🎯 What I Learned:
+## 🎯 What I Learned:
 
 - Deployed a live Nginx web server on AWS EC2 ☁️
 
@@ -34,7 +34,7 @@ Day 08 – Cloud Server Setup: Docker, Nginx & Web DeploymentDay 08 – Cloud Se
 
 - Collected Nginx logs on the instance and transferred them to my local system 💾
 
-📌 Steps Followed :-
+## 📌 Steps Followed :-
 
 Step 1: Create a Cloud Instance and security group settings :
 Instance Creation:
