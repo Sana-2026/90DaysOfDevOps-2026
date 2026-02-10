@@ -74,12 +74,19 @@ pvcreate → vgcreate → lvcreate
 ### 🔍 What I learned:
 
 ✔️ Why LVM is better than traditional disk partitioning
+
 ✔️ Understood LVM components: PV → VG → LV
+
 ✔️ Created Physical Volumes using pvcreate
+
 ✔️ Created Volume Groups using vgcreate
+
 ✔️ Created Logical Volumes using lvcreate
+
 ✔️ Formatted volumes with mkfs.ext4
+
 ✔️ Extended disk size using lvextend + resize2fs
+
 ✔️ Verified storage using lsblk, pvs, vgs, lvs, df -h
 
 
