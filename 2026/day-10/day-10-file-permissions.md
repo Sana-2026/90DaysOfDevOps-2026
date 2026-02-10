@@ -1,4 +1,4 @@
-Day 10 – File Permissions & File Operations 
+# Day 10 – File Permissions & File Operations 
 
 
 ## Files Created
@@ -6,7 +6,7 @@ Day 10 – File Permissions & File Operations
 - notes.txt
 - script.sh
 
-Task 1: Create Files
+### Task 1: Create Files
 
 <img width="1066" height="648" alt="echo-redirection-operators" src="https://github.com/user-attachments/assets/d6e38312-0257-4161-8a6e-15e331631e65" />
 
@@ -21,7 +21,7 @@ Task 2: Read Files
 
 ## Permission Changes
 
-Task 3: Understand Permissions
+### Task 3: Understand Permissions
 
 
 ubuntu@ip-172-31-62-245:~/Day10$ ls -l
@@ -57,7 +57,7 @@ Other users are allowed to read and execute the script but cannot modify it.
 Because the execute permission is set, this file can be run as a program.
 
 
-Task 4: Modify Permissions
+### Task 4: Modify Permissions
 
 1. Make script.sh executable → run it with ./script.sh
    
@@ -75,7 +75,7 @@ Task 4: Modify Permissions
 
 <img width="909" height="563" alt="task4-prt2" src="https://github.com/user-attachments/assets/7bab6999-79e1-4192-b9c2-f4092a436b02" />
 
-Task 5: Test Permissions 
+### Task 5: Test Permissions 
 
    1. Try writing to a read-only file - what happens?
    2. Try executing a file without execute permission
