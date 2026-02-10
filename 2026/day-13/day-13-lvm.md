@@ -1,6 +1,6 @@
 # Day 13 – Linux Volume Management (LVM)
 
-## 🔹 What is LVM (in simple words)?
+## 🔹 What is LVM ?
 
 LVM lets you manage disk space flexibly.
 
