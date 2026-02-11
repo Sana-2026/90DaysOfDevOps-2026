@@ -186,6 +186,63 @@ Observations:
    - Identified multiple ports currently in the LISTEN state
 <img width="1349" height="293" alt="netstat-an" src="https://github.com/user-attachments/assets/c2309a4c-6647-447f-9558-f2bc089774ac" />
 
+## Mini Task: Port Probe & Interpret
+
+- Identify one listening port from ss -tulpn
+- From the same machine, test it: nc -zv localhost <port>
+   
+<img width="1078" height="112" alt="nc -zv-localhost" src="https://github.com/user-attachments/assets/557d273f-32c4-441d-9fdf-ffffaea60a87" />
+- If NOT reachable 
+      Next check: service status (systemctl status ssh) and firewall rules
+
+
+## Reflection 
+
+#### Which command gives you the fastest signal when something is broken? ping
+
+#### What layer (OSI/TCP-IP) would you inspect next if DNS fails? If HTTP 500 shows up?
+
+If DNS fails
+
+   OSI: Layer 7 – Application
+
+   TCP/IP: Application layer
+
+   👉 DNS  is an application-layer protocol, so we will  inspect:
+
+   DNS server reachability
+
+   Resolver config (/etc/resolv.conf)
+
+   DNS response (dig, nslookup)
+
+If HTTP 500 error appears
+
+   OSI: Layer 7 – Application
+
+   TCP/IP: Application layer
+
+   👉 500 = server-side application error, so you inspect:
+
+   Web server logs (Nginx/Apache)
+
+   App/service logs
+
+   Backend dependencies (DB, APIs)
+   
+ 👉 DNS failure or HTTP 500 → Application layer first.
+
+
+#### Two follow-up checks you’d run in a real incident.
+
+Service health: systemctl status <service> or check app logs
+
+Network access: ss -tulpn 
+
+
+
+
+
 
 
 
