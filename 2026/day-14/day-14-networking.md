@@ -222,7 +222,7 @@ If HTTP 500 error appears
 
    TCP/IP: Application layer
 
-   👉 500 = server-side application error, so you inspect:
+   👉 500 = server-side application error, so we will inspect:
 
    Web server logs (Nginx/Apache)
 
