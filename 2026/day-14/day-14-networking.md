@@ -56,11 +56,11 @@ Transmits bits as electrical signals / radio waves.
 
 ## Identity
 
-1. hostname -I
+### 1. hostname -I
    
-   Displays all assigned IP addresses of the system (excluding loopback), useful for quickly identifying the machine’s current network IPs.
+  Displays all assigned IP addresses of the system (excluding loopback), useful for quickly identifying the machine’s current network IPs.
    
-2. ip addr show
+### 2. ip addr show
 
   Displays all network interfaces on the system along with their MAC addresses, IPv4/IPv6 addresses, interface state (UP/DOWN), MTU, and link status.
   Used to quickly verify network configuration and connectivity.
@@ -69,7 +69,7 @@ Transmits bits as electrical signals / radio waves.
 
 ## Reachability
 
-3. ping <target>
+### 3. ping <target>
 
   Tests network connectivity between your system and a remote host by sending ICMP Echo Requests and measuring response time.
 
@@ -77,11 +77,11 @@ Transmits bits as electrical signals / radio waves.
 
 ## Path
 
-4. traceroute <target> (or tracepath)
+### 4. traceroute <target> (or tracepath)
 
    Displays the network path (hops) taken by packets from your system to a destination host, helping identify where delays or failures occur.
 
-5. tracepath
+### 5. tracepath
 
    Traces the network route (hops) to a destination and shows path MTU and latency, without requiring root privileges.
 
@@ -89,12 +89,12 @@ Transmits bits as electrical signals / radio waves.
 
 ## Ports
 
-6. ss -tulpn
+### 6. ss -tulpn
 
    Displays all listening TCP and UDP sockets along with the port numbers and the process (PID/program) using them.
    It is the modern replacement for netstat.
    
-8. netstat -tulpn
+### 8. netstat -tulpn
 
     Displays all listening network ports along with the protocol, local address, and the process (PID/program) using each port.
 
