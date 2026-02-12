@@ -13,7 +13,7 @@
 5️⃣ Authoritative DNS server returns the resolved IP address (IPv4/IPv6) of the target server
 
 
-### What are these record types? 
+### What are these record types ? 
 
 | Record Type | One-Line Description |
 |------------|----------------------|
