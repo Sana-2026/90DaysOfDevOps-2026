@@ -1,6 +1,5 @@
 # Day 10 – File Permissions & File Operations 
 
-
 ## Files Created
 - devops.txt
 - notes.txt
