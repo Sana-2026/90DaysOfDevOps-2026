@@ -59,7 +59,7 @@ echo '$name'   # Output: $name
 
 <img width="1346" height="448" alt="server-scrt-output2" src="https://github.com/user-attachments/assets/b4397d85-8280-4c38-a171-5c3946f08f69" />
 
-## What I Learned:
+## What I Learned
 
 - Shebang (#!/bin/bash) defines the shell used to run a script
   Commands learned: bash script.sh, chmod +x script.sh, ./script.sh
