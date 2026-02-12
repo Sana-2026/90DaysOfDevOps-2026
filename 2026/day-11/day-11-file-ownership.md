@@ -14,6 +14,7 @@ Owner → The user who created or owns the file and controls it fully.
 Group → A collection of users allowed to access the file for teamwork.
 
 👉 Owner = single user
+
 👉 Group = multiple users
 
 
