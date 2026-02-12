@@ -12,7 +12,7 @@
 | Data Link (L2) | Network Access | Framing & MAC addressing |
 | Physical (L1) | Network Access | Bits, signals, cables |
 
-# Where IP, TCP/UDP, HTTP/HTTPS, DNS sit in the stack
+# Where IP, TCP/UDP, HTTP/HTTPS, DNS sit in the stack ?
 
 ## 📘 Protocol Placement in OSI & TCP/IP Stack
 
