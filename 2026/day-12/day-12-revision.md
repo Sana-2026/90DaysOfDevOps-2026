@@ -39,7 +39,7 @@ Here are 5 Day-03 commands I’d reach for first during an incident 👇
 
 ## Mini Self-Check
 
-### 1. Which 3 commands save you the most time right now, and why?
+### 1. Which 3 commands save you the most time right now, and why ?
       - ls -l → instantly see files, permissions, ownership
 
       - ps aux → quickly spot problematic processes
