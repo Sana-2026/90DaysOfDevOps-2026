@@ -18,6 +18,7 @@
 <img width="1335" height="564" alt="task5-comp" src="https://github.com/user-attachments/assets/6271935b-a682-4ae0-a5fa-83fc189104df" />
 
 ## Commands Used
+
 sudo useradd -m tokyo
 
 sudo useradd -m berlin
