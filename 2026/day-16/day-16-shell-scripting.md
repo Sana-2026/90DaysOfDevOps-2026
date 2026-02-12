@@ -4,6 +4,9 @@
 
 <img width="855" height="174" alt="first-scriot" src="https://github.com/user-attachments/assets/7acc976e-576c-43a2-9d71-98755079646b" />
 
+<img width="653" height="220" alt="running-script" src="https://github.com/user-attachments/assets/1718a10e-5af1-4e18-b05e-33f750948db5" />
+
+
 <img width="780" height="404" alt="hello sh" src="https://github.com/user-attachments/assets/05791f19-2d11-4b02-be7f-b641b1f602b7" />
 
 ### What happens if you remove the shebang line?
