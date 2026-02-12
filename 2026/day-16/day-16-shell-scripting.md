@@ -32,6 +32,7 @@ Single quotes → variables are treated as literal text
 name="Sana"
 
 echo "$name"   # Output: Sana
+
 echo '$name'   # Output: $name
 
 ## Task 3: User Input with read
