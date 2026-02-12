@@ -71,7 +71,7 @@ pvcreate → vgcreate → lvcreate
 <img width="1345" height="235" alt="resize2fs" src="https://github.com/user-attachments/assets/8f9ed375-590a-4ec0-ba70-ccd624922a40" />
 
 
-### 🔍 What I learned:
+### 🔍 What I learned
 
 ✔️ Why LVM is better than traditional disk partitioning
 
