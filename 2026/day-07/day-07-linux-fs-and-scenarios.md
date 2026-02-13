@@ -17,7 +17,7 @@ I want to understand the overall system structure or navigate to any directory.
 
 ##/home
 
-### What it contains:
+### What it contains ?
 
 Home directories for normal users (documents, downloads, projects).
 
