@@ -4,17 +4,21 @@
 
 ### ✅ Step 1: Verify Git is installed
 git --version
+
 ✔️ If you see a version → Git is installed
 ❌ If not → Git is not installed
 
 ### ✅ Step 2: Set your Git identity (one-time)
 Set your name
+
 git config --global user.name "Your Name"
 
 Set your email
+
 git config --global user.email "your_email@example.com"
 
 ### ✅ Step 3: Verify your configuration
+
 git config --global --list
 
 Expected output:
@@ -28,17 +32,21 @@ user.email=your_email@example.com
 ## Task 2: Create Your Git Project
 
 ### 1️⃣ Create a new folder
+
 mkdir devops-git-practice
+
 cd devops-git-practice
 
 ### 2️⃣ Initialize it as a Git repository
 
 git init
+
 - Git creates a hidden folder called .git/
 
 - Your folder is now under version control
 
 ### 3️⃣ Check repository status
+
 git status
 
 On branch master/main → you’re on the main branch
@@ -52,6 +60,7 @@ nothing to commit → no files tracked yet
 ### 4️⃣ Explore the hidden .git/ directory
 
 Show hidden files (Git Bash)
+
 ls -la
 ls .git
 
@@ -62,7 +71,6 @@ ls .git
 - HEAD → tells Git which branch you’re on
 
 - config → repo-specific settings
-ls -a
 
 <img width="1363" height="709" alt="task2" src="https://github.com/user-attachments/assets/ef3210eb-82d1-4d25-9058-3d500f6d4672" />
 
@@ -81,6 +89,7 @@ ls -a
 git add git-command.md
 
 What this does:
+
 Moves the file from working directory → staging area
 
 ### 2️⃣ Check what’s staged
