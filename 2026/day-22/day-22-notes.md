@@ -6,6 +6,7 @@
 git --version
 
 ✔️ If you see a version → Git is installed
+
 ❌ If not → Git is not installed
 
 ### ✅ Step 2: Set your Git identity (one-time)
