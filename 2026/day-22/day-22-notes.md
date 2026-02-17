@@ -132,5 +132,40 @@ Date & commit message
 
 <img width="733" height="236" alt="task5-3" src="https://github.com/user-attachments/assets/a75b9509-f514-4c2e-9b6b-9751bb2c29e7" />
 
+## Task 6: Understand the Git Workflow
+
+### What is the difference between git add and git commit?
+
+git add is used to select files that you want to save.
+
+git commit is used to actually save those selected files permanently.
+
+### What does the staging area do? Why doesn't Git just commit directly?
+
+The staging area lets you choose which changes you want to save.
+
+Git doesn’t commit directly because you may not want to save all changes at once.
+
+### What information does git log show you?
+
+git log shows the history of commits.
+
+It shows who made the commit, when it was made, and the commit message.
+
+### What is the .git/ folder and what happens if you delete it?
+
+The .git/ folder stores all Git data and history.
+
+If you delete it, the project is no longer a Git repository and all history is lost.
+
+### What is the difference between a working directory, staging area, and repository?
+
+The working directory is where you edit files.
+
+The staging area is where selected files wait to be saved.
+
+The repository is where files are permanently saved after commit.
+
+
 
 
