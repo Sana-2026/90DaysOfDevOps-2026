@@ -26,7 +26,7 @@ Command to switch to that branch
 
 ### Why do we use branches instead of committing everything to main?
 
-We don’t commit everything to main because:
+#### We don’t commit everything to main because:
 
 main should always be stable
 
@@ -34,7 +34,7 @@ New features may break things
 
 Bugs should not affect working code
 
-Branches allow:
+#### Branches allow:
 
 Safe experimentation
 
