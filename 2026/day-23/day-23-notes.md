@@ -105,11 +105,46 @@ done
 ## Task 3: Push to GitHub
 
 ### 1.Create a new repository on GitHub (do NOT initialize it with a README)
+
+<img width="1343" height="644" alt="task3-q1" src="https://github.com/user-attachments/assets/e45cd934-96d0-4b1d-9fb2-643670e384d6" />
+
 ### 2.Connect your local devops-git-practice repo to the GitHub remote
+
+<img width="986" height="204" alt="connecting-local-repo-to-github" src="https://github.com/user-attachments/assets/917b39cb-713c-49a0-8b88-adadc2c91dc6" />
+
+
 ### 3.Push your main branch to GitHub
 ### 4.Push feature-1 branch to GitHub
 ### 5.Verify both branches are visible on GitHub
 ### 6.What is the difference between origin and upstream?
+
+Difference Between origin and upstream
+#### 🔹 What is origin?
+
+- origin is the default remote name for your repository
+
+- It usually points to your GitHub repo
+
+- You push your changes to origin
+
+Example
+
+origin → https://github.com/your-username/devops-git-practice.git
+
+#### 🔹 What is upstream?
+
+- upstream points to the original / main repository
+
+- Common when working with forked repositories
+
+- You pull updates from upstream
+
+- You usually do not push to upstream
+
+Example
+
+upstream → https://github.com/original-owner/devops-git-practice.git
+
 
 
 
