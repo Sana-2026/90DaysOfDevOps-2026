@@ -138,7 +138,7 @@ Difference Between origin and upstream
 
 Example
 
-origin → https://github.com/your-username/devops-git-practice.git
+origin → git remote add origin https://github.com/Sana-2026/devops-hands-on.git
 
 #### 🔹 What is upstream?
 
@@ -152,7 +152,8 @@ origin → https://github.com/your-username/devops-git-practice.git
 
 Example
 
-upstream → https://github.com/original-owner/devops-git-practice.git
+upstream →  git remote add origin https://github.com/Sana-2026/90DaysOfDevOps
+
 
 
 
