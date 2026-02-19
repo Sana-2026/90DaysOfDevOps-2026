@@ -114,8 +114,17 @@ done
 
 
 ### 3.Push your main branch to GitHub
+
+<img width="906" height="720" alt="Push-main -branch-to-GitHub" src="https://github.com/user-attachments/assets/3f73ed84-1f7a-42ee-ae97-9373e5f8c53f" />
+
 ### 4.Push feature-1 branch to GitHub
+
+<img width="998" height="501" alt="push-branch-feature-one" src="https://github.com/user-attachments/assets/25d349fe-9a0d-4707-b62e-06bf613d4a85" />
+
 ### 5.Verify both branches are visible on GitHub
+
+<img width="1348" height="569" alt="2-brnch-pushed" src="https://github.com/user-attachments/assets/f3e05c2d-56ac-47a1-a1f2-a93fc3f1df71" />
+
 ### 6.What is the difference between origin and upstream?
 
 Difference Between origin and upstream
