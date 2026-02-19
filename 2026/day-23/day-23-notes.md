@@ -84,19 +84,19 @@ When you switch branches:
 
 ### 5.Try using git switch to move between branches — how is it different from git checkout?
 
-<img width="747" height="429" alt="q5-switchbranch" src="https://github.com/user-attachments/assets/656ceee2-95e2-435d-b4ed-9988489f4abf" />
+<img width="747" height="429" alt="q5-switchbranch" src="https://github.com/user-attachments/assets/656ceee2-95e2-435d-b4ed-9988489f4abf"/>
 
 ### 6.Make a commit on feature-1 that does not exist on main
 
-<img width="1185" height="455" alt="Q6-Task2" src="https://github.com/user-attachments/assets/5daef5cc-4481-402b-9c8d-940fc5b69fcb" />
+<img width="1185" height="455" alt="Q6-Task2" src="https://github.com/user-attachments/assets/5daef5cc-4481-402b-9c8d-940fc5b69fcb"/>
 
 ### 7.Switch back to main — verify that the commit from feature-1 is not there
 
-<img width="1000" height="716" alt="Q7-task2" src="https://github.com/user-attachments/assets/152bf37f-dcb9-4009-a5e7-c6e06eab8694" />
+<img width="1000" height="716" alt="Q7-task2" src="https://github.com/user-attachments/assets/152bf37f-dcb9-4009-a5e7-c6e06eab8694"/>
 
 ### 8.Delete a branch you no longer need
 
-<img width="950" height="541" alt="Q8-Task2" src="https://github.com/user-attachments/assets/f97f0315-77c1-4a1c-8d76-3b770eba19fb" />
+<img width="950" height="541" alt="Q8-Task2" src="https://github.com/user-attachments/assets/f97f0315-77c1-4a1c-8d76-3b770eba19fb"/>
 
 ### 9.Add all branching commands to your git-commands.md
 
@@ -106,24 +106,24 @@ done
 
 ### 1.Create a new repository on GitHub (do NOT initialize it with a README)
 
-<img width="1343" height="644" alt="task3-q1" src="https://github.com/user-attachments/assets/e45cd934-96d0-4b1d-9fb2-643670e384d6" />
+<img width="1343" height="644" alt="task3-q1" src="https://github.com/user-attachments/assets/e45cd934-96d0-4b1d-9fb2-643670e384d6"/>
 
 ### 2.Connect your local devops-git-practice repo to the GitHub remote
 
-<img width="986" height="204" alt="connecting-local-repo-to-github" src="https://github.com/user-attachments/assets/917b39cb-713c-49a0-8b88-adadc2c91dc6" />
+<img width="986" height="204" alt="connecting-local-repo-to-github" src="https://github.com/user-attachments/assets/917b39cb-713c-49a0-8b88-adadc2c91dc6"/>
 
 
 ### 3.Push your main branch to GitHub
 
-<img width="906" height="720" alt="Push-main -branch-to-GitHub" src="https://github.com/user-attachments/assets/3f73ed84-1f7a-42ee-ae97-9373e5f8c53f" />
+<img width="906" height="720" alt="Push-main -branch-to-GitHub" src="https://github.com/user-attachments/assets/3f73ed84-1f7a-42ee-ae97-9373e5f8c53f"/>
 
 ### 4.Push feature-1 branch to GitHub
 
-<img width="998" height="501" alt="push-branch-feature-one" src="https://github.com/user-attachments/assets/25d349fe-9a0d-4707-b62e-06bf613d4a85" />
+<img width="998" height="501" alt="push-branch-feature-one" src="https://github.com/user-attachments/assets/25d349fe-9a0d-4707-b62e-06bf613d4a85"/>
 
 ### 5.Verify both branches are visible on GitHub
 
-<img width="1348" height="569" alt="2-brnch-pushed" src="https://github.com/user-attachments/assets/f3e05c2d-56ac-47a1-a1f2-a93fc3f1df71" />
+<img width="1348" height="569" alt="2-brnch-pushed" src="https://github.com/user-attachments/assets/f3e05c2d-56ac-47a1-a1f2-a93fc3f1df71"/>
 
 ### 6.What is the difference between origin and upstream?
 
