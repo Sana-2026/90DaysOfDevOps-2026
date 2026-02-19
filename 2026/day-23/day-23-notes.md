@@ -4,11 +4,11 @@
 
 ### What is a branch in Git?
 
-A branch is a separate path where you can work on changes without affecting the main code.
+- A branch is a separate path where you can work on changes without affecting the main code.
 
-You copy the project, work freely, and later decide whether to add it back.
+- You copy the project, work freely, and later decide whether to add it back.
 
-Command to see branches
+- Command to see branches
 
 - git branch
 
@@ -28,31 +28,31 @@ Command to switch to that branch
 
 #### We don’t commit everything to main because:
 
-main should always be stable
+- main should always be stable
 
-New features may break things
+- New features may break things
 
-Bugs should not affect working code
+- Bugs should not affect working code
 
 #### Branches allow:
 
-Safe experimentation
+- Safe experimentation
 
-Clean and organized work
+- Clean and organized work
 
-Easy collaboration
+- Easy collaboration
 
 ### What is HEAD in Git?
 
-HEAD is a pointer that tells Git:
+- HEAD is a pointer that tells Git:
 
-“This is where you are right now.”
+- This is where you are right now.
 
-It points to:
+- It points to:
 
-The current branch
+- The current branch
 
-The latest commit on that branch
+- The latest commit on that branch
 
 ### What happens to your files when you switch branches?
 
