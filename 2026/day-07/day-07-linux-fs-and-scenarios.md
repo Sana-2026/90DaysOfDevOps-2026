@@ -13,7 +13,7 @@ You’ll see folders like bin, etc, home, var, usr
 
 ### I would use this when ?
 
-I want to understand the overall system structure or navigate to any directory.
+I want to understand the overall system structure or navigate to any directory
 
 ##/home
 
