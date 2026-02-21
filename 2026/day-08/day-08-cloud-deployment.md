@@ -12,7 +12,7 @@
 
 - sudo systemctl status nginx
   
-- scp -i your-key.pem ubuntu@<your-instance-ip>:~/nginx-logs.txt .
+- scp -i your-key.pem ubuntu@<your-instance-ip>:~/nginx-logs.txt 
   
 ## ⚠️ Challenges Faced
 
