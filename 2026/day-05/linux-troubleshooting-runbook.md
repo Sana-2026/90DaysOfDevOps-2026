@@ -40,7 +40,7 @@ Observation: Logs are reasonable in size.
 
 <img width="1351" height="513" alt="logs-ssh-command" src="https://github.com/user-attachments/assets/00f2488e-ee3c-48ae-abf8-7542ab1c2d21" />
 
-Observation: Successful SSH logins; no recent errors.
+Observation: Successful SSH logins; no recent errors
 
 ## 🚨 Summary
 
