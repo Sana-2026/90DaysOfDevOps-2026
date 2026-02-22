@@ -262,25 +262,6 @@ Rebase before push, Merge after push
 
 ### What is the trade-off of squashing?
 
-#### What squash merge does
-- Takes **many commits from a feature branch**
-- Converts them into **one single commit** on `main`
-
-#### Why squash merge is used
-- Feature branches often have **messy commits** (fix, retry, typo)
-- Main branch should stay **clean and readable**
-- Only the **final result** matters on main
-
-#### When to use squash merge
-- Small features or bug fixes
-- Solo work or simple PRs
-- When commit-by-commit history is not important
-
-#### Where squash merge is used
-- While merging **feature → main**
-- In **GitHub Pull Requests** (Squash and merge option)
-
-### Trade-off of squash merge
 - ❌ Lose small commit details
 - ❌ Hard to see how work evolved
 - ❌ Cannot undo tiny changes separately
@@ -288,6 +269,78 @@ Rebase before push, Merge after push
 
 🧠 **Memory hook**:  
 > Squash keeps the **result**, not the **journey**
+
+## Task 4: Git Stash — Hands-On
+
+
+### Difference between `git stash apply` and `git stash pop`
+
+### `git stash apply`
+- Applies the stashed changes
+- **Keeps** the stash in stash list
+- You can reuse the same stash again
+
+🧠 **Memory hook**:  
+> Apply = use it, keep it
+
+---
+
+### `git stash pop`
+- Applies the stashed changes
+- **Removes** the stash from stash list
+- One-time use
+
+🧠 **Memory hook**:  
+> Pop = use it, drop it
+
+---
+
+## When would you use stash in real-world workflow?
+- You are working on a feature
+- Suddenly need to **switch branches**
+- Your changes are **not ready to commit**
+- You stash the work, fix something urgent, then come back
+
+🧠 **Memory hook**:  
+> Stash = temporary save, not a commit
+
+---
+
+## Task 5: Cherry Picking
+
+
+###  What does `git cherry-pick` do?
+- Takes **one specific commit** from another branch
+- Applies it to your **current branch**
+- Creates a **new commit with a new commit ID**
+
+🧠 **Memory hook**:  
+> Cherry-pick = pick one commit you like
+
+---
+
+### When would you use cherry-pick in a real project?
+- A **bug fix** exists in another branch
+- You need **only that fix**, not the full branch
+- Hotfix needs to go to **main / release branch**
+- Backporting a fix to an older version
+
+🧠 **Memory hook**:  
+> One needed commit → cherry-pick
+
+---
+
+###  What can go wrong with cherry-picking?
+- ❌ Can cause **conflicts** if code differs
+- ❌ Creates **duplicate commits** (same change, different IDs)
+- ❌ History can become confusing if overused
+
+🧠 **Memory hook**:  
+> Cherry-pick is powerful, but don’t overuse it
+
+---
+
+
 
 
 
