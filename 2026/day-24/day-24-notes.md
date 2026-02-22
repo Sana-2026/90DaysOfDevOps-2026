@@ -65,10 +65,15 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 ### 3️⃣ Graph symbols (MOST IMPORTANT)
 
 *   commit
+  
 |   same branch history
+
 |\
+
 | * branch split
+
 |/
+
 *   merged history
 
 * → a commit
