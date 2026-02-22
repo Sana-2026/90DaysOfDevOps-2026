@@ -31,3 +31,84 @@
 | Common usage | Merging feature → main | Updating feature branch with main |
 | Industry preference | Safer, more explicit | Cleaner, more readable history |
 | Risk level | Low | Medium (if misused) |
+
+
+
+## Understanding git log --oneline --graph --decorate --all
+
+1️⃣ Commit line structure
+
+<commit-id> (branch pointers) commit message
+
+Example:
+
+1d4ae98 (HEAD -> feature-dashboard) Resolved conflicts in dashboard
+
+- Commit ID → unique identifier
+
+- HEAD → where you are right now
+
+- Branch name → which branch points to this commit
+
+- Message → what changed
+
+## 2️⃣ Branch pointers (inside brackets)
+
+HEAD -> feature-dashboard → currently on feature-dashboard
+
+(main) → main branch latest commit
+
+(feature-login) → feature-login branch tip
+
+(origin/main) → remote GitHub main branch
+
+### 3️⃣ Graph symbols (MOST IMPORTANT)
+
+*   commit
+|   same branch history
+|\
+| * branch split
+|/
+*   merged history
+
+* → a commit
+
+| → straight history
+
+/ \ → branch split or merge
+
+### 4️⃣ Rebase 
+* 258ccb9 Improved UI of dashboard
+* 993a448 Added user stats widget
+* 48f7d2b Added dashboard for users
+
+➡ These commits were replayed one by one during git rebase
+➡ triggered multiple conflicts
+
+### 5️⃣ Merge commit 
+
+4c633ea Merge branch 'feature-signup'
+
+This is a merge commit
+
+### 6️⃣ Stash entries (special)
+
+(refs/stash) WIP on feature-dashboard
+
+- Saved uncommitted work
+
+- Used to temporarily park changes
+
+### 7️⃣ Rules to remember
+
+- HEAD → where I am
+
+- Branch name → pointer to a commit
+
+- Merge commit → two histories joined
+
+- Rebase → commits rewritten & replayed
+
+- Stash → hidden work, not committed
+
+- Colors → terminal-dependent, NOT Git logic
