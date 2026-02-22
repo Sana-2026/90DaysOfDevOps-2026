@@ -112,6 +112,8 @@ Conflict = Git is confused, human decides
 
 4. Observe your git log --oneline --graph --all — how does the history look compared to a merge?
    
+   <img width="996" height="660" alt="task2-rebase-q4" src="https://github.com/user-attachments/assets/2c1a49b9-ceb9-496c-a014-7d7b7158430d" />
+
 
 ### Understanding git log --oneline --graph --decorate --all
 
@@ -199,7 +201,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 - Colors → terminal-dependent, NOT Git logic
 
 
-### What does rebase actually do to your commits?
+### 5a. What does rebase actually do to your commits?
 
 * Rebase replays your commits on top of another branch
 
@@ -211,7 +213,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 Rebase = copy → replay → replace commits
 
-### How is the history different from a merge?
+### 5b. How is the history different from a merge?
 
 * Merge → keeps original history + adds a merge commit
 
@@ -225,7 +227,7 @@ Rebase = clean history
 
 
 
-### Why should you never rebase pushed & shared commits?
+### 5c. Why should you never rebase pushed & shared commits?
 
 * Rebase changes commit IDs
 
@@ -241,7 +243,7 @@ Rebase = clean history
 
 
 
-### When would you use rebase vs merge?
+### 5d. When would you use rebase vs merge?
 #### Use rebase when:
 
 * Working on your local feature branch
@@ -284,7 +286,35 @@ Rebase before push, Merge after push
 
 ## Task 3: Squash Commit vs Merge Commit
 
-### What does squash merging do?
+1. Create a branch feature-profile, add 4-5 small commits (typo fix, formatting, etc.)
+
+<img width="1007" height="718" alt="task3-ques1" src="https://github.com/user-attachments/assets/f87a9e8e-c590-40ec-91f8-2f786263d699" />
+
+2. Merge it into main using --squash — what happens?
+   
+<img width="703" height="251" alt="task3-ques2" src="https://github.com/user-attachments/assets/36500770-1e42-4253-b594-090d510cb811" />
+
+<img width="761" height="480" alt="task3-ques2-part2" src="https://github.com/user-attachments/assets/e32db40d-72f6-4714-a9bf-1f6c925a1f5d" />
+
+<img width="761" height="480" alt="task3-ques2-part2" src="https://github.com/user-attachments/assets/3581c07b-dac9-472e-be76-af08a3570c7f" />
+
+3. Check git log — how many commits were added to main?
+   
+   Exactly one commit was added to the main branch
+   
+4. Now create another branch feature-settings, add a few commits
+   
+<img width="982" height="659" alt="task3-ques4" src="https://github.com/user-attachments/assets/331ae05c-9fe6-4c25-bfb7-71781834f8a4" />
+
+5. Merge it into main without --squash (regular merge) — compare the history
+
+<img width="966" height="417" alt="task3-ques5" src="https://github.com/user-attachments/assets/a4ff081e-038c-4837-aa46-08045eee22d8" />
+
+
+
+
+
+### 6a. What does squash merging do?
 - Combines **all commits from a feature branch into a single commit**
 - That one commit is added to the target branch (usually `main`)
 - Individual commits from the feature branch are **not preserved** in `main`
@@ -294,7 +324,7 @@ Rebase before push, Merge after push
 
 ---
 
-### When to use squash merge vs regular merge?
+### 6b. When to use squash merge vs regular merge?
 
 #### Use **squash merge** when:
 
@@ -328,7 +358,7 @@ Rebase before push, Merge after push
 | Common usage | Long-running branches, open-source | Feature branches, PRs |
 | Used in GitHub PRs | ⚠️ Sometimes | ✅ Very common |
 
-### What is the trade-off of squashing?
+### 6c.  What is the trade-off of squashing?
 
 - ❌ Lose small commit details
 - ❌ Hard to see how work evolved
@@ -340,8 +370,22 @@ Rebase before push, Merge after push
 
 ## Task 4: Git Stash — Hands-On
 
+1. Start making changes to a file but do not commit
+2. Now imagine you need to urgently switch to another branch — try switching. What happens?
+3. Use git stash to save your work-in-progress
+4. Switch to another branch, do some work, switch back
+5. Apply your stashed changes using git stash pop
 
-### Difference between `git stash apply` and `git stash pop`
+<img width="1283" height="699" alt="task4-ques1to5" src="https://github.com/user-attachments/assets/8dabf157-13c3-4863-945a-772a0971493b" />
+
+<img width="667" height="379" alt="task4-ques1-5-part2" src="https://github.com/user-attachments/assets/eae14c53-61c3-4d76-98e4-474551804604" />
+
+6. Try stashing multiple times and list all stashes
+7. Try applying a specific stash from the list
+   
+<img width="999" height="553" alt="task4-ques6-7" src="https://github.com/user-attachments/assets/d170f859-6604-49e3-bb89-43ad12630745" />
+
+### 8a. Difference between `git stash apply` and `git stash pop`
 
 ### `git stash apply`
 - Applies the stashed changes
@@ -363,7 +407,7 @@ Rebase before push, Merge after push
 
 ---
 
-## When would you use stash in real-world workflow?
+## 8b. When would you use stash in real-world workflow?
 - You are working on a feature
 - Suddenly need to **switch branches**
 - Your changes are **not ready to commit**
@@ -375,9 +419,18 @@ Rebase before push, Merge after push
 ---
 
 ## Task 5: Cherry Picking
+1. Create a branch feature-hotfix, make 3 commits with different changes
 
+<img width="1049" height="684" alt="task5-ques1" src="https://github.com/user-attachments/assets/d2a83b8f-d789-4f24-ab3c-942599f89fbf" />
 
-###  What does `git cherry-pick` do?
+2. Switch to main
+3. Cherry-pick only the second commit from feature-hotfix onto main
+4. Verify with git log that only that one commit was applied
+   
+<img width="1355" height="695" alt="task5-ques3-4part1" src="https://github.com/user-attachments/assets/1219106d-5792-424e-9ba7-8aa50105c594" />
+<img width="858" height="439" alt="task-5-ques3-4-partb" src="https://github.com/user-attachments/assets/34bf468a-98fa-4de0-9db3-0172004c64bc" />
+
+### 5a. What does `git cherry-pick` do?
 - Takes **one specific commit** from another branch
 - Applies it to your **current branch**
 - Creates a **new commit with a new commit ID**
@@ -387,7 +440,7 @@ Rebase before push, Merge after push
 
 ---
 
-### When would you use cherry-pick in a real project?
+### 5b. When would you use cherry-pick in a real project?
 - A **bug fix** exists in another branch
 - You need **only that fix**, not the full branch
 - Hotfix needs to go to **main / release branch**
@@ -398,7 +451,7 @@ Rebase before push, Merge after push
 
 ---
 
-###  What can go wrong with cherry-picking?
+### 5c. What can go wrong with cherry-picking?
 - ❌ Can cause **conflicts** if code differs
 - ❌ Creates **duplicate commits** (same change, different IDs)
 - ❌ History can become confusing if overused
