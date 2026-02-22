@@ -4,7 +4,7 @@
 
 
 
- 🔀 Merge vs Squash
+ ## 🔀 Merge vs Squash
 | Feature | Normal Merge (`git merge`) | Squash Merge (`git merge --squash`) |
 |-------|----------------------------|-------------------------------------|
 | Keeps all commits | ✅ Yes | ❌ No |
