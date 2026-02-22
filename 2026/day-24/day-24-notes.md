@@ -38,7 +38,7 @@
 
 ### 1️⃣ Commit line structure
 
-<commit-id> (branch pointers) commit message
+commit-id (branch pointers) commit message
 
 Example:
 
