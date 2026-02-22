@@ -87,22 +87,23 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 * 993a448 Added user stats widget
 * 48f7d2b Added dashboard for users
 
-➡ These commits were replayed one by one during git rebase
-➡ triggered multiple conflicts
+* These commits were replayed one by one during git rebase
+
+* triggered multiple conflicts
 
 ### 5️⃣ Merge commit 
 
 4c633ea Merge branch 'feature-signup'
 
-This is a merge commit
+* This is a merge commit
 
 ### 6️⃣ Stash entries (special)
 
 (refs/stash) WIP on feature-dashboard
 
-- Saved uncommitted work
+* Saved uncommitted work
 
-- Used to temporarily park changes
+* Used to temporarily park changes
 
 ### 7️⃣ Rules to remember
 
