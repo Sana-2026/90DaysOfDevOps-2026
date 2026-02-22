@@ -32,11 +32,11 @@
 | Industry preference | Safer, more explicit | Cleaner, more readable history |
 | Risk level | Low | Medium (if misused) |
 
+## Task 2: Git Rebase — Hands-On
 
+### Understanding git log --oneline --graph --decorate --all
 
-## Understanding git log --oneline --graph --decorate --all
-
-### 1️⃣ Commit line structure
+#### 1️⃣ Commit line structure
 
 commit-id (branch pointers) commit message
 
@@ -52,7 +52,7 @@ Example:
 
 - Message → what changed
 
-### 2️⃣ Branch pointers (inside brackets)
+#### 2️⃣ Branch pointers (inside brackets)
 
 HEAD -> feature-dashboard → currently on feature-dashboard
 
@@ -62,7 +62,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 (origin/main) → remote GitHub main branch
 
-### 3️⃣ Graph symbols (MOST IMPORTANT)
+#### 3️⃣ Graph symbols (MOST IMPORTANT)
 
 (*) commit
   
@@ -82,7 +82,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 / \ → branch split or merge
 
-### 4️⃣ Rebase 
+#### 4️⃣ Rebase 
 * 258ccb9 Improved UI of dashboard
 * 993a448 Added user stats widget
 * 48f7d2b Added dashboard for users
@@ -91,13 +91,13 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 * triggered multiple conflicts
 
-### 5️⃣ Merge commit 
+#### 5️⃣ Merge commit 
 
 4c633ea Merge branch 'feature-signup'
 
 * This is a merge commit
 
-### 6️⃣ Stash entries (special)
+#### 6️⃣ Stash entries (special)
 
 (refs/stash) WIP on feature-dashboard
 
@@ -105,7 +105,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 * Used to temporarily park changes
 
-### 7️⃣ Rules to remember
+#### 7️⃣ Rules to remember
 
 - HEAD → where I am
 
@@ -118,3 +118,75 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 - Stash → hidden work, not committed
 
 - Colors → terminal-dependent, NOT Git logic
+
+
+#### What does rebase actually do to your commits?
+
+* Rebase replays your commits on top of another branch
+
+* Old commits are deleted
+
+* New commits with new commit IDs are created
+
+🧠 Memory Hook :
+
+Rebase = copy → replay → replace commits
+
+#### How is the history different from a merge?
+
+* Merge → keeps original history + adds a merge commit
+
+* Rebase → rewrites history into a straight line
+
+🧠 Memory Hook :
+
+Merge = real history
+Rebase = clean history
+
+
+
+
+#### Why should you never rebase pushed & shared commits?
+
+* Rebase changes commit IDs
+
+* Teammates still have the old commits
+
+* Causes duplicate commits & conflicts
+
+* Breaks team history
+
+🧠 Memory hook:
+
+❌ Never rebase commits that others may already have
+
+
+
+#### When would you use rebase vs merge?
+##### Use rebase when:
+
+* Working on your local feature branch
+
+* Updating your branch with latest main
+
+* Want clean, linear history
+
+* No one else is using your branch
+
+##### Use merge when:
+
+* Code is already pushed
+
+* Working with a team
+
+* Merging feature → main
+
+* You want safe, traceable history
+
+🧠 Memory hook :
+
+Rebase before push, Merge after push
+
+
+
+
