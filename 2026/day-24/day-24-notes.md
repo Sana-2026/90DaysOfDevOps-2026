@@ -262,13 +262,32 @@ Rebase before push, Merge after push
 
 ### What is the trade-off of squashing?
 
-- ❌ Loses individual commit history
-- ❌ Harder to trace or revert a specific change later
-- ❌ Less context for debugging
+#### What squash merge does
+- Takes **many commits from a feature branch**
+- Converts them into **one single commit** on `main`
+
+#### Why squash merge is used
+- Feature branches often have **messy commits** (fix, retry, typo)
+- Main branch should stay **clean and readable**
+- Only the **final result** matters on main
+
+#### When to use squash merge
+- Small features or bug fixes
+- Solo work or simple PRs
+- When commit-by-commit history is not important
+
+#### Where squash merge is used
+- While merging **feature → main**
+- In **GitHub Pull Requests** (Squash and merge option)
+
+### Trade-off of squash merge
+- ❌ Lose small commit details
+- ❌ Hard to see how work evolved
+- ❌ Cannot undo tiny changes separately
+- ✅ Gain a clean, simple history
 
 🧠 **Memory hook**:  
-> Squash = clean history, less detail
-
+> Squash keeps the **result**, not the **journey**
 
 
 
