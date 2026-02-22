@@ -64,7 +64,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 ### 3️⃣ Graph symbols (MOST IMPORTANT)
 
-*   commit
+* commit
   
 |   same branch history
 
@@ -74,7 +74,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 |/
 
-*   merged history
+* merged history
 
 * → a commit
 
