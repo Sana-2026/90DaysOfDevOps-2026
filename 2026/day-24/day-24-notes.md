@@ -33,10 +33,21 @@
 
 <img width="738" height="315" alt="task1-q4-part2" src="https://github.com/user-attachments/assets/e648b0c5-7b33-4584-9f19-29ea4d2b4f3c" />
 
-5. Merge feature-signup into main — what happens this time
-   
+5. Merge feature-signup into main — what happens this time?
+  * A merge conflict happens when the same file is modified in more than one branch and Git cannot decide which change to keep.
 
- ### What is a fast-forward merge?
+<img width="798" height="179" alt="task1-q5-merge-conflict" src="https://github.com/user-attachments/assets/d3485836-46e5-494f-8d6d-f47072df0745" />
+
+<img width="809" height="213" alt="task1-q5-status-merge-conflict" src="https://github.com/user-attachments/assets/7210a7e1-00b1-4da3-83a5-6ee75c5b5275" />
+
+<img width="773" height="409" alt="task1-q5-part3" src="https://github.com/user-attachments/assets/aa1cea8d-8d5a-48b1-8295-f5853c7ca260" />
+
+* Resolved the merge conflict and checked the logs.
+  
+<img width="925" height="575" alt="task1-q5-resolvedconflict" src="https://github.com/user-attachments/assets/9fa674ea-d89c-427b-88e3-0a7fd40f1b72" />
+
+
+ ### 6.a) What is a fast-forward merge?
 
 * Happens when main has not moved ahead
 
@@ -48,7 +59,7 @@
 
 Fast-forward = no divergence, just move the pointer
 
-### When does Git create a merge commit?
+### 6.b)  When does Git create a merge commit?
 
 * Git creates a merge commit when:
 
@@ -62,7 +73,7 @@ Fast-forward = no divergence, just move the pointer
 
 Diverged history → merge commit needed
 
-###  What is a merge conflict?
+### 6.c)  What is a merge conflict?
 
 * Happens when same file + same lines changed in both branches
 
@@ -77,6 +88,8 @@ Conflict = Git is confused, human decides
 
 
 ## Task 2: Git Rebase — Hands-On
+
+1. Create a branch feature-dashboard from main, add 2-3 commits
 
 ### Understanding git log --oneline --graph --decorate --all
 
