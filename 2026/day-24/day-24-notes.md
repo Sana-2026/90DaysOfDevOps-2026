@@ -1,6 +1,43 @@
 
+## Task 1: Git Merge — Hands-On
 
+ ### What is a fast-forward merge?
 
+* Happens when main has not moved ahead
+
+* Git simply moves the branch pointer forward
+
+* No merge commit is created
+
+🧠 Memory hook:
+
+Fast-forward = no divergence, just move the pointer
+
+### When does Git create a merge commit?
+
+* Git creates a merge commit when:
+
+* Both branches have new commits
+
+* Histories have diverged
+
+* A fast-forward is not possible
+
+🧠 Memory hook:
+
+Diverged history → merge commit needed
+
+###  What is a merge conflict?
+
+* Happens when same file + same lines changed in both branches
+
+* Git cannot decide which change to keep
+
+* You must manually resolve it
+
+🧠 Memory hook:
+
+Conflict = Git is confused, human decides
 
 
 
@@ -186,6 +223,51 @@ Rebase = clean history
 🧠 Memory hook :
 
 Rebase before push, Merge after push
+
+
+## Task 3: Squash Commit vs Merge Commit
+
+### What does squash merging do?
+- Combines **all commits from a feature branch into a single commit**
+- That one commit is added to the target branch (usually `main`)
+- Individual commits from the feature branch are **not preserved** in `main`
+
+🧠 **Memory hook**:  
+> Squash = many commits → one clean commit
+
+---
+
+### When to use squash merge vs regular merge?
+
+#### Use **squash merge** when:
+
+- Feature branch has **messy or WIP commits**
+- You want a **clean and simple main branch history**
+- Commit-by-commit history is not important
+- Small features or solo work
+
+#### Use **regular merge** when:
+
+- Commit history **matters**
+- You want to track **how changes evolved**
+- Working in a **team**
+- Large or complex features
+
+🧠 **Memory hook**:  
+
+> Clean history → squash  
+> Detailed history → merge
+
+---
+
+### What is the trade-off of squashing?
+
+- ❌ Loses individual commit history
+- ❌ Harder to trace or revert a specific change later
+- ❌ Less context for debugging
+
+🧠 **Memory hook**:  
+> Squash = clean history, less detail
 
 
 
