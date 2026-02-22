@@ -157,7 +157,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 - Colors → terminal-dependent, NOT Git logic
 
 
-#### What does rebase actually do to your commits?
+### What does rebase actually do to your commits?
 
 * Rebase replays your commits on top of another branch
 
@@ -169,7 +169,7 @@ HEAD -> feature-dashboard → currently on feature-dashboard
 
 Rebase = copy → replay → replace commits
 
-#### How is the history different from a merge?
+### How is the history different from a merge?
 
 * Merge → keeps original history + adds a merge commit
 
@@ -183,7 +183,7 @@ Rebase = clean history
 
 
 
-#### Why should you never rebase pushed & shared commits?
+### Why should you never rebase pushed & shared commits?
 
 * Rebase changes commit IDs
 
@@ -199,8 +199,8 @@ Rebase = clean history
 
 
 
-#### When would you use rebase vs merge?
-##### Use rebase when:
+### When would you use rebase vs merge?
+#### Use rebase when:
 
 * Working on your local feature branch
 
@@ -210,7 +210,7 @@ Rebase = clean history
 
 * No one else is using your branch
 
-##### Use merge when:
+#### Use merge when:
 
 * Code is already pushed
 
