@@ -91,6 +91,28 @@ Conflict = Git is confused, human decides
 
 1. Create a branch feature-dashboard from main, add 2-3 commits
 
+<img width="1362" height="696" alt="task2-q1" src="https://github.com/user-attachments/assets/c79d80fb-661c-4670-9bdb-b89357d08527" />
+<img width="1351" height="550" alt="task2-q1-part2" src="https://github.com/user-attachments/assets/12e63228-4f7c-4954-9896-39e06879e818" />
+
+2. While on main, add a new commit (so main moves ahead)
+
+<img width="1346" height="697" alt="task-2-rebase-ques2" src="https://github.com/user-attachments/assets/de8fc2cd-4b0c-4640-b83a-bb1839e0445a" />
+
+3. Switch to feature-dashboard and rebase it onto main
+   
+<img width="1222" height="723" alt="task2-rebase-q3" src="https://github.com/user-attachments/assets/eadc88cb-a5d9-4d6d-be33-5f941191fecc" />
+
+<img width="932" height="650" alt="task2-rebase-q3-part2" src="https://github.com/user-attachments/assets/e4ad094b-07e2-4841-8cdb-69e9ac3e9f45" />
+
+<img width="899" height="484" alt="task-2-rebase-ques2-part3" src="https://github.com/user-attachments/assets/d02a3808-a81d-460e-bedc-edb83ddbdc5f" />
+
+<img width="1039" height="674" alt="task-2-rebase-ques2-part4" src="https://github.com/user-attachments/assets/9638e01e-6ced-4b92-8307-6522fba69f2e" />
+
+<img width="842" height="534" alt="task-2-rebase-ques2-part5" src="https://github.com/user-attachments/assets/ecb0d8d4-9193-442b-96f3-ae0ef210c5aa" />
+
+4. Observe your git log --oneline --graph --all — how does the history look compared to a merge?
+   
+
 ### Understanding git log --oneline --graph --decorate --all
 
 #### 1️⃣ Commit line structure
