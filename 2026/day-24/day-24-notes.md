@@ -36,7 +36,7 @@
 
 ## Understanding git log --oneline --graph --decorate --all
 
-1️⃣ Commit line structure
+### 1️⃣ Commit line structure
 
 <commit-id> (branch pointers) commit message
 
@@ -52,7 +52,7 @@ Example:
 
 - Message → what changed
 
-## 2️⃣ Branch pointers (inside brackets)
+### 2️⃣ Branch pointers (inside brackets)
 
 HEAD -> feature-dashboard → currently on feature-dashboard
 
