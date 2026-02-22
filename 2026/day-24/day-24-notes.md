@@ -1,6 +1,41 @@
 
 ## Task 1: Git Merge — Hands-On
 
+1. Create a new branch feature-login from main, add a couple of commits to it
+<img width="1077" height="719" alt="New-feature-login-branch-created" src="https://github.com/user-attachments/assets/cf96b993-7fe3-4e7d-8a7d-4aed7f11d9ce" />
+
+<img width="1054" height="728" alt="commit-on-feature-login-branch" src="https://github.com/user-attachments/assets/376cf33a-3199-4ea0-bf93-1b5fee77fcca" />
+
+<img width="1041" height="721" alt="commit-passd-feature-login" src="https://github.com/user-attachments/assets/08419fbb-50da-46a5-a831-d362b2d52271" />
+
+2. Switch back to main and merge feature-login into main
+
+<img width="818" height="265" alt="Task1-2q" src="https://github.com/user-attachments/assets/0c32b29f-05a2-4c30-bb73-182b9e92e2ac" />
+
+3. Observe the merge — did Git do a fast-forward merge or a merge commit?
+   
+   * Git did a fast-forward merge
+     
+   * The main branch had not changed after the feature branch was created
+
+   * All new commits existed only on the feature branch
+
+   * There was no divergence between main and the feature branch
+
+   * So Git didn’t need to “merge” histories.
+
+   * Instead, Git simply moved the main pointer forward to the latest commit of the feature branch
+
+
+4. Now create another branch feature-signup, add commits to it — but also add a commit to main before merging
+
+<img width="1074" height="700" alt="task1-q4" src="https://github.com/user-attachments/assets/225a1c21-9d22-443d-aad5-ab869f6fb035" />
+
+<img width="738" height="315" alt="task1-q4-part2" src="https://github.com/user-attachments/assets/e648b0c5-7b33-4584-9f19-29ea4d2b4f3c" />
+
+5. Merge feature-signup into main — what happens this time
+   
+
  ### What is a fast-forward merge?
 
 * Happens when main has not moved ahead
