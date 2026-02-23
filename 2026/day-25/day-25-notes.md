@@ -99,3 +99,52 @@ Commits        : A → B (HEAD)
 
 * Fixing commits made on the wrong branch before pushing
 
+4. Re-commit, then use git reset --hard to go back one commit — what happens this time?
+
+<img width="840" height="707" alt="task1-q4" src="https://github.com/user-attachments/assets/7e71a78f-7ed5-46b0-b043-aa8c4116473b" />
+
+#### What Happens Internally
+
+* HEAD moves from Commit C → Commit B
+
+* Branch main also moves to Commit B
+
+* Commit C is removed from commit history
+
+* All changes from Commit C are permanently discarded
+
+* Working directory and staging area are reset to exactly match Commit B
+  
+5a) What is the difference between --soft, --mixed, and --hard?
+
+* --soft → Undo the commit, keep changes staged
+
+* --mixed → Undo the commit, keep changes unstaged
+
+* --hard → Undo the commit and delete all changes
+5b) Which one is destructive and why?
+
+git reset --hard` is destructive because it permanently discards local changes.
+  It removes the commit from history
+  - It deletes all changes from both:
+  - the staging area
+  - the working directory
+  - Once done, the lost changes cannot be recovered easily 
+
+🔑 Key Difference: --soft vs --mixed vs --hard
+| Reset Mode            | Commit History      | Staging Area              | Working Directory            | Data Loss Risk | Common Use Case                            |
+| --------------------- | ------------------- | ------------------------- | ---------------------------- | -------------- | ------------------------------------------ |
+| `--soft`              | Last commit removed | Changes remain **staged** | Files unchanged              | 🟢 Low         | Edit commit message, squash commits        |
+| `--mixed` *(default)* | Last commit removed | Staging area **cleared**  | Files unchanged              | 🟡 Medium      | Uncommit changes for review and re-staging |
+| `--hard`              | Last commit removed | Cleared                   | Files reset to target commit | 🔴 High        | Discard local changes completely           |
+
+
+
+
+
+
+
+
+
+
+
