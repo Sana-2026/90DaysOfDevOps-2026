@@ -5,13 +5,13 @@
 
 ### Task 1: Git Reset — Hands-On
 
-1. Make 3 commits in your practice repo (commit A, B, C)
+#### 1. Make 3 commits in your practice repo (commit A, B, C)
 
 <img width="1000" height="687" alt="Task1-ques1" src="https://github.com/user-attachments/assets/dc4613a4-abbf-45c4-8224-949f065d1e95" />
 
 <img width="554" height="87" alt="task1-ques1-part2" src="https://github.com/user-attachments/assets/f752bd72-558f-41eb-813c-53a718a08977" />
 
-2. Use git reset --soft to go back one commit — what happens to the changes?
+#### 2. Use git reset --soft to go back one commit — what happens to the changes?
 
 <img width="592" height="179" alt="task1-ques2-part1" src="https://github.com/user-attachments/assets/554ceba6-1fb4-491f-bc29-936a6d9f0184" />
 
@@ -99,7 +99,7 @@ Commits        : A → B (HEAD)
 
 * Fixing commits made on the wrong branch before pushing
 
-4. Re-commit, then use git reset --hard to go back one commit — what happens this time?
+#### 4. Re-commit, then use git reset --hard to go back one commit — what happens this time?
 
 <img width="840" height="707" alt="task1-q4" src="https://github.com/user-attachments/assets/7e71a78f-7ed5-46b0-b043-aa8c4116473b" />
 
@@ -122,7 +122,8 @@ Commits        : A → B (HEAD)
 * --mixed → Undo the commit, keep changes unstaged
 
 * --hard → Undo the commit and delete all changes
-5b) Which one is destructive and why?
+  
+### 5b) Which one is destructive and why?
 
 git reset --hard` is destructive because it permanently discards local changes.
   It removes the commit from history
@@ -130,8 +131,56 @@ git reset --hard` is destructive because it permanently discards local changes.
   - the staging area
   - the working directory
   - Once done, the lost changes cannot be recovered easily 
+### 5c) When would you use each one?
 
-🔑 Key Difference: --soft vs --mixed vs --hard
+### `git reset --soft`
+- When you want to **edit or fix the last commit message**
+- When you want to **squash commits** before pushing
+- When you want to **recommit changes without unstaging them**
+
+👉 Best when you want to rewrite history but keep changes ready to commit.
+
+---
+
+### `git reset --mixed` (default)
+- When you want to **undo a commit but review changes again**
+- When you want to **re-stage files selectively**
+- When you committed on the **wrong branch** and want to fix it
+
+👉 Best when you want control over what gets staged next.
+
+---
+
+### `git reset --hard`
+- When you want to **discard local changes completely**
+- When your working tree is **broken and you want a clean state**
+- When undoing **local, unpushed commits only**
+
+👉 Best when you want to reset everything and start clean.
+
+---
+
+### 🧠 Quick memory rule
+> **Soft = staged • Mixed = unstaged • Hard = gone**
+
+### 5d) Should you ever use git reset on commits that are already pushed?
+
+No, you should not :
+`git reset` **rewrites commit history**
+- Pushed commits may already be:
+  - pulled by teammates
+  - used in CI/CD pipelines
+- Resetting them causes:
+  - history mismatch
+  - merge conflicts
+  - broken collaboration
+
+👉 This can force others to deal with **confusing errors and lost work**.
+
+---
+
+### 🔑 Key Difference: --soft vs --mixed vs --hard
+
 | Reset Mode            | Commit History      | Staging Area              | Working Directory            | Data Loss Risk | Common Use Case                            |
 | --------------------- | ------------------- | ------------------------- | ---------------------------- | -------------- | ------------------------------------------ |
 | `--soft`              | Last commit removed | Changes remain **staged** | Files unchanged              | 🟢 Low         | Edit commit message, squash commits        |
