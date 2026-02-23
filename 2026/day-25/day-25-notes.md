@@ -56,3 +56,46 @@ Commits        : A → B (HEAD)
 
 *  Recommitting changes in a better logical structure
 
+
+#### git reset --mixed HEAD~1 — Before vs After
+
+##### Before Reset
+
+- HEAD points to the latest commit (Commit C)
+
+- Commit history includes A → B → C
+
+- Working directory is clean
+
+- Staging area is empty
+
+    A → B → C (HEAD)
+    Working directory : clean
+    Staging area      : empty
+
+
+##### After Reset
+
+- HEAD moves back to Commit B
+
+- Commit C is removed from history
+
+- Changes from Commit C remain in the working directory
+
+- Staging area is cleared (changes are unstaged)
+
+    A → B (HEAD)
+    Working directory : modified (changes from C)
+    Staging area      : empty
+
+
+  ##### Use Cases (git reset --mixed)
+
+* Uncommitting changes while keeping them in the working directory
+
+* Reviewing and re-staging changes before committing again
+
+* Splitting a single commit into multiple logical commits
+
+* Fixing commits made on the wrong branch before pushing
+
