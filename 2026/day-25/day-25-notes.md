@@ -287,154 +287,85 @@ Instead, Git **created a new commit** that *undoes the changes introduced by Com
 
 ## Task 4: Branching Strategies
 
-GitFlow
+### Research the following branching strategies and document each in your notes with:
 
-How it works:
+  ## 1️⃣ GitFlow
 
-main : Contains production-ready code.Every commit here is a stable release.
+### 🔹 How it works
+- Uses **multiple long-lived branches**
+- Structured release management
 
-develop : The integration branch where new features are merged before they’re ready to go live.
+**Main branches**
+- `main` → production
+- `develop` → integration branch
 
-feature : For building out new functionality.Created from develop and merged back when complete.
+**Supporting branches**
+- `feature/*`
+- `release/*`
+- `hotfix/*`
 
-release : Used to prep a new version for production.Created from develop and merged into both main and develop.
+---
 
-hotfix : For urgent fixes on production.Created from main,then merged back into both main and develop.
+### A simple diagram or flow (text-based is fine)
 
-Text Diagram:
+feature → develop → release → main
+↑
+hotfix
 
-[main] (Production-ready)
-|
-o <----------------------------------------- (Start)
-| \
-|  \ [develop] (Integration)
-|   |
-|   o <------------------------------------- (Develop Start)
-|   | \
-|   |  \ [feature/login] (New functionality)
-|   |   |
-|   |   o (Feature Commit)
-|   |   |
-|   |   o (Feature Complete)
-|   |  /
-|   o / (Merge feature to develop)
-|   |
-|   | \
-|   |  \ [release/1.0] (Prep for production)
-|   |   |
-|   |   o (Release Prep/Bug Fix)
-|   |   |
-|   |   o (Release Ready)
-|   |  / \
-|   o /   o (Merge release to develop)
-|  /
-o / (Merge release to main & tag v1.0)
-|
-| \
-|  \ [hotfix/1.0.1] (Urgent fix)
-|   |
-|   o (Apply Fix)
-|  / \
-o /   o (Merge hotfix to develop)
-|
-V
-When/where it's used:
+### When/where it's used
 
-Team follows scheduled release cycles
+- Large teams
+- Products with **scheduled releases**
+- Enterprise / legacy systems
 
-Need to maintain multiple versions
+Pros and cons
 
-Pros:
+### 🔹 Pros
+- Clear structure
+- Stable releases
+- Easy hotfix handling
 
-Clear separation of concerns across features,releases,and hotfixes.
-Cons:
+### 🔹 Cons
+- Heavy process
+- Slow for fast shipping
+- Complex for small teams
+- 
+GitFlow — develop, feature, release, hotfix branches
 
-Can result in long-lived branches,increasing the risk of merge conflicts.
-GitHub Flow
+### 🔹 How it works
+- Only **one main branch**
+- Work happens in **feature branches**
+- Every change goes through a **Pull Request**
 
-How it works:
-
-Create a feature branch from main
-Push commits to the feature branch
-Open a pull request for code review and automated tests.
-Once approved, merge back to main.
-Deploy immediately.
-Everything in main should always be production-ready.
-Text Diagram:
+---
 
 
-  [main] (Always Production-Ready)
-    |
-    o (Start)
-    |
-    |\_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-    |                               \
-    |                                \ [feature/login]
-    |                                 |
-    |                                 o (Commit 1)
-    |                                 |
-    |                                 o (Commit 2)
-    |                                 |
-    |                                 o (Pull Request & Review)
-    |<_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _/
-    |                               
-    o (Merge & Auto-Deploy)
-    |
-    v
-When/where it's used:
+### GitHub Flow — simple, single main branch + feature branches
 
-ship frequent,small releases
-Pros:
+### 🔹 Simple flow
 
-Fast merge & deploy
-Cons:
+main → feature → PR → main
 
-In large teams,it can result in frequent merge conflicts
+Trunk-Based Development — everyone commits to main, short-lived branches
+
+### 🔹 How it works
+- Everyone commits **directly to main (trunk)**
+- Feature branches are **very short-lived**
+- Uses **feature flags** for incomplete work
+
+
+### Which strategy would you use for a startup shipping fast?
+ GitHub Flow
+### Which strategy would you use for a large team with scheduled releases?
+ GitHub Flow
+### Which one does your favorite open-source project use? 
 Trunk-Based Development
 
-How it works:
-
-There’s one main branch, often called main or trunk. All development happens here
-Developers commit directly to main, often multiple times per day
-Changes are small,incremental
-Text Diagram:
-
- [main] (The Trunk)
-   |
-   o (Start)
-   |
-   |\_ _ _ _ _ _ _ 
-   |             \
-   |              o (Dev A: Small Change)
-   |<_ _ _ _ _ _ /
-   |             /
-   o (Merge & Test)
-   |
-   |\_ _ _ _ _ _ _ 
-   |             \
-   |              o (Dev B: Small Change)
-   |<_ _ _ _ _ _ /
-   |             /
-   o (Merge & Test)
-   |
-   v
-When/where it's used:
-
-building SaaS products or anything that updates frequently
-Pros:
-
-Delivers the fastest feedback from dev to prod
-Cons:
-
-Can be risky without tests
-Answer:
-
-Which strategy would you use for a startup shipping fast?
-
-Trunk-Based Development
-Which strategy would you use for a large team with scheduled releases?
-
-GitFlow
+ Kubernetes  
+  - Uses **GitHub Flow-style**
+  - Main branch + feature branches
+  - Heavy use of PRs and CI checks
+  
 
 ## Task 3: Reset vs Revert — Summary
 | Git Command   | What it does                                                                 | Removes commit from history? | Safe for shared/pushed branches? | When to use                                                      |
