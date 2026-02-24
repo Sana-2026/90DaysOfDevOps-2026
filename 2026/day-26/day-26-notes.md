@@ -6,7 +6,7 @@
 
  #### 1. Install the GitHub CLI on your machine
  #### 2. Authenticate with your GitHub account
- #### 3. Verify you're logged in and check which account is active
+ #### 3. Verify you're logged in and check which account is active.
 
 <img width="1330" height="393" alt="Github-cli-install" src="https://github.com/user-attachments/assets/71e2e7bd-deda-4a42-98b8-050fd1df2cbd" />
 
