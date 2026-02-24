@@ -68,4 +68,51 @@
 
 ### 1. Create an issue on one of your repos from the terminal — give it a title, body, and a label
 
+<img width="1044" height="656" alt="task3-q1-part1" src="https://github.com/user-attachments/assets/e9efe156-fbd2-438a-99f8-1b34b36ffc2e" />
+
+<img width="959" height="303" alt="task3-q1-part2" src="https://github.com/user-attachments/assets/18a41c43-e093-4dd9-9092-4661bf9a0757" />
+
+<img width="1364" height="608" alt="task3-q1-part3" src="https://github.com/user-attachments/assets/aefab277-c2ed-48ee-ae44-8dd09f82f3b4" />
+
+### 2. List all open issues on that repo
+
+<img width="828" height="162" alt="task3-ques2" src="https://github.com/user-attachments/assets/6b175fff-4a07-4f2e-ab38-4bdd093a5525" />
+
+### 3. View a specific issue by its number
+
+<img width="900" height="239" alt="task3-ques3" src="https://github.com/user-attachments/assets/41ef98dc-e257-4389-a06a-8eff6364dde7" />
+
+### 4. Close an issue from the terminal
+
+<img width="1277" height="86" alt="task3-ques4" src="https://github.com/user-attachments/assets/585de6ad-5cfc-4f55-a81e-effbb8b91740" />
+
+### 5a. How could you use gh issue in a script or automation?
+
+#### Using gh issue in Scripts & Automation
+
+### Using `gh issue` in Scripts & Automation
+
+| Task | Command | Purpose |
+|-----|--------|---------|
+| Authenticate (non-interactive) | `export GH_TOKEN=<PAT>` | Allows gh to run inside scripts / CI |
+| Create an issue | `gh issue create --title "Bug" --body "Build failed" --label bug` | Auto-create issues |
+| List issues | `gh issue list` | Fetch open issues |
+| List issues (JSON) | `gh issue list --json number,title` | Script-friendly output |
+| Close an issue | `gh issue close 5` | Auto-close issues |
+| Close with comment | `gh issue close 5 --comment "Fixed"` | Close + add context |
+
+### ✅ Typical Automation Use Cases
+
+- CI/CD failure → create GitHub issue
+- Auto-close issues after deployment
+- Bulk issue management via scripts
+
+## Task 4: Pull Requests
+
+### 1. Create a branch, make a change, push it, and create a pull request entirely from the terminal
+### 2. List all open PRs on a repo
+### 3. View the details of your PR — check its status, reviewers, and checks
+### 4. Merge your PR from the terminal
+### 5. What merge methods does gh pr merge support?
+### 6. How would you review someone else's PR using gh?
 
