@@ -186,15 +186,10 @@ gh pr review <PR_NUMBER> --approve --comment "Looks good to me"
 
 #### 3. Answer in your notes: How could gh run and gh workflow be useful in a CI/CD pipeline?
 
-Using gh run & gh workflow in CI/CD Pipelines
-### How `gh run` and `gh workflow` Help in CI/CD Pipelines
-
 | Command | How it helps | CI/CD Use Case |
-|--------|-------------|----------------|
+|--------|--------------|----------------|
 | `gh workflow list` | Lists all GitHub Actions workflows | Discover available CI/CD pipelines |
-| `gh workflow run` | Manually triggers a workflow | Re-run deployments, hotfix builds |
+| `gh workflow run` | Manually triggers a workflow | Re-run builds or deployments |
 | `gh run list` | Lists workflow runs | Monitor pipeline executions |
 | `gh run view` | Shows run status, logs, and results | Debug failed CI/CD jobs |
-| `gh run download` | Downloads artifacts from runs | Retrieve build outputs, reports |
-
-
+| `gh run download` | Downloads artifacts from runs | Retrieve build outputs |
