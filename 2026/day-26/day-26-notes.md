@@ -174,7 +174,7 @@ Comment
 
 gh pr review <PR_NUMBER> --approve --comment "Looks good to me"
 
-
+```bash
 
 ## Task 5: GitHub Actions & Workflows (Preview)
 
