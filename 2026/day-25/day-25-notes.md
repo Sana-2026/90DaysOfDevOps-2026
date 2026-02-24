@@ -286,3 +286,7 @@ Instead, Git **created a new commit** that *undoes the changes introduced by Com
 > **Local and private → reset**
 
 
+## Task 5: Git Commands Reference Update
+
+https://github.com/Sana-2026/devops-hands-on/blob/main/git-command.md
+
