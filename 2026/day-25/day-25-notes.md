@@ -285,6 +285,8 @@ Instead, Git **created a new commit** that *undoes the changes introduced by Com
 > **Pushed or shared → revert**  
 > **Local and private → reset**
 
+#### Task 4: Branching Strategies
+
 ## Task 3: Reset vs Revert — Summary
 | Git Command   | What it does                                                                 | Removes commit from history? | Safe for shared/pushed branches? | When to use                                                      |
 |---------------|-----------------------------------------------------------------------------|------------------------------|---------------------------------|-----------------------------------------------------------------|
