@@ -285,7 +285,156 @@ Instead, Git **created a new commit** that *undoes the changes introduced by Com
 > **Pushed or shared → revert**  
 > **Local and private → reset**
 
-#### Task 4: Branching Strategies
+## Task 4: Branching Strategies
+
+GitFlow
+
+How it works:
+
+main : Contains production-ready code.Every commit here is a stable release.
+
+develop : The integration branch where new features are merged before they’re ready to go live.
+
+feature : For building out new functionality.Created from develop and merged back when complete.
+
+release : Used to prep a new version for production.Created from develop and merged into both main and develop.
+
+hotfix : For urgent fixes on production.Created from main,then merged back into both main and develop.
+
+Text Diagram:
+
+[main] (Production-ready)
+|
+o <----------------------------------------- (Start)
+| \
+|  \ [develop] (Integration)
+|   |
+|   o <------------------------------------- (Develop Start)
+|   | \
+|   |  \ [feature/login] (New functionality)
+|   |   |
+|   |   o (Feature Commit)
+|   |   |
+|   |   o (Feature Complete)
+|   |  /
+|   o / (Merge feature to develop)
+|   |
+|   | \
+|   |  \ [release/1.0] (Prep for production)
+|   |   |
+|   |   o (Release Prep/Bug Fix)
+|   |   |
+|   |   o (Release Ready)
+|   |  / \
+|   o /   o (Merge release to develop)
+|  /
+o / (Merge release to main & tag v1.0)
+|
+| \
+|  \ [hotfix/1.0.1] (Urgent fix)
+|   |
+|   o (Apply Fix)
+|  / \
+o /   o (Merge hotfix to develop)
+|
+V
+When/where it's used:
+
+Team follows scheduled release cycles
+
+Need to maintain multiple versions
+
+Pros:
+
+Clear separation of concerns across features,releases,and hotfixes.
+Cons:
+
+Can result in long-lived branches,increasing the risk of merge conflicts.
+GitHub Flow
+
+How it works:
+
+Create a feature branch from main
+Push commits to the feature branch
+Open a pull request for code review and automated tests.
+Once approved, merge back to main.
+Deploy immediately.
+Everything in main should always be production-ready.
+Text Diagram:
+
+
+  [main] (Always Production-Ready)
+    |
+    o (Start)
+    |
+    |\_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+    |                               \
+    |                                \ [feature/login]
+    |                                 |
+    |                                 o (Commit 1)
+    |                                 |
+    |                                 o (Commit 2)
+    |                                 |
+    |                                 o (Pull Request & Review)
+    |<_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _/
+    |                               
+    o (Merge & Auto-Deploy)
+    |
+    v
+When/where it's used:
+
+ship frequent,small releases
+Pros:
+
+Fast merge & deploy
+Cons:
+
+In large teams,it can result in frequent merge conflicts
+Trunk-Based Development
+
+How it works:
+
+There’s one main branch, often called main or trunk. All development happens here
+Developers commit directly to main, often multiple times per day
+Changes are small,incremental
+Text Diagram:
+
+ [main] (The Trunk)
+   |
+   o (Start)
+   |
+   |\_ _ _ _ _ _ _ 
+   |             \
+   |              o (Dev A: Small Change)
+   |<_ _ _ _ _ _ /
+   |             /
+   o (Merge & Test)
+   |
+   |\_ _ _ _ _ _ _ 
+   |             \
+   |              o (Dev B: Small Change)
+   |<_ _ _ _ _ _ /
+   |             /
+   o (Merge & Test)
+   |
+   v
+When/where it's used:
+
+building SaaS products or anything that updates frequently
+Pros:
+
+Delivers the fastest feedback from dev to prod
+Cons:
+
+Can be risky without tests
+Answer:
+
+Which strategy would you use for a startup shipping fast?
+
+Trunk-Based Development
+Which strategy would you use for a large team with scheduled releases?
+
+GitFlow
 
 ## Task 3: Reset vs Revert — Summary
 | Git Command   | What it does                                                                 | Removes commit from history? | Safe for shared/pushed branches? | When to use                                                      |
