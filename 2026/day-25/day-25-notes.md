@@ -115,7 +115,7 @@ Commits        : A → B (HEAD)
 
 * Working directory and staging area are reset to exactly match Commit B
   
-5a) What is the difference between --soft, --mixed, and --hard?
+#### 5a) What is the difference between --soft, --mixed, and --hard?
 
 * --soft → Undo the commit, keep changes staged
 
@@ -123,7 +123,7 @@ Commits        : A → B (HEAD)
 
 * --hard → Undo the commit and delete all changes
   
-### 5b) Which one is destructive and why?
+#### 5b) Which one is destructive and why?
 
 git reset --hard` is destructive because it permanently discards local changes.
   It removes the commit from history
@@ -131,9 +131,9 @@ git reset --hard` is destructive because it permanently discards local changes.
   - the staging area
   - the working directory
   - Once done, the lost changes cannot be recovered easily 
-### 5c) When would you use each one?
+#### 5c) When would you use each one?
 
-### `git reset --soft`
+#### `git reset --soft`
 - When you want to **edit or fix the last commit message**
 - When you want to **squash commits** before pushing
 - When you want to **recommit changes without unstaging them**
@@ -142,7 +142,7 @@ git reset --hard` is destructive because it permanently discards local changes.
 
 ---
 
-### `git reset --mixed` (default)
+#### `git reset --mixed` (default)
 - When you want to **undo a commit but review changes again**
 - When you want to **re-stage files selectively**
 - When you committed on the **wrong branch** and want to fix it
@@ -151,7 +151,7 @@ git reset --hard` is destructive because it permanently discards local changes.
 
 ---
 
-### `git reset --hard`
+#### `git reset --hard`
 - When you want to **discard local changes completely**
 - When your working tree is **broken and you want a clean state**
 - When undoing **local, unpushed commits only**
@@ -160,7 +160,7 @@ git reset --hard` is destructive because it permanently discards local changes.
 
 ---
 
-### 🧠 Quick memory rule
+#### 🧠 Quick memory rule
 > **Soft = staged • Mixed = unstaged • Hard = gone**
 
 ### 5d) Should you ever use git reset on commits that are already pushed?
