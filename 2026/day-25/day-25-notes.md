@@ -286,6 +286,10 @@ Instead, Git **created a new commit** that *undoes the changes introduced by Com
 > **Local and private → reset**
 
 ## Task 3: Reset vs Revert — Summary
+| Git Command   | What it does                                                                 | Removes commit from history? | Safe for shared/pushed branches? | When to use                                                      |
+|---------------|-----------------------------------------------------------------------------|------------------------------|---------------------------------|-----------------------------------------------------------------|
+| `git reset`   | Moves the branch pointer to an earlier commit and optionally updates index; can rewrite history | Yes                          | No                              | When you want to rewrite history or completely remove commits   |
+| `git revert`  | Creates a new commit that undoes changes from a previous commit; keeps original commit in history | No                           | Yes                             | On branches that are already pushed/shared. To undo a commit without breaking history |
 
 ## Task 5: Git Commands Reference Update
 
