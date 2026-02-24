@@ -190,11 +190,99 @@ No, you should not :
 
 ## Task 2: Git Revert — Hands-On
 
+### 1. Reverting the Middle Commit (Commit Y) — What Happens?
+
+When I reverted **Commit Y** (the middle commit), Git **did not delete the commit**.  
+Instead, Git **created a new commit** that *undoes the changes introduced by Commit Y*.
+
+#### What actually happened in my case
+
+- Commit **Y** was already followed by **Commit Z**
+- Both commits modified the same file (`revert.txt`)
+- While reverting **Y**, Git **could not automatically decide** how to undo the changes
+- As a result, Git raised a **merge conflict**
+- I manually resolved the conflict in the file
+- After resolving, Git created a new commit:  
+  **`Revert "Commit Y"`**
+
+<img width="644" height="298" alt="task1-q3-part1" src="https://github.com/user-attachments/assets/d4682727-292b-4c10-9019-59e14f3b090b" />
+
+<img width="496" height="150" alt="merge-conflict-revert" src="https://github.com/user-attachments/assets/e65ec246-4265-4062-a730-511a7fe4a644" />
+
+<img width="669" height="297" alt="task2-ques2-part3" src="https://github.com/user-attachments/assets/08b934a3-a845-4d33-a689-cc6fa04be562" />
 
 
+### 3.Check git log — is commit Y still in the history?
+
+- ✅ Commit **Y is still present** in `git log`
+- ✅ A **new revert commit** appears on top of the history
+- ❌ No commit history was rewritten
+- ❌ No commits were deleted
+
+### 4a) git revert vs git reset — What’s the Difference?
+
+| Feature | `git revert` | `git reset` |
+|------|-------------|------------|
+| What it does | Creates a **new commit** that undoes changes | **Moves HEAD** to an earlier commit |
+| Commit history | **Preserved** | **Rewritten** |
+| Affects existing commits | ❌ No | ✅ Yes |
+| Safe for pushed commits | ✅ Yes | ❌ No |
+| Conflict possible | ✅ Yes (like merge) | ❌ No |
+| Use case | Undo changes **safely** | Fix **local mistakes** |
+| Data loss risk | 🟢 Low | 🟡–🔴 Medium to High |
+| Team-friendly | ✅ Yes | ❌ No |
+
+---
+
+## 🧠 One-Line Memory Rule
+> **Revert = safe undo with history kept**  
+> **Reset = erase and move history back**
+
+### 4c) Why is `git revert` Safer Than `git reset` on Shared Branches?
 
 
+`git revert` is safer because it **does not rewrite commit history**, while `git reset` **changes history**.
 
+#### What Happens with `git revert`
+- Creates a **new commit** that undoes a previous commit
+- Keeps **all existing commits intact**
+- Other teammates’ branches stay in sync
+- No force push needed
 
+👉 Everyone can pull safely
+
+#### What Happens with `git reset`
+- Moves `HEAD` backward
+- **Deletes or rewrites commits**
+- Local history no longer matches remote
+- Requires `git push --force`
+
+👉 Teammates’ history breaks
+
+### 4d. When Would You Use `git revert` vs `git reset`?
+
+#### Use **`git revert`** when:
+- The commit is **already pushed** to a remote repository
+- You’re working on a **shared branch** (main, develop)
+- You want to **undo a change safely** without rewriting history
+- You need an **audit trail** of what was undone and why
+
+> 🧠 **Memory tip:** *Revert = safe undo for teams*
+
+---
+
+#### Use **`git reset`** when:
+- The commit is **local only** (not pushed)
+- You want to **edit, squash, or fix commits** before pushing
+- You’re cleaning up commit history
+- You accidentally committed the wrong files or message
+
+> 🧠 **Memory tip:** *Reset = rewrite history locally*
+
+---
+
+#### 🔑 One-Line Decision Rule
+> **Pushed or shared → revert**  
+> **Local and private → reset**
 
 
