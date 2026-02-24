@@ -163,7 +163,7 @@ git reset --hard` is destructive because it permanently discards local changes.
 #### 🧠 Quick memory rule
 > **Soft = staged • Mixed = unstaged • Hard = gone**
 
-### 5d) Should you ever use git reset on commits that are already pushed?
+#### 5d) Should you ever use git reset on commits that are already pushed?
 
 No, you should not :
 `git reset` **rewrites commit history**
