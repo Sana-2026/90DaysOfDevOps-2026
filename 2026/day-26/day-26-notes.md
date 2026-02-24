@@ -64,7 +64,8 @@
 <img width="1366" height="389" alt="task1-q6-part4" src="https://github.com/user-attachments/assets/6843ca95-f2d2-442b-9360-614f0dacb9cf" />
 
 
+## Task 3: Issues
 
-
+### 1. Create an issue on one of your repos from the terminal — give it a title, body, and a label
 
 
