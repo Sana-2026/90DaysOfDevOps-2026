@@ -174,3 +174,27 @@ Comment
 
 gh pr review <PR_NUMBER> --approve --comment "Looks good to me"
 
+
+
+## Task 5: GitHub Actions & Workflows (Preview)
+
+### 1. List the workflow runs on any public repo that uses GitHub Actions
+
+### 2. View the status of a specific workflow run
+
+<img width="1288" height="671" alt="task5-ques1" src="https://github.com/user-attachments/assets/21fd8bef-bd3a-4b70-b3f5-6835c1dcb8c7" />
+
+#### 3. Answer in your notes: How could gh run and gh workflow be useful in a CI/CD pipeline?
+
+Using gh run & gh workflow in CI/CD Pipelines
+### How `gh run` and `gh workflow` Help in CI/CD Pipelines
+
+| Command | How it helps | CI/CD Use Case |
+|--------|-------------|----------------|
+| `gh workflow list` | Lists all GitHub Actions workflows | Discover available CI/CD pipelines |
+| `gh workflow run` | Manually triggers a workflow | Re-run deployments, hotfix builds |
+| `gh run list` | Lists workflow runs | Monitor pipeline executions |
+| `gh run view` | Shows run status, logs, and results | Debug failed CI/CD jobs |
+| `gh run download` | Downloads artifacts from runs | Retrieve build outputs, reports |
+
+
