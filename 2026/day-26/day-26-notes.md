@@ -110,9 +110,67 @@
 ## Task 4: Pull Requests
 
 ### 1. Create a branch, make a change, push it, and create a pull request entirely from the terminal
+
+<img width="1045" height="623" alt="task4-ques1-part1" src="https://github.com/user-attachments/assets/ec6f1835-aff7-4f21-b20b-f60c5c195cb5" />
+
+<img width="1045" height="356" alt="task4-ques1-part2" src="https://github.com/user-attachments/assets/7bd4056c-d4f7-4122-80ac-fc8574778681" />
+
 ### 2. List all open PRs on a repo
+
+<img width="1360" height="447" alt="task4-ques2" src="https://github.com/user-attachments/assets/349f3c68-b271-4999-9615-a4bdfeddd318" />
+
 ### 3. View the details of your PR — check its status, reviewers, and checks
+
+<img width="1295" height="382" alt="task4-ques3" src="https://github.com/user-attachments/assets/48d58ae9-bd74-447d-a06b-45f03a800637" />
+
 ### 4. Merge your PR from the terminal
+
+<img width="1121" height="307" alt="task4-ques4" src="https://github.com/user-attachments/assets/c750d4a1-4427-4978-b182-d1c807aa840a" />
+
 ### 5. What merge methods does gh pr merge support?
+
+### Merge Methods Supported by `gh pr merge`
+
+| Merge Method | Command Flag | What it does | When to use |
+|-------------|-------------|--------------|-------------|
+| Merge Commit | `--merge` | Creates a merge commit and keeps all commits | Preserve full commit history |
+| Squash Merge | `--squash` | Squashes all PR commits into one | Clean, linear history |
+| Rebase Merge | `--rebase` | Replays commits on top of base branch | Linear history without merge commit |
+
 ### 6. How would you review someone else's PR using gh?
+
+#### Review a Pull Request Using gh
+
+```bash
+gh pr list
+
+2️⃣ View the PR details
+gh pr view <PR_NUMBER>
+
+Shows:
+
+Title & description
+
+Commits & files changed
+
+Reviewers & status
+
+3️⃣ Check changed files (diff)
+
+gh pr diff <PR_NUMBER>
+
+4️⃣ Review the PR (approve / request changes / comment)
+gh pr review <PR_NUMBER>
+
+You will be prompted to choose:
+
+Approve
+
+Request changes
+
+Comment
+
+5️⃣ Review with comment (non-interactive)
+
+gh pr review <PR_NUMBER> --approve --comment "Looks good to me"
 
