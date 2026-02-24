@@ -188,6 +188,7 @@ No, you should not :
 | `--hard`              | Last commit removed | Cleared                   | Files reset to target commit | 🔴 High        | Discard local changes completely           |
 
 
+## Task 2: Git Revert — Hands-On
 
 
 
