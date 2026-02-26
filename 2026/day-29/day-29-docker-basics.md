@@ -33,11 +33,11 @@ Tools like Docker and Kubernetes made this the industry standard.
 * Virtual Machine → Virtualizes hardware
 
 * Container → Virtualizes the operating system
-  
-  | Feature        | Containers       | Virtual Machines |
+
+ | Feature        | Containers       | Virtual Machines |
 | -------------- | ---------------- | ---------------- |
-| OS Required    | ❌ No separate OS | ✅ Full Guest OS  |
-| Boot Time      | Seconds ⚡        | Minutes ⏳        |
+| OS Required    | ❌ No separate OS | ✅ Full Guest OS|
+| Boot Time      | Seconds ⚡        | Minutes ⏳      |
 | Resource Usage | Very low         | High             |
 | Performance    | Near-native      | Slower           |
 | Isolation      | Process-level    | Hardware-level   |
