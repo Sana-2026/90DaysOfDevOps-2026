@@ -177,17 +177,8 @@ docker push myimage:latest
 
 🖼️ Docker Architecture Diagram
 
-flowchart TD
-    Client[Docker Client<br/>(CLI / API)]
-    Daemon[Docker Daemon<br/>(dockerd)]
-    Images[Images]
-    Containers[Containers]
-    Registry[Docker Registry<br/>Docker Hub / Private Repo]
+<img width="879" height="873" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/eae5e7a9-e7f9-442a-a487-8a2c6ce44441" />
 
-    Client -->|REST API| Daemon
-    Daemon --> Images
-    Images --> Containers
-    Daemon --> Registry
 
 ### Task 2: Install Docker
 
