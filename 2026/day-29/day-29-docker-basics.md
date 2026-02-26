@@ -255,7 +255,7 @@ newgrp docker
 
 4. List all containers (including stopped ones): docker ps -a
 
-   <img width="1218" height="206" alt="docker-ps-a" src="https://github.com/user-attachments/assets/68b6461e-a1e4-4bc9-b9ee-de572b8c2e33" />
+ <img width="1218" height="206" alt="docker-ps-a" src="https://github.com/user-attachments/assets/68b6461e-a1e4-4bc9-b9ee-de572b8c2e33" />
 
 5. Stop and remove a container: docker stop && docker rm
    
