@@ -177,34 +177,17 @@ docker push myimage:latest
 
 🖼️ Docker Architecture Diagram
 
-+---------------------+
-|   Docker Client     |
-|   (CLI / API)       |
-+----------+----------+
-           |
-           | REST API
-           v
-+---------------------+
-|   Docker Daemon     |
-|     (dockerd)       |
-|                     |
-|   +-------------+   |
-|   |   Images    |   |
-|   +-------------+   |
-|          |          |
-|          v          |
-|   +-------------+   |
-|   | Containers  |   |
-|   +-------------+   |
-+----------+----------+
-           |
-           |
-           v
-+---------------------+
-|  Docker Registry    |
-| (Docker Hub /       |
-|  Private Repo)      |
-+---------------------+
+flowchart TD
+    Client[Docker Client<br/>(CLI / API)]
+    Daemon[Docker Daemon<br/>(dockerd)]
+    Images[Images]
+    Containers[Containers]
+    Registry[Docker Registry<br/>Docker Hub / Private Repo]
+
+    Client -->|REST API| Daemon
+    Daemon --> Images
+    Images --> Containers
+    Daemon --> Registry
 
 ### Task 2: Install Docker
 
