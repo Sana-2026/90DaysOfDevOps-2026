@@ -244,6 +244,7 @@ newgrp docker
    ###### docker run -it ubuntu
 
 <img width="936" height="141" alt="ubuntu" src="https://github.com/user-attachments/assets/c606ae15-65ca-48d4-bdb6-5d0a99591d4a" />
+
   ##### cat /etc/os-release
   
 <img width="870" height="313" alt="etc-s-release" src="https://github.com/user-attachments/assets/4edc43db-5a7a-4ac8-9529-63d45059b393" />
