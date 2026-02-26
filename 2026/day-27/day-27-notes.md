@@ -37,25 +37,18 @@ Before making changes, assess where you stand:
 Create and organize the following repos (if you don't have them already):
 
 ### 1.90 Days of DevOps — your fork or personal repo with all daily submissions
-       - Clear README explaining what the challenge is
-       - Organized folder structure by day
+       - Done ✔
        
 ### 2.Shell Scripts — a dedicated repo for all your shell scripting work
 
-      - Move/copy your scripts from Days 16–21 here
-      - Add a README listing what each script does
+      - Done ✔     
       
 ### 3.Python Scripts — a dedicated repo for your Python projects
 
-      - Move/copy your scripts from Days 7–15 here
-      - Add a README listing what each script does
+ - I will be creating the repo, once i start studying python will update the repo.
       
 ### 4.DevOps Notes — a repo for your learning notes, cheat sheets, and references
-
-      - Add your shell scripting cheat sheet (Day 21)
-      - Add your git-commands.md
-      - Organize by topic (Linux, Git, Python, etc.)
-      
+       Done ✔
 For every repo, make sure you have:
 
 * A clear, descriptive repo name (use hyphens, not spaces — e.g., shell-scripts not Shell Scripts)
