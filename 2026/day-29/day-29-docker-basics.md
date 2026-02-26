@@ -49,9 +49,13 @@ Tools like Docker and Kubernetes made this the industry standard.
 ##### 🚀 Why Containers Are Preferred Today
 
 ✔ Faster deployments
+
 ✔ Lower infrastructure cost
+
 ✔ Perfect for microservices
+
 ✔ CI/CD friendly
+
 ✔ Cloud-native
 
 When Should You Use Virtual Machines?
