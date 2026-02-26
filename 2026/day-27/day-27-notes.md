@@ -27,9 +27,11 @@ Before making changes, assess where you stand:
   - What you're currently working on (e.g., 90 Days of DevOps)
        -  
   - Skills/tools you know or are learning (Linux, Git, Python, Shell, etc.)
+    * I have updated this section again
   - Links to your important repos
+    * I have pinned important repos
   - How to reach you (LinkedIn, Twitter, email — whatever you're comfortable sharing)
-
+    * Already added these details
 4. Keep it clean and simple — don't overload it with badges and widgets
 
 
