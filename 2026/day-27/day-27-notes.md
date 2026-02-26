@@ -85,10 +85,10 @@ For every repo have:
 
 ### 🌟 Key Improvements I Made to My GitHub Profile
 
-Refined Intro – Updated my profile summary to clearly reflect my experience, domain, and DevOps transition journey.
+* Refined Intro – Updated my profile summary to clearly reflect my experience, domain, and DevOps transition journey.
 
-Added Skills & Tools – Showcased hands-on learning in Linux, Bash, AWS, Docker, Kubernetes, Terraform, Jenkins, Git & GitHub.
+* Added Skills & Tools – Showcased hands-on learning in Linux, Bash, AWS, Docker, Kubernetes, Terraform, Jenkins, Git & GitHub.
 
-Outlined Learning Journey & Career Goal – Documented #90DaysOfDevOps progress and long-term goal of becoming a DevOps & Cloud Engineer.
+* Outlined Learning Journey & Career Goal – Documented #90DaysOfDevOps progress and long-term goal of becoming a DevOps & Cloud Engineer.
 
-Pinned Key Projects – Highlighted important hands-on repos to demonstrate practical skills and consistency.
+* Pinned Key Projects – Highlighted important hands-on repos to demonstrate practical skills and consistency.
