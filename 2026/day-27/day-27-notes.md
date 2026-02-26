@@ -49,35 +49,44 @@ Create and organize the following repos (if you don't have them already):
       
 ### 4.DevOps Notes — a repo for your learning notes, cheat sheets, and references
        Done ✔
-For every repo, make sure you have:
 
-* A clear, descriptive repo name (use hyphens, not spaces — e.g., shell-scripts not Shell Scripts)
-* A one-line description on GitHub
-* A proper README.md explaining what's inside
-* A relevant .gitignore
+For every repo have:
+
+* Descriptive repo names using hyphens
+* One-line description on GitHub
+* A README.md which explains the contents 
+  
 
 ## Task 4: Pin Your Best Repos
-1. Go to your GitHub profile and select 6 pinned repositories
-   
-2. Choose repos that best represent your work and learning
-   
-3. Make sure each pinned repo has a description and README
+``` bash
+* 90DaysOfDevOps-2026
 
+* shell-scripts
+
+* awesome-behavioral-interviews
+
+```
 ## Task 5: Clean Up
 
-1. Delete or archive repos that are empty, abandoned, or irrelevant
+1. Added description to repos which was empty
 
-2. Rename any repos with unclear names
+## Task 6: 
 
-3. Make sure you're not exposing any secrets (.env files, API keys, passwords) in any repo — check your commit history too
+### Before 
 
-## Task 6: Before & After
+<img width="1354" height="621" alt="gitprofile-before" src="https://github.com/user-attachments/assets/c617f857-8d2c-4d4a-87a1-8663eaae7d4c" />
 
-1. Take a screenshot of your GitHub profile before you started today
+### After
 
-2. Take a screenshot after all your changes
+<img width="1360" height="637" alt="after" src="https://github.com/user-attachments/assets/fd15ba56-02e1-4f59-b0f2-bdb55fc94953" />
 
-3. Add both to your day-27-notes.md
 
-4. Write 3 things you improved and why
+### 🌟 Key Improvements I Made to My GitHub Profile
 
+Refined Intro – Updated my profile summary to clearly reflect my experience, domain, and DevOps transition journey.
+
+Added Skills & Tools – Showcased hands-on learning in Linux, Bash, AWS, Docker, Kubernetes, Terraform, Jenkins, Git & GitHub.
+
+Outlined Learning Journey & Career Goal – Documented #90DaysOfDevOps progress and long-term goal of becoming a DevOps & Cloud Engineer.
+
+Pinned Key Projects – Highlighted important hands-on repos to demonstrate practical skills and consistency.
