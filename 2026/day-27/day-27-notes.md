@@ -8,7 +8,7 @@ Before making changes, assess where you stand:
           * Is your bio filled in? Does it say what you do?
               - Yes
           * Are your pinned repos relevant, or are they random forks?
-              - My repos are relevant i working on them.
+              - My repos are relevant, I am working on them.
           * Do your repos have descriptions, or are they blank?
               - Repos which I created have descriptions. 
           * Would a recruiter understand what you've been working on?
