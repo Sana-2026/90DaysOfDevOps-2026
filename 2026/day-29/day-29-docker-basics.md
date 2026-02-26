@@ -175,7 +175,8 @@ Commands:
 docker pull nginx
 docker push myimage:latest
 
-🖼️ Docker Architecture Diagram 
+🖼️ Docker Architecture Diagram
+
 +------------------+
 |  Docker Client   |
 | (CLI / API)      |
@@ -188,7 +189,7 @@ docker push myimage:latest
 | (dockerd)        |
 |                  |
 |  +------------+  |
-|  | Images     |  |
+|  |  Images    |  |
 |  +------------+  |
 |        |         |
 |        v         |
@@ -204,7 +205,6 @@ docker push myimage:latest
 | (Docker Hub /    |
 |  Private Repo)   |
 +------------------+
-
 
 ### Task 2: Install Docker
 
