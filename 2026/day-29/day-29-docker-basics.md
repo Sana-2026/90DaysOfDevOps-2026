@@ -201,6 +201,11 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 sudo apt update
+sudo systemctl status docker
+sudo systemctl start docker
+
+sudo usermod -aG docker $USER
+newgrp docker
 
 ```
   
