@@ -183,7 +183,7 @@ docker push myimage:latest
 ### Task 2: Install Docker
 
 Install Docker on your machine (https://docs.docker.com/engine/install/)
-
+```bash
 # Add Docker's official GPG key:
 sudo apt update
 sudo apt install ca-certificates curl
@@ -201,4 +201,6 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 sudo apt update
+
+```
   
