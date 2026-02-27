@@ -141,7 +141,7 @@
 	Z	Zombie (dead, not cleaned)
 
 
-### Process management commands
+### Process management commands.
 
 	ps aux          # list processes
 	top / htop      # live view
