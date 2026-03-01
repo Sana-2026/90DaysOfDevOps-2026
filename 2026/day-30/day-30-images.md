@@ -7,11 +7,11 @@
 
  <img width="922" height="645" alt="pulling-dock-images" src="https://github.com/user-attachments/assets/dedc5c6a-5ae8-44d9-b626-614990a5f9f7" />
 
-#### 1. List all images on your machine — note the sizes
+#### 2. List all images on your machine — note the sizes
    
 <img width="836" height="274" alt="dock-images" src="https://github.com/user-attachments/assets/21daedc0-d12d-4ead-9882-1bc8b1e18fd1" />
 
-#### 1. Compare ubuntu vs alpine — why is one much smaller?
+#### 3. Compare ubuntu vs alpine — why is one much smaller?
 
 | Feature / Aspect        | Ubuntu Image                          | Alpine Image                         |
 |-------------------------|---------------------------------------|--------------------------------------|
