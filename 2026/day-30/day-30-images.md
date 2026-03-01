@@ -13,7 +13,7 @@
 
 1. Compare ubuntu vs alpine — why is one much smaller?
 
-   | Feature / Aspect        | Ubuntu Image                          | Alpine Image                         |
+| Feature / Aspect        | Ubuntu Image                          | Alpine Image                         |
 |-------------------------|---------------------------------------|--------------------------------------|
 | Base Philosophy         | Full-featured Linux OS                | Minimal OS for containers            |
 | Typical Image Size      | ~70–120 MB                            | ~5–15 MB                             |
