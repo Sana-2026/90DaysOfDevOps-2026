@@ -12,7 +12,29 @@
 <img width="836" height="274" alt="dock-images" src="https://github.com/user-attachments/assets/21daedc0-d12d-4ead-9882-1bc8b1e18fd1" />
 
 1. Compare ubuntu vs alpine — why is one much smaller?
-   
+
+<img width="836" height="274" alt="dock-images" src="https://github.com/user-attachments/assets/60c5e9a2-c9ed-4162-9e7f-1de1bbb1d4c5" />
+
+
+   | Feature / Aspect        | Ubuntu Image                          | Alpine Image                         |
+|-------------------------|---------------------------------------|--------------------------------------|
+| Base Philosophy         | Full-featured Linux OS                | Minimal OS for containers            |
+| Typical Image Size      | ~70–120 MB                            | ~5–15 MB                             |
+| Disk Usage (Docker)     | High                                  | Very low                             |
+| Default Shell           | bash                                  | ash (BusyBox)                        |
+| Package Manager         | apt                                   | apk                                  |
+| C Library (libc)        | glibc                                 | musl                                 |
+| System Utilities        | Full GNU utilities                    | BusyBox (lightweight replacements)  |
+| Startup Time            | Slower                                | Faster                               |
+| Compatibility           | Very high (most binaries work)        | Limited (glibc binaries may fail)   |
+| Learning & Debugging    | Easier                                | Harder (minimal tools)              |
+| Security Surface        | Larger                                | Smaller                              |
+| Best Use Case           | Learning, debugging, complex apps     | Microservices, CI/CD, production    |
+| Popular Tag Example     | ubuntu:latest                         | alpine:latest                        |
+
+Content Size  = compressed layer size
+Disk Usage    = actual space on disk
+
 1. Inspect an image — what information can you see?
 
    ## Important `docker inspect` Fields – Easy to Remember
