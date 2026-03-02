@@ -17,7 +17,7 @@
 
 <img width="1359" height="486" alt="docker-runpart2" src="https://github.com/user-attachments/assets/536929fd-c892-4609-bae9-73e957bd22f3" />
 
-### 🐳 Docker Errors Faced 
+### 🐳 Docker Errors Faced and debugged
 
 ❌ Error 1: [echo: not found
  ``/bin/sh: 1: [echo: not found ``
@@ -38,6 +38,15 @@ docker run my-ubuntu:v2
 Key Learning :
 
 Docker images are  ``immutable — always rebuild after Dockerfile changes. ``
+
+ ❌ Error 3: Wrong Dockerfile Name
+
+ Docker only auto-detects a file named exactly Dockerfile
+(case-sensitive).
+
+If the file is named incorrectly (e.g. DockerFile, dockerfile, Dockerfile-dev), Docker will fail to build unless explicitly     told which file to use.
+
+Fix:
 
 ❌ Error 2:  ``Container name already in use ``
 
