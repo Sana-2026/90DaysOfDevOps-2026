@@ -39,7 +39,7 @@ Key Learning :
 
 Docker images are  ``immutable — always rebuild after Dockerfile changes. ``
 
- ❌ Error 3: Wrong Dockerfile Name
+ ❌ Error 2: ``Wrong Dockerfile Name``
 
  Docker only auto-detects a file named exactly Dockerfile
 (case-sensitive).
@@ -48,7 +48,7 @@ If the file is named incorrectly (e.g. DockerFile, dockerfile, Dockerfile-dev), 
 
 Fix:
 
-❌ Error 2:  ``Container name already in use ``
+❌ Error 3:  ``Container name already in use ``
 
 Conflict. The container name "/first-container" is already in use
 
