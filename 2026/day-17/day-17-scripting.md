@@ -4,19 +4,13 @@
 
 ### Task 1: For Loop
 1. Create for_loop.sh that:
+   - Loops through a list of 5 fruits and prints each one
 
 <img width="1318" height="472" alt="correct-for-loop-script" src="https://github.com/user-attachments/assets/5d3bfee8-83eb-4f10-a105-2068fe934449" />
 
-<img width="710" height="369" alt="count-script-output" src="https://github.com/user-attachments/assets/eb0c65e4-7353-4138-90e1-9e57fcb913f6" />
-
-
-2. Loops through a list of 5 fruits and prints each one
-
-<img width="943" height="423" alt="for_loop-script" src="https://github.com/user-attachments/assets/81c4fce6-1b47-4e0b-a8f9-3b906ee04e2d" />
-
 <img width="847" height="280" alt="for-loop-scrpt-output" src="https://github.com/user-attachments/assets/5d181ead-6fd4-421f-b773-4cb1d3bd916a" />
 
-3. Create count.sh that:
+2. Create count.sh that:
    Prints numbers 1 to 10 using a for loop
 
    <img width="1360" height="514" alt="count-script" src="https://github.com/user-attachments/assets/6ff34aef-d63a-4693-8c41-e38e91ff3936" />
