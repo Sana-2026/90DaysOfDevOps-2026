@@ -73,14 +73,18 @@ Container names must be unique.
 
 ### Create a new Dockerfile that uses all of these instructions:
 
-*  ``FROM `` — base image
-*  ``RUN `` — execute commands during build
-*  ``COPY `` — copy files from host to image
-*  ``WORKDIR `` — set working directory
-*  ``EXPOSE ``— document the port
-*  ``CMD `` — default command
+ *  ``FROM python:3.10-slim``                                This Dockerfile builds a lightweight Python image
+*  ``RUN pip install --no-cache-dir -r requirements.txt``    Installs Python dependencies
+*  ``COPY requirements.txt, app.py``                         Copies dependency file into the container
+*  ``WORKDIR /app``                                          Sets /app as the working directory inside the container
+*  ``EXPOSE ``— 5000                                         Documents that the app listens on port 5000
+*  ``CMD ["python", "app.py"]``                              Runs the Python application when the container starts
   
- ``Build and run it. ``Understand what each line does.
+ ``Build and run it. `` Understand what each line does.
+ 
+<img width="1365" height="560" alt="task2-part1" src="https://github.com/user-attachments/assets/cdba5e51-9d00-4815-93b1-d638dbd1969d" />
+
+<img width="1337" height="113" alt="task2-dockerrun" src="https://github.com/user-attachments/assets/7b50ba64-846c-40c0-a301-d173ab5d6eae" />
 
 ## Task 3: CMD vs ENTRYPOINT
 
