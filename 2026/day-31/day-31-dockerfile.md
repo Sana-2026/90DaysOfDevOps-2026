@@ -52,7 +52,7 @@ Reason :
 Fix :
 
 docker rm first-container
-# or
+or
 docker run --name first-container-v2 my-ubuntu:v1
 
 Key Learning :
