@@ -4,14 +4,14 @@
 1. Create a folder called `` my-first-image ``
 1. Inside it, create a  ``Dockerfile `` that:
  - Uses  ``ubuntu`` as the base image
- - Installs curl
- - Sets a default command to print "Hello from my custom image!"
-1. Build the image and tag it my-ubuntu:v1
+ - Installs  ``curl ``
+ - Sets a default command to print  ``"Hello from my custom image!" ``
+1. Build the image and tag it  ``my-ubuntu:v1 ``
 
 <img width="1348" height="724" alt="first-dockerfile" src="https://github.com/user-attachments/assets/9415a17c-9481-47fc-913c-4912c707b546" />
 
 1. Run a container from your image
-   Verify: The message prints on docker run
+   Verify: The message prints on  ``docker run ``
 
 <img width="1361" height="472" alt="docker-run-part1" src="https://github.com/user-attachments/assets/2b8082ac-2922-4bf0-a8ae-fee3dfd7ec35" />
 
@@ -20,13 +20,13 @@
 ### 🐳 Docker Errors Faced 
 
 ❌ Error 1: [echo: not found
-/bin/sh: 1: [echo: not found
+ ``/bin/sh: 1: [echo: not found ``
 
 Reason :
 
- - Image (my-ubuntu:v1) was built earlier with an incorrect CMD
+ - Image  ``(my-ubuntu:v1) `` was built earlier with an  ``incorrect CMD ``
 
- - Dockerfile was fixed later, but image was not rebuilt
+ - Dockerfile was fixed later, but image was  ``not rebuilt ``
 
  - Docker kept using the old broken image
 
@@ -37,9 +37,9 @@ docker run my-ubuntu:v2
 
 Key Learning :
 
-Docker images are immutable — always rebuild after Dockerfile changes.
+Docker images are  ``immutable — always rebuild after Dockerfile changes. ``
 
-❌ Error 2: Container name already in use
+❌ Error 2:  ``Container name already in use ``
 
 Conflict. The container name "/first-container" is already in use
 
@@ -47,7 +47,7 @@ Reason :
 
  - A container named first-container already exists
 
- - Docker does not allow duplicate container names
+ - Docker does not allow  ``duplicate container names ``
 
 Fix :
 
@@ -61,15 +61,17 @@ Container names must be unique.
 
 
 ## Task 2: Dockerfile Instructions
+
 ### Create a new Dockerfile that uses all of these instructions:
 
-* FROM — base image
-* RUN — execute commands during build
-* COPY — copy files from host to image
-* WORKDIR — set working directory
-* EXPOSE — document the port
-* CMD — default command
-Build and run it. Understand what each line does.
+*  ``FROM `` — base image
+*  ``RUN `` — execute commands during build
+*  ``COPY `` — copy files from host to image
+*  ``WORKDIR `` — set working directory
+*  ``EXPOSE ``— document the port
+*  ``CMD `` — default command
+  
+ ``Build and run it. ``Understand what each line does.
 
 ## Task 3: CMD vs ENTRYPOINT
 
