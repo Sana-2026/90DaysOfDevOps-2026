@@ -7,6 +7,9 @@
 
 <img width="1318" height="472" alt="correct-for-loop-script" src="https://github.com/user-attachments/assets/5d3bfee8-83eb-4f10-a105-2068fe934449" />
 
+<img width="710" height="369" alt="count-script-output" src="https://github.com/user-attachments/assets/eb0c65e4-7353-4138-90e1-9e57fcb913f6" />
+
+
 2. Loops through a list of 5 fruits and prints each one
 
 <img width="943" height="423" alt="for_loop-script" src="https://github.com/user-attachments/assets/81c4fce6-1b47-4e0b-a8f9-3b906ee04e2d" />
