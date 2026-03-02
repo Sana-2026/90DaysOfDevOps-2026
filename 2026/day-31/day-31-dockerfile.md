@@ -1,7 +1,7 @@
 ## Challenge Tasks
 ## Task 1: Your First Dockerfile
 
-1. Create a folder called ``bash my-first-image ``
+1. Create a folder called `` my-first-image ``
 1. Inside it, create a Dockerfile that:
  - Uses ubuntu as the base image
  - Installs curl
