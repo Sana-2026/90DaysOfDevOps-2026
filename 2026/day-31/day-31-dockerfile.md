@@ -89,8 +89,58 @@ Container names must be unique.
 ## Task 3: CMD vs ENTRYPOINT
 
 1. Create an image with CMD ["echo", "hello"] — run it, then run it with a custom command. What happens?
+
+ <img width="1352" height="484" alt="task3-part1" src="https://github.com/user-attachments/assets/d7c5ea89-a8e7-4ec7-8900-475775680ef0" />
+
+### Run the Image Normally:
+
++ Docker uses the default CMD
+
++ So it runs: ``echo hello``
+
+### Run the Image with a Custom Command :
+
++ ``CMD ["echo", "hello"]`` is the default command
+
++ When you pass a command at ``docker run,`` it overrides CMD
+
++ Docker now runs:
+
+``echo "custom command"``
+
+👉 The original CMD ["echo", "hello"] is ignored
+
 1. Create an image with ENTRYPOINT ["echo"] — run it, then run it with additional arguments. What happens?
+   
+<img width="1384" height="618" alt="task3-part2" src="https://github.com/user-attachments/assets/be0f9e31-fd82-4742-a3c0-b88a93671048" />
+
+### Runing the Image (No Arguments)
+docker run cmd-test
+<blank line>
+
++ echo runs with no arguments
+
++ echo just prints a newline
+
+👉 ENTRYPOINT runs, but nothing is passed to it
+   
 1. Write in your notes: When would you use CMD vs ENTRYPOINT?
+
+   ## CMD vs ENTRYPOINT — Quick Memory Table
+
+| Aspect | CMD | ENTRYPOINT |
+|------|-----|-----------|
+| Purpose | Provides a default command | Defines the main executable |
+| Overridden by `docker run` | ✅ Yes | ❌ No (unless `--entrypoint`) |
+| User input treated as | New command | Arguments to the executable |
+| Flexibility | High | Low (fixed behavior) |
+| Best use case | Dev, utility, base images | Apps, CLIs, production services |
+| Common example | `CMD ["bash"]` | `ENTRYPOINT ["nginx"]` |
+| If both are used | CMD is replaced | ENTRYPOINT always runs |
+| Interview memory line | “CMD is a default” | “ENTRYPOINT is mandatory” |
+
+### One-Line Memory Trick
+**CMD = suggestion | ENTRYPOINT = rule**
 
 ## Task 4: Build a Simple Web App Image
 
