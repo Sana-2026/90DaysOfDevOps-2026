@@ -2,15 +2,15 @@
 ## Task 1: Your First Dockerfile
 
 1. Create a folder called `` my-first-image ``
-1. Inside it, create a  ``Dockerfile `` that:
+2. Inside it, create a  ``Dockerfile `` that:
  - Uses  ``ubuntu`` as the base image
  - Installs  ``curl ``
  - Sets a default command to print  ``"Hello from my custom image!" ``
-1. Build the image and tag it  ``my-ubuntu:v1 ``
+3. Build the image and tag it  ``my-ubuntu:v1 ``
 
 <img width="1348" height="724" alt="first-dockerfile" src="https://github.com/user-attachments/assets/9415a17c-9481-47fc-913c-4912c707b546" />
 
-1. Run a container from your image
+4. Run a container from your image
    Verify: The message prints on  ``docker run ``
 
 <img width="1361" height="472" alt="docker-run-part1" src="https://github.com/user-attachments/assets/2b8082ac-2922-4bf0-a8ae-fee3dfd7ec35" />
@@ -110,7 +110,7 @@ Container names must be unique.
 
 👉 The original CMD ["echo", "hello"] is ignored
 
-1. Create an image with ENTRYPOINT ["echo"] — run it, then run it with additional arguments. What happens?
+2. Create an image with ENTRYPOINT ["echo"] — run it, then run it with additional arguments. What happens?
    
 <img width="1384" height="618" alt="task3-part2" src="https://github.com/user-attachments/assets/be0f9e31-fd82-4742-a3c0-b88a93671048" />
 
@@ -124,7 +124,7 @@ docker run cmd-test
 
 👉 ENTRYPOINT runs, but nothing is passed to it
    
-1. Write in your notes: When would you use CMD vs ENTRYPOINT?
+3. Write in your notes: When would you use CMD vs ENTRYPOINT?
 
    ## CMD vs ENTRYPOINT — Quick Memory Table
 
@@ -166,12 +166,11 @@ docker run cmd-test
 ## Task 5: .dockerignore
 
 1. Create a .dockerignore file in one of your project folders
-1. Add entries for: node_modules, .git, *.md, .env
-
-   
+2. Add entries for: node_modules, .git, *.md, .env
+    
 <img width="1372" height="677" alt="task5-part1" src="https://github.com/user-attachments/assets/3574af92-5d5b-4751-a8c7-5c9063019986" />
 
-1. Build the image — verify that ignored files are not included
+3. Build the image — verify that ignored files are not included
 
 <img width="778" height="71" alt="task5-part3" src="https://github.com/user-attachments/assets/e51d308a-af56-427f-8bf9-981a4b5420c3" />
 
@@ -187,7 +186,7 @@ docker run cmd-test
 <img width="1345" height="728" alt="task6-part1" src="https://github.com/user-attachments/assets/f890ff45-ea9e-46e7-81c6-c7173d333720" />
 👉 Docker reused unchanged layers and rebuilt only what changed.
 
-1. Reorder your Dockerfile so that frequently changing lines come last
+2. Reorder your Dockerfile so that frequently changing lines come last
 
 ❌ Bad order (slow builds)
 
