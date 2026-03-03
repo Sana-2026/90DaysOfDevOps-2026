@@ -198,10 +198,10 @@ Any file change → entire COPY layer invalidated
 ✅ Good order (fast builds)
 FROM nginx:alpine
 
-# Copy only static / less-changing files first
+#### Copy only static / less-changing files first
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy frequently changing content LAST
+#### Copy frequently changing content LAST
 COPY index.html /usr/share/nginx/html/
 
 Now:
