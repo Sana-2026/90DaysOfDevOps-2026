@@ -20,12 +20,11 @@
 👉 testdb is missing
 👉 Tables and rows are gone
 
-Write what happened and why.
+5. Write what happened and why.
 
-Docker containers are ephemeral (temporary).
-When a container is removed, its writable layer is destroyed.
-Since no volume was attached, PostgreSQL stored its data inside the container filesystem, which was deleted.
-
++ Docker containers are ephemeral (temporary).
++ When a container is removed, its writable layer is destroyed.
++ Since no volume was attached, PostgreSQL stored its data inside the container filesystem, which was deleted.
 
 ### Task 2: Named Volumes
 
