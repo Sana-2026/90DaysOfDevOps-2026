@@ -42,17 +42,17 @@
 
 + Correct approach: mount the volume at /var/lib/postgresql, and let PostgreSQL manage subdirectories.
 
-#### ✅ Step-by-step FIX 
-
-1️⃣ Remove old container and volume
-
-2️⃣ Create volume again
-
-3️⃣ Run Postgres with CORRECT mount path
-
-4️⃣ Verify container is running
-
-5️⃣ Connect and test persistence
+         #### ✅ Step-by-step FIX 
+         
+         1️⃣ Remove old container and volume
+         
+         2️⃣ Create volume again
+         
+         3️⃣ Run Postgres with CORRECT mount path
+         
+         4️⃣ Verify container is running
+         
+         5️⃣ Connect and test persistence
 
 2. Run the same database container, but this time attach the volume to it
 
