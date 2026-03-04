@@ -9,11 +9,11 @@
 
 <img width="1340" height="720" alt="task1-1-2" src="https://github.com/user-attachments/assets/02eabcd1-5e98-4ff8-815c-043c5cf50961" />
 
-Stop and remove the container
+3. Stop and remove the container
 
 <img width="1345" height="205" alt="task1-part3" src="https://github.com/user-attachments/assets/dddbdba7-e7d4-4152-8626-328eb257246c" />
 
-Run a new one — is your data still there?
+4. Run a new one — is your data still there?
 
 <img width="1319" height="522" alt="task1-part4" src="https://github.com/user-attachments/assets/ec91a12b-8597-4235-953a-0276f283f446" />
 
@@ -29,7 +29,7 @@ Since no volume was attached, PostgreSQL stored its data inside the container fi
 
 ### Task 2: Named Volumes
 
-#### 1. Create a named volume
+1. Create a named volume
    
 <img width="1370" height="717" alt="task2-vol-part1" src="https://github.com/user-attachments/assets/d0a7f9c6-787d-441d-9928-d39ea817d2a0" />
 
@@ -55,20 +55,20 @@ Since no volume was attached, PostgreSQL stored its data inside the container fi
 
 5️⃣ Connect and test persistence
 
-#### 2. Run the same database container, but this time attach the volume to it
-#### 3. Add some data, stop and remove the container
+2. Run the same database container, but this time attach the volume to it
+
+3. Add some data, stop and remove the container
 
 <img width="1370" height="643" alt="task2-vol-post-error-part1" src="https://github.com/user-attachments/assets/3b218319-c835-4cf8-b3c0-c28516d15917" />
 
 <img width="1271" height="320" alt="task2-vol-part3" src="https://github.com/user-attachments/assets/a2e105ab-8dd1-46e4-8478-daee27d7d558" />
 
 
-
-#### 4.Run a brand new container with the same volume
+4.Run a brand new container with the same volume
 
 <img width="1357" height="393" alt="task2-vol-part4" src="https://github.com/user-attachments/assets/a6751d20-6169-4347-a9ab-7a5388b48437" />
-
-#### 5.hIs the data still there?
+ 
+5.Is the data still there?
 
 Verify: docker volume ls, docker volume inspect
 🎉 Data is still there.
@@ -79,19 +79,19 @@ Verify: docker volume ls, docker volume inspect
 
 
 ### Task 3: Bind Mounts
-#### 1. Create a folder on your host machine with an index.html file
+1. Create a folder on your host machine with an index.html file
 
-#### 2. Run an Nginx container and bind mount your folder to the Nginx web directory
+2. Run an Nginx container and bind mount your folder to the Nginx web directory
 
-#### 3. Access the page in your browser
+3. Access the page in your browser
 
 <img width="1354" height="718" alt="task3-bind-mount123" src="https://github.com/user-attachments/assets/c2aafd48-f954-4147-8b5a-9c857e6c660f" />
 
-#### 4. Edit the index.html on your host — refresh the browser
+4. Edit the index.html on your host — refresh the browser
 
 <img width="1365" height="725" alt="task3-bind-mount4" src="https://github.com/user-attachments/assets/0f105a0d-704a-4792-9a3b-c3e9e0a0b40b" />
 
-#### 5. Write in your notes: What is the difference between a named volume and a bind mount?
+5. Write in your notes: What is the difference between a named volume and a bind mount?
 
 | Feature | Named Volume | Bind Mount |
 |------|-------------|-----------|
