@@ -9,11 +9,16 @@
 <img width="565" height="77" alt="task1" src="https://github.com/user-attachments/assets/73533b5b-c2a1-475d-823e-4d4eaade8468" />
 
 ### Task 2: Your First Compose File
-Create a folder ``compose-basics``
-Write a ``docker-compose.yml`` that runs a single Nginx container with port mapping
-Start it with ``docker compose up``
-Access it in your browser
-Stop it with ``docker compose down``
+
+1. Create a folder ``compose-basics``
+   
+2. Write a ``docker-compose.yml`` that runs a single Nginx container with port mapping
+
+3. Start it with ``docker compose up``
+
+4. Access it in your browser
+   
+5. Stop it with ``docker compose down``
 
 [Docker Compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/docker-compose.yml)
 
@@ -36,16 +41,17 @@ Stop it with ``docker compose down``
 
 ### Task 3: Two-Container Setup
 
-Write a docker-compose.yml that runs:
+1.Write a docker-compose.yml that runs:
 
-A WordPress container
-A MySQL container
++ A ``WordPress`` container
++ A ``MySQL`` container
+
 They should:
 
-Be on the same network (Compose does this automatically)
-MySQL should have a named volume for data persistence
-WordPress should connect to MySQL using the service name
-Start it, access WordPress in your browser, and set it up.
++ Be on the same network (Compose does this automatically)
++ MySQL should have a named volume for data persistence
++ WordPress should connect to MySQL using the service name
++ Start it, access WordPress in your browser, and set it up.
 
 Verify: Stop and restart with docker compose down and docker compose up — is your WordPress data still there?
 
