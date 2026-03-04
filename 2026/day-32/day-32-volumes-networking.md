@@ -177,8 +177,15 @@ Custom bridge networks have Docker’s built-in DNS server enabled, while the de
    + Name resolution is not supported by default
   
 ### Task 6: Put It Together
-Create a custom network
-Run a database container (MySQL/Postgres) on that network with a volume for data
-Run an app container (use any image) on the same network
-Verify the app container can reach the database by container name
+
+1. Create a custom network
+   
+2. Run a database container (MySQL/Postgres) on that network with a volume for data
+ 
+3. Run an app container (use any image) on the same network
+ 
+4. Verify the app container can reach the database by container name
+
+<img width="1379" height="727" alt="task6" src="https://github.com/user-attachments/assets/9dc9e3e9-b61e-4582-a662-7070b8af19e5" />
+
 
