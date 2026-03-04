@@ -42,7 +42,7 @@
 
 + Correct approach: mount the volume at /var/lib/postgresql, and let PostgreSQL manage subdirectories.
 
-         #### ✅ Step-by-step FIX 
+         ✅ Step-by-step FIX 
          
          1️⃣ Remove old container and volume
          
