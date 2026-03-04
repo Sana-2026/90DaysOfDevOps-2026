@@ -106,17 +106,76 @@ Verify: docker volume ls, docker volume inspect
 | Typical example | Postgres/MySQL data | Nginx `index.html`, source code |
 
 ### Task 4: Docker Networking Basics
-List all Docker networks on your machine
-Inspect the default bridge network
-Run two containers on the default bridge — can they ping each other by name?
-Run two containers on the default bridge — can they ping each other by IP?
+1. List all Docker networks on your machine
+2. Inspect the default bridge network
+
+<img width="1366" height="724" alt="task4-part1 2" src="https://github.com/user-attachments/assets/0f5ef01c-1d97-421e-89ca-1a4454fb55db" />
+
+Key things to observe
+
++ Subnet (example): 172.17.0.0/16
+
++ Gateway (example): 172.17.0.1
+
++ Containers attached
+
++ IP addresses
+
+3. Run two containers on the default bridge.
+
+Can they ping each other by name?
+
++ Default bridge does NOT provide DNS-based name resolution
+
++ Container names are not resolvable
+
+  📝 Note: Name-based communication works only on user-defined networks
+
+4. Run two containers on the default bridge —
+
+Can they ping each other by IP?
+
++ Containers on the same bridge share the same subnet
+
++ IP-based communication works
+
+<img width="1364" height="668" alt="task4-part3 4" src="https://github.com/user-attachments/assets/ef22679d-bf9f-4983-930c-683a9f7588a8" />
+
+- Default bridge allows container-to-container communication via IP
+- Default bridge does NOT support container name resolution
+- User-defined bridge networks support DNS + name-based communication
+
 
 ### Task 5: Custom Networks
-Create a custom bridge network called my-app-net
-Run two containers on my-app-net
-Can they ping each other by name now?
-Write in your notes: Why does custom networking allow name-based communication but the default bridge doesn't?
+1. Create a custom bridge network called my-app-net
+   
+2. Run two containers on my-app-net
+   
+3. Can they ping each other by name now?
 
+<img width="1362" height="728" alt="task5" src="https://github.com/user-attachments/assets/8c1f4549-8064-40e5-879a-cc3730ed17c8" />
+
+   
+4.Write in your notes: Why does custom networking allow name-based communication but the default bridge doesn't?
+
+Custom bridge networks have Docker’s built-in DNS server enabled, while the default bridge does not.
+
+* Custom bridge network
+
+   + Docker runs an internal DNS
+
+   + Container names are automatically registered
+
+   + Containers can reach each other using names
+
+* Default bridge network
+
+   + No automatic DNS for container names
+
+   + Containers must use IP addresses
+
+   + Name resolution is not supported by default
+  
 ### Task 6: Put It Together
 Create a custom network
 Run a database container (MySQL/Postgres) on that network with a volume for data
