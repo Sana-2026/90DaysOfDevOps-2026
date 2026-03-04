@@ -1,4 +1,4 @@
-<img width="1357" height="393" alt="image" src="https://github.com/user-attachments/assets/821eb6a4-b95c-49f6-96cb-a92bf1baa230" /># Day 32 – Docker Volumes & Networking
+# Day 32 – Docker Volumes & Networking
 
 ## Challenge Tasks
 ### Task 1: The Problem
@@ -57,6 +57,7 @@ Since no volume was attached, PostgreSQL stored its data inside the container fi
 
 #### 2. Run the same database container, but this time attach the volume to it
 #### 3. Add some data, stop and remove the container
+
 <img width="1370" height="643" alt="task2-vol-post-error-part1" src="https://github.com/user-attachments/assets/3b218319-c835-4cf8-b3c0-c28516d15917" />
 
 <img width="1271" height="320" alt="task2-vol-part3" src="https://github.com/user-attachments/assets/a2e105ab-8dd1-46e4-8478-daee27d7d558" />
