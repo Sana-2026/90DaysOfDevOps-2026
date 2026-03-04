@@ -9,11 +9,28 @@
 <img width="565" height="77" alt="task1" src="https://github.com/user-attachments/assets/73533b5b-c2a1-475d-823e-4d4eaade8468" />
 
 ### Task 2: Your First Compose File
-Create a folder compose-basics
-Write a docker-compose.yml that runs a single Nginx container with port mapping
-Start it with docker compose up
+Create a folder ``compose-basics``
+Write a ``docker-compose.yml`` that runs a single Nginx container with port mapping
+Start it with ``docker compose up``
 Access it in your browser
-Stop it with docker compose down
+Stop it with ``docker compose down``
+[Docker Documentation] https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/docker-compose.yml
+[Docker Documentation] https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/Dockefi
+
+#### Case 1️⃣: Using an existing image ( Nginx example)
+
+<img width="1357" height="712" alt="task2-part1-2-3" src="https://github.com/user-attachments/assets/b185d347-832a-4110-bdc8-4decb47a9cdb" />
+
+<img width="1346" height="728" alt="task2-part4" src="https://github.com/user-attachments/assets/59a3d23e-1542-4d63-a60f-702709091f1f" />
+
+<img width="1345" height="721" alt="task2-part5" src="https://github.com/user-attachments/assets/22f5e2ff-e375-4f60-a50f-96a30ce522d4" />
+
+#### Case 2️⃣:Custom content 
+
+<img width="1366" height="724" alt="task2-custom-index-docker-compse" src="https://github.com/user-attachments/assets/883f2a44-bf7d-4919-91bf-8405071d443d" />
+
+<img width="1366" height="732" alt="docker-compose-down-custom-index" src="https://github.com/user-attachments/assets/69b7aada-b867-4385-b725-14b47f4dced0" />
+
 
 ### Task 3: Two-Container Setup
 
