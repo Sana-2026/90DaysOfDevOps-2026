@@ -15,9 +15,9 @@ Start it with ``docker compose up``
 Access it in your browser
 Stop it with ``docker compose down``
 
-[Docker Documentation](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/docker-compose.yml)
+[Docker Compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/docker-compose.yml)
 
-[Docker Documentation](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/Dockefi)
+[Dockerfile](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/Dockefi)
 
 #### Case 1️⃣: Using an existing image ( Nginx example)
 
