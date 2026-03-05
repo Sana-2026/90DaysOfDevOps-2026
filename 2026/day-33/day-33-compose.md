@@ -67,7 +67,6 @@ Verify: Stop and restart with docker compose down and docker compose up — is y
 <img width="1340" height="226" alt="task3-docker-compose-down" src="https://github.com/user-attachments/assets/548fa264-bdbd-409b-88df-e9d2d15449cc" />
 
 <img width="1366" height="730" alt="task3-post-restart" src="https://github.com/user-attachments/assets/04dcc974-2e36-4d1f-aead-84de2f3b11c9" />
-[Docker Compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/word-press-mysql/docker-compose.yml)
 
 ### Task 4: Compose Commands
 
@@ -108,5 +107,4 @@ Practice and document these:
 3.Verify the variables are being picked up
 
 <img width="1362" height="694" alt="task5" src="https://github.com/user-attachments/assets/948ea473-758f-40fd-a46d-bb4a2136dadb" />
-### Environment Configuration
-- [.env file](./word-press-mysql-env/.env)
+
