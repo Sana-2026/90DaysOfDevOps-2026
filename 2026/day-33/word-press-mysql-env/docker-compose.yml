@@ -1,1 +1,9 @@
-
+services:
+  app:
+    image: nginx
+    container_name: env-test
+    environment:
+      - APP_ENV=${APP_ENV}
+      - APP_VERSION=${APP_VERSION}
+    ports:
+      - "8080:80"
