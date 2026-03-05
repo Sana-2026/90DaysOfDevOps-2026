@@ -67,18 +67,40 @@ Verify: Stop and restart with docker compose down and docker compose up — is y
 <img width="1340" height="226" alt="task3-docker-compose-down" src="https://github.com/user-attachments/assets/548fa264-bdbd-409b-88df-e9d2d15449cc" />
 
 <img width="1366" height="730" alt="task3-post-restart" src="https://github.com/user-attachments/assets/04dcc974-2e36-4d1f-aead-84de2f3b11c9" />
-[Docker Compose]
+[Docker Compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/word-press-mysql/docker-compose.yml)
+
 ### Task 4: Compose Commands
 
 Practice and document these:
 
-Start services in detached mode
-View running services
-View logs of all services
-View logs of a specific service
-Stop services without removing
-Remove everything (containers, networks)
-Rebuild images if you make a change
+1. Start services in detached mode
+   ``docker compose up``
+2. View running services
+   ``docker ps``
+3. View logs of all services
+``docker compose logs``
+<img width="1366" height="725" alt="task4-1-2-3" src="https://github.com/user-attachments/assets/09f2f331-9136-48fe-862f-2e6b9344d397" />
+
+4. View logs of a specific service
+``docker compose logs db``
+<img width="1366" height="692" alt="task4-4" src="https://github.com/user-attachments/assets/5d08a1db-0a42-4b56-9494-6a2c26b23edf" />
+
+<img width="1351" height="609" alt="task4-4b" src="https://github.com/user-attachments/assets/1a010862-bc2d-4533-bb78-ef918ca9d65f" />
+
+5. Stop services without removing
+   
+``docker compose stop``
+
+<img width="1353" height="229" alt="task4-5th" src="https://github.com/user-attachments/assets/436b60cf-ca5b-4d2f-bb03-6821e0f8ce53" />
+
+6. Remove everything (containers, networks)
+   ``docker compose down``
+   
+<img width="1357" height="222" alt="task4-6" src="https://github.com/user-attachments/assets/37617bb9-570c-437e-a9f6-0e2347d85543" />
+
+7.Rebuild images if you make a change
+
+``docker compose up --build.``
 
 ### Task 5: Environment Variables
 Add environment variables directly in your docker-compose.yml
