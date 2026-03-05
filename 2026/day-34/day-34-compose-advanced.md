@@ -19,7 +19,7 @@
 
 1. Add depends_on to your compose file so the app starts after the database
 
-[docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/app-stack/docker-compose.yml)
+  [docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/app-stack/docker-compose.yml)
  
 3. Add a healthcheck on the database service
 
