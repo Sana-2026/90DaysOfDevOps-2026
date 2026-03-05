@@ -108,4 +108,4 @@ Practice and document these:
 3.Verify the variables are being picked up
 
 <img width="1362" height="694" alt="task5" src="https://github.com/user-attachments/assets/948ea473-758f-40fd-a46d-bb4a2136dadb" />
-[.env file]
+[.env file](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/word-press-mysql-env/.env)
