@@ -6,4 +6,4 @@ services:
       - APP_ENV=${APP_ENV}
       - APP_VERSION=${APP_VERSION}
     ports:
-      - "8080:80"
+      - "8081:80"
