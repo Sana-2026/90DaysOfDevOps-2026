@@ -14,6 +14,7 @@
 
 
 <img width="1363" height="727" alt="task1" src="https://github.com/user-attachments/assets/9d184b9f-546d-4848-9820-1cce464c2762" />
+
 ### Task 2: depends_on & Healthchecks
 
 1. Add depends_on to your compose file so the app starts after the database
