@@ -103,6 +103,9 @@ Practice and document these:
 ``docker compose up --build.``
 
 ### Task 5: Environment Variables
-Add environment variables directly in your docker-compose.yml
-Create a .env file and reference variables from it in your compose file
-Verify the variables are being picked up
+1. Add environment variables directly in your docker-compose.yml
+2. Create a .env file and reference variables from it in your compose file
+3.Verify the variables are being picked up
+
+<img width="1362" height="694" alt="task5" src="https://github.com/user-attachments/assets/948ea473-758f-40fd-a46d-bb4a2136dadb" />
+[.env file]
