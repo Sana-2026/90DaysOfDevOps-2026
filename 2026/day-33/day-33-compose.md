@@ -53,8 +53,21 @@ They should:
 + WordPress should connect to MySQL using the service name
 + Start it, access WordPress in your browser, and set it up.
 
+
+<img width="1364" height="702" alt="task3-containersetup" src="https://github.com/user-attachments/assets/1027d3b1-d6f3-4c1a-920d-8ef547a78b8c" />
+
+<img width="1342" height="726" alt="task3-wordpress" src="https://github.com/user-attachments/assets/6f075723-28ba-47d7-a260-efe0443b6c3f" />
+
+<img width="1366" height="715" alt="Screenshot 2026-03-05 092253" src="https://github.com/user-attachments/assets/cefd4d28-153b-4fb5-bd2b-da77831ef0e3" />
+
 Verify: Stop and restart with docker compose down and docker compose up — is your WordPress data still there?
 
++ Yes,WordPress data still persist.
+
+<img width="1340" height="226" alt="task3-docker-compose-down" src="https://github.com/user-attachments/assets/548fa264-bdbd-409b-88df-e9d2d15449cc" />
+
+<img width="1366" height="730" alt="task3-post-restart" src="https://github.com/user-attachments/assets/04dcc974-2e36-4d1f-aead-84de2f3b11c9" />
+[Docker Compose]
 ### Task 4: Compose Commands
 
 Practice and document these:
