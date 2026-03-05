@@ -16,7 +16,7 @@
 <img width="1363" height="727" alt="task1" src="https://github.com/user-attachments/assets/9d184b9f-546d-4848-9820-1cce464c2762" />
 ### Task 2: depends_on & Healthchecks
 1. Add depends_on to your compose file so the app starts after the database
-   {docker-compose]()
+   {docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/app-stack/docker-compose.yml)
 2. Add a healthcheck on the database service
 
 3.Use depends_on with condition: service_healthy so the app waits for the database to be truly ready, not just started
