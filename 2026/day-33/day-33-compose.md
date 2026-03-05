@@ -67,7 +67,7 @@ Verify: Stop and restart with docker compose down and docker compose up — is y
 <img width="1340" height="226" alt="task3-docker-compose-down" src="https://github.com/user-attachments/assets/548fa264-bdbd-409b-88df-e9d2d15449cc" />
 
 <img width="1366" height="730" alt="task3-post-restart" src="https://github.com/user-attachments/assets/04dcc974-2e36-4d1f-aead-84de2f3b11c9" />
-[Docker Compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/word-press-mysql/docker-compose.yml)
+[Docker Compose] (https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-33/word-press-mysql/docker-compose.yml)
 
 ### Task 4: Compose Commands
 
