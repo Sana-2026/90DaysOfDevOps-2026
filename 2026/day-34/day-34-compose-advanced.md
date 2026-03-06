@@ -37,3 +37,11 @@ When containers start we will see:
 2️⃣ healthcheck runs pg_isready
 3️⃣ DB becomes healthy
 4️⃣ web container starts
+
+Task 3: Restart Policies
+
+Add restart: always to your database service
+
+Manually kill the database container — does it come back?
+Try restart: on-failure — how is it different?
+Write in your notes: When would you use each restart policy?v
