@@ -100,7 +100,7 @@ so container ``restart: on-failure``
    
 3. Add labels to your services for better organization
    
-[docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/Demo-app/docker-compose.yml
+[docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/Demo-app/docker-compose.yml)
 
 ### Task 6: Scaling (Bonus)
 Try scaling your web app to 3 replicas using docker compose up --scale
