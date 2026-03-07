@@ -85,9 +85,13 @@ so container ``restart: on-failure``
 | unless-stopped | Similar to `always`, but the container will not restart if it was manually stopped by the user. | Production services that should run continuously |
 
 ### Task 4: Custom Dockerfiles in Compose
-Instead of using a pre-built image for your app, use build: in your compose file to build from a Dockerfile
-Make a code change in your app
-Rebuild and restart with one command
+1. Instead of using a pre-built image for your app, use build: in your compose file to build from a Dockerfile
+   
+2. Make a code change in your app
+   
+3. Rebuild and restart with one command
+
+<img width="1364" height="699" alt="task4" src="https://github.com/user-attachments/assets/3c05b83b-175a-4d16-b33d-4075353a082d" />
 
 ### Task 5: Named Networks & Volumes
 Define explicit networks in your compose file instead of relying on the default
