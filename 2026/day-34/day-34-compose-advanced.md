@@ -182,7 +182,7 @@ A host port can only be bound to one container at a time, causing scaling to fai
 Production architectures use a reverse proxy or load balancer to distribute traffic across replicas.
 
 Example architecture:
-``
+```
 User Request
      │
      ▼
@@ -191,7 +191,7 @@ Load Balancer (Nginx / Traefik)
  ┌───┴────┬─────┐
  ▼        ▼     ▼
 web-1    web-2  web-3
-``
+```
 The load balancer listens on a single host port and routes requests to multiple container replicas.
 
 Key Takeaway
