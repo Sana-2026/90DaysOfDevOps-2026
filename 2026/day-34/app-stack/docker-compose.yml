@@ -5,12 +5,13 @@ services:
   web:
     build: .
     ports:
-      - "5000:5000"
+      - "5001:5000"
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_started
+    restart: on-failure
 
   db:
     image: postgres:15
@@ -20,7 +21,7 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - db_data:/var/lib/postgresql/18
-        restart: always
+    restart: always
 
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
@@ -30,6 +31,7 @@ services:
 
   redis:
     image: redis:7
+    restart: unless-stopped
 
 volumes:
   db_data:
