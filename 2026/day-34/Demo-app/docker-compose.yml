@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-      - "5002:5000"
+      - "5001:5000"
     depends_on:
       db:
         condition: service_healthy
@@ -11,15 +11,22 @@ services:
         condition: service_started
     restart: on-failure
 
+    labels:
+      app: "docker-3tier-demo"
+      tier: "frontend"
+      maintainer: "devops-demo"
+
   db:
     image: postgres:15
+    restart: always
+
     environment:
       POSTGRES_DB: mydb
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-    restart: always
+
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
 
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
@@ -27,9 +34,17 @@ services:
       timeout: 5s
       retries: 5
 
+    labels:
+      app: "docker-3tier-demo"
+      tier: "database"
+
   redis:
     image: redis:7
     restart: unless-stopped
 
+    labels:
+      app: "docker-3tier-demo"
+      tier: "cache"
+
 volumes:
-  db_data:
+  postgres_data:
