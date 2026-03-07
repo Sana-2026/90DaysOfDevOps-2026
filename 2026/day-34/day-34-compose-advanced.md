@@ -113,6 +113,9 @@ so container ``restart: on-failure``
 3.Write in your notes: Why doesn't simple scaling work with port mapping?
 
 
+<img width="1348" height="225" alt="task6" src="https://github.com/user-attachments/assets/6dc72577-af82-4479-b3e0-7b163ec1be71" />
+
+
 #### Scaling a Service with Docker Compose
 Command Used
 
