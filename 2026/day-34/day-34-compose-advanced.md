@@ -103,7 +103,96 @@ so container ``restart: on-failure``
 [docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/Demo-app/docker-compose.yml)
 
 ### Task 6: Scaling (Bonus)
-Try scaling your web app to 3 replicas using docker compose up --scale
-What happens? What breaks?
-Write in your notes: Why doesn't simple scaling work with port mapping?
+1. Try scaling your web app to 3 replicas using docker compose up --scale
+   
+2. What happens? What breaks?
+   
+3.Write in your notes: Why doesn't simple scaling work with port mapping?
+
+
+#### Scaling a Service with Docker Compose
+Command Used
+
+``docker compose up -d --scale web=3``
+
++ This command instructs Docker Compose to create 3 replicas of the web service.
+
++ Example containers created:
+
+web-1
+web-2
+web-3
+
+#### What Happens During Scaling
+
++ Docker successfully starts the first container.
+
++ When Docker attempts to start additional replicas, it encounters a port conflict.
+
++ The additional containers fail to start.
+
+#### Typical error:
+
+port is already allocated
+
+#### Why This Happens
+
++ In the docker-compose.yml, the web service exposes a port like this:
+
+ports:
+  - "5001:5000"
+
+This means:
+ - Host Port	5001
+ - Container Port	5000
+
+#### When scaling occurs:
+
+Container	Port Mapping  Attempt	  Result
+web-1	    5001 → 5000	  Starts    successfully
+web-2	    5001 → 5000	  Fails     (port already used)
+web-3	    5001 → 5000	  Fails     (port already used)
+
+A host port can only be bound to one container at a time, causing scaling to fail.
+
+#### What Breaks
+
+- Port binding conflict
+
+- Only one replica becomes accessible
+
+- Remaining replicas cannot start
+
+- No traffic distribution between containers
+
+#### Why Simple Scaling Doesn't Work with Port Mapping
+
+- Simple scaling fails because:
+
+- Host ports cannot be shared by multiple containers.
+
+- Docker Compose does not automatically provide load balancing.
+
+ - Each replica attempts to bind to the same host port.
+
+#### How Production Systems Solve This
+
+Production architectures use a reverse proxy or load balancer to distribute traffic across replicas.
+
+Example architecture:
+
+User Request
+     │
+     ▼
+Load Balancer (Nginx / Traefik)
+     │
+ ┌───┴────┬─────┐
+ ▼        ▼     ▼
+web-1    web-2  web-3
+
+The load balancer listens on a single host port and routes requests to multiple container replicas.
+
+Key Takeaway
+
+Simple container scaling with Docker Compose does not work when host port mapping is used, because multiple containers cannot bind to the same host port. A load balancer or reverse proxy is required to distribute traffic across scaled containers.
 
