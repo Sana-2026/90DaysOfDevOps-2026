@@ -105,6 +105,7 @@ so container ``restart: on-failure``
 [docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/Demo-app/docker-compose.yml)
 
 ### Task 6: Scaling (Bonus)
+
 1. Try scaling your web app to 3 replicas using docker compose up --scale
    
 2. What happens? What breaks?
@@ -194,7 +195,7 @@ web-1    web-2  web-3
 ```
 The load balancer listens on a single host port and routes requests to multiple container replicas.
 
-Key Takeaway
+#### Key Takeaway
 
 Simple container scaling with Docker Compose does not work when host port mapping is used, because multiple containers cannot bind to the same host port. A load balancer or reverse proxy is required to distribute traffic across scaled containers.
 
