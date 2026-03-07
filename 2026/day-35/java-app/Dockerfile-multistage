@@ -9,7 +9,7 @@ RUN javac HelloWorld.java
 
 #-------------Stage 2 : Runtime stage-----------
 
-FROM eclipse-temurin:17-jdk AS builder
+FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
