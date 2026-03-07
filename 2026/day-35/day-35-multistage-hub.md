@@ -176,6 +176,73 @@ Apply these to one of your images and rebuild:
 3. Combine RUN commands to reduce layers
    
 4. Use specific tags for base images (not latest)
-   
+
+ [Dockerfile](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-35/java-app/Dockerfile-optimized-distroless)
+ 
 Check the size before and after.
+
+#### 1️⃣ Before Optimization (Typical Dockerfile)
+``
+FROM ubuntu:latest
+
+WORKDIR /app
+
+COPY HelloWorld.java .
+
+RUN apt update
+RUN apt install -y openjdk-17-jdk
+
+RUN javac HelloWorld.java
+
+CMD ["java","HelloWorld"]
+``
+
+#### Problems ❌
+
++ Uses large base image (Ubuntu)
+
++ Uses latest tag
+
++ Multiple RUN layers
+
++ Runs as root
+
++ Includes build tools in runtime
+
+#### 2️⃣ Optimized Dockerfile (Applying All Best Practices)
+``
+# Stage 1: Build
+FROM eclipse-temurin:17-jdk-alpine AS builder
+
+WORKDIR /app
+COPY HelloWorld.java .
+
+RUN javac HelloWorld.java
+
+
+# Stage 2: Runtime
+FROM eclipse-temurin:17-jre-alpine
+
+WORKDIR /app
+
+# Create non-root user
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+COPY --from=builder /app/HelloWorld.class .
+
+USER appuser
+
+CMD ["java","HelloWorld"]
+``
+#### Advantages of the Optimized Docker Image
+
++ Smaller size – Minimal base images reduce storage usage.
+
++ Faster deployments – Smaller images pull and start quicker.
+
++ Better security – Running as a non-root user reduces risk.
+
++ Fewer vulnerabilities – Minimal packages mean a smaller attack surface.
+
++ Consistent builds – Specific image tags ensure reproducible environments.
 
