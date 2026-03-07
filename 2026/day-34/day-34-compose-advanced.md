@@ -38,10 +38,64 @@ When containers start we will see:
 3️⃣ DB becomes healthy
 4️⃣ web container starts
 
-Task 3: Restart Policies
+### Task 3: Restart Policies
 
-Add restart: always to your database service
+1.Add restart: always to your database service.
 
-Manually kill the database container — does it come back?
-Try restart: on-failure — how is it different?
-Write in your notes: When would you use each restart policy?v
+<img width="1363" height="696" alt="task3-part1" src="https://github.com/user-attachments/assets/c50566d1-3acc-42c2-9d29-a27b94a3744f" />
+
+
+2. Manually kill the database container — does it come back?
+   Yes the container comes back
+   
+   <img width="1367" height="339" alt="task3-part2" src="https://github.com/user-attachments/assets/eb942731-85ac-40b7-9d3c-71a935c5eeb6" />
+
+4. Try restart: on-failure — how is it different?
+
+``restart: on-failure``this policy means:
+
++ Restart the container only if it exits with a non-zero error code (failure).
+
++  ``docker kill`` sends SIGKILL (signal 9) to the container.
+
++ Docker treats this as an abnormal termination, so the container exits with a failure code.
+so container ``restart: on-failure``
+
++ ``docker stop`` is considered a normal exit, not a failure.
+
+   
+<img width="1348" height="757" alt="task3-correct-a" src="https://github.com/user-attachments/assets/453c90d8-2430-4969-9e1f-1b0656b0f784" />
+
+<img width="1363" height="725" alt="task3-correct-b" src="https://github.com/user-attachments/assets/7f741030-6bd1-454d-9a13-f22d967631ad" />
+
+<img width="1364" height="724" alt="task3-correct-c" src="https://github.com/user-attachments/assets/1247a52b-0294-49bc-b952-36bf5aef5101" />
+
+| Action | restart: on-failure |
+|------|---------------------|
+| `docker kill` | ✅ container restarts |
+| container crash | ✅ container restarts |
+| `docker stop` | ❌ container does NOT restart |
+6. Write in your notes: When would you use each restart policy?
+
+| Restart Policy | When to Use | Example Services |
+|---------------|-------------|------------------|
+| no | When you do not want the container to restart automatically. Useful for testing or debugging. | Temporary test containers |
+| always | When the service must always stay running, even if the container crashes or Docker restarts. | Databases, Redis, Monitoring tools |
+| on-failure | When the container should restart only if it crashes (non-zero exit code). It will not restart if stopped manually. | Web apps, APIs, workers |
+| unless-stopped | Similar to `always`, but the container will not restart if it was manually stopped by the user. | Production services that should run continuously |
+
+### Task 4: Custom Dockerfiles in Compose
+Instead of using a pre-built image for your app, use build: in your compose file to build from a Dockerfile
+Make a code change in your app
+Rebuild and restart with one command
+
+### Task 5: Named Networks & Volumes
+Define explicit networks in your compose file instead of relying on the default
+Define named volumes for database data
+Add labels to your services for better organization
+
+### Task 6: Scaling (Bonus)
+Try scaling your web app to 3 replicas using docker compose up --scale
+What happens? What breaks?
+Write in your notes: Why doesn't simple scaling work with port mapping?
+
