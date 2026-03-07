@@ -102,17 +102,80 @@ Since build tools and extra packages are removed:
 5. Pull it on a different machine (or after removing locally) to verify
    
 ### Task 4: Docker Hub Repository
-Go to Docker Hub and check your pushed image
-Add a description to the repository
-Explore the tags tab — understand how versioning works
-Pull a specific tag vs latest — what happens?
-Task 5: Image Best Practices
+1. Go to Docker Hub and check your pushed image.
+
+<img width="1158" height="468" alt="docker-hub" src="https://github.com/user-attachments/assets/ebd59ffb-c3c0-4c09-948e-bd6e71fc7d3e" />
+
+2. Add a description to the repository
+   
+3. Explore the tags tab — understand how versioning works
+
+<img width="1365" height="564" alt="task4-1-2-3" src="https://github.com/user-attachments/assets/fa2e92a3-66cc-410c-83a8-525cc4f37294" />
+
+   
+5. Pull a specific tag vs latest — what happens
+
+When pulling images from Docker Hub, you can pull either a specific tag or the latest tag.
+
+#### Pulling a Specific Tag
+
+``docker pull username/java-hello:v1``
+
+#### What happens?
+
++ Docker downloads exactly that version of the image.
+
++ You always get the same image every time.
+
++ Useful for production and stable deployments.
+
+Example:
+
+``username/java-hello:v1``
+
+If v1 was built months ago, Docker will still pull that exact image.
+
+#### Pulling the latest Tag
+
+``docker pull username/java-hello:latest``
+
+#### What happens?
+
++ Docker pulls the image tagged as latest.
+
++ The latest tag can change whenever someone pushes a new image.
+
++ You may get different versions over time.
+
+Example:
+
+``username/java-hello:latest``
+
+If a new image is pushed with the latest tag, pulling again will download the updated image.
+
+Comparison Table
+| Feature | Specific Tag (v1, v2) | latest Tag |
+|-------|----------------|-------------|
+| Version stability | Fixed | Can change |
+| Reproducibility | High | Low |
+| Recommended for production | Yes | No |
+| Recommended for testing | Sometimes | Yes |
+
+#### DevOps Best Practice 🚀
+
+Always use specific version tags in production instead of latest.
+
+### Task 5: Image Best Practices
+
 Apply these to one of your images and rebuild:
 
-Use a minimal base image (alpine vs ubuntu — compare sizes)
-Don't run as root — add a non-root USER in your Dockerfile
-Combine RUN commands to reduce layers
-Use specific tags for base images (not latest)
+1. Use a minimal base image (alpine vs ubuntu — compare sizes)
+   
+2.Don't run as root — add a non-root USER in your Dockerfile
+
+3. Combine RUN commands to reduce layers
+   
+4. Use specific tags for base images (not latest)
+   
 Check the size before and after.
 
-Hints
