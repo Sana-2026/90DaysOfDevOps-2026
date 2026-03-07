@@ -94,9 +94,13 @@ so container ``restart: on-failure``
 <img width="1364" height="699" alt="task4" src="https://github.com/user-attachments/assets/3c05b83b-175a-4d16-b33d-4075353a082d" />
 
 ### Task 5: Named Networks & Volumes
-Define explicit networks in your compose file instead of relying on the default
-Define named volumes for database data
-Add labels to your services for better organization
+1. Define explicit networks in your compose file instead of relying on the default4
+   
+2. Define named volumes for database data
+   
+3. Add labels to your services for better organization
+   
+[docker-compose](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-34/Demo-app/docker-compose.yml
 
 ### Task 6: Scaling (Bonus)
 Try scaling your web app to 3 replicas using docker compose up --scale
