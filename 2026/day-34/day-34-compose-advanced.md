@@ -70,11 +70,13 @@ so container ``restart: on-failure``
 
 <img width="1364" height="724" alt="task3-correct-c" src="https://github.com/user-attachments/assets/1247a52b-0294-49bc-b952-36bf5aef5101" />
 
+
 | Action | restart: on-failure |
 |------|---------------------|
 | `docker kill` | ✅ container restarts |
 | container crash | ✅ container restarts |
 | `docker stop` | ❌ container does NOT restart |
+
 6. Write in your notes: When would you use each restart policy?
 
 | Restart Policy | When to Use | Example Services |
