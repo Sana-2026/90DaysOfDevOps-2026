@@ -7,7 +7,8 @@
 + role
 + experience_years
 + learning (a boolean)
-[person.yml]()
+  
+[person.yml](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-38/person.yml)
 
  Verify: Run cat person.yaml — does it look clean? No tabs?
 
@@ -55,13 +56,16 @@ Create server.yaml that describes a server:
 
 Verify: Try adding a tab instead of spaces — what happens when you validate it?
 
+<img width="363" height="419" alt="task3" src="https://github.com/user-attachments/assets/7690bc84-e177-4988-8afd-97c166735ca5" />
+
 ### Task 4: Multi-line Strings
 
 In server.yaml, add a startup_script field using:
 
 + The | block style (preserves newlines)
 + The > fold style (folds into one line)
-+ Write in your notes: When would you use | vs >?
+
+When would you use | vs >?
 
 ### Task 5: Validate Your YAML
 
