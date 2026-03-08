@@ -1,10 +1,13 @@
 ## Day 40 – Your First GitHub Actions Workflow
 
 Challenge Tasks
+
 Task 1: Set Up
+
 Create a new public GitHub repository called github-actions-practice
 Clone it locally
 Create the folder structure: .github/workflows/
+
 Task 2: Hello Workflow
 Create .github/workflows/hello.yml with a workflow that:
 
