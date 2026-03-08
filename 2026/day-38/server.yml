@@ -11,3 +11,13 @@ database:
   credentials:
     user: admin
     password: securepassword
+
+startup_script_block: |
+  echo "Starting server..."
+  sudo systemctl start nginx
+  echo "Server started"
+
+startup_script_fold: >
+  echo "Starting server..."
+  sudo systemctl start nginx
+  echo "Server started"
