@@ -87,6 +87,11 @@ Use when you want **multiple lines to be treated as a single line**, useful for 
 + Intentionally break the indentation — what error do you get?
 + Fix it and validate again
 
+<img width="792" height="472" alt="day-38-yamlint-error" src="https://github.com/user-attachments/assets/344812e7-b93a-4c57-af1a-85b0e436fe8b" />
+
+<img width="792" height="384" alt="day-38-yamlint-rectfied" src="https://github.com/user-attachments/assets/4cc4bc9a-350a-4ebc-a7e7-e22534382736" />
+
+
 ### Task 6: Spot the Difference
 
 Read both blocks and write what's wrong with the second one:
@@ -100,4 +105,24 @@ tools:
 name: devops
 tools:
 - docker
+  - kubernetes
+
+**Issue in Block 2**
+
+➡ The **indentation is inconsistent** in the list under `tools`.
+
+In YAML, list items must be **aligned at the same indentation level**, but in Block 2:
+- `docker` starts without indentation
+- `kubernetes` is indented with spaces
+
+❌ Broken
+```yaml
+tools:
+- docker
+  - kubernetes
+
+✔ Correct
+
+tools:
+  - docker
   - kubernetes
