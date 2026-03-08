@@ -26,14 +26,33 @@ Add to person.yaml:
 + tools — a list of 5 DevOps tools you know or are learning
 + hobbies — a list using the inline format [item1, item2]
   
-Write in your notes: What are the two ways to write a list in YAML?
+[person.yml]()
+
+What are the two ways to write a list in YAML?
+
+**Two ways to write a list in YAML**
+
+1️⃣ **Block style (dash format)**  
+➡ Each item starts with `-`
+
+```yaml
+tools:
+  - Docker
+  - Kubernetes
+  - Jenkins
+2️⃣ Inline style (bracket format)
+➡ Items written inside [ ] separated by commas
+
+tools: [Docker, Kubernetes, Jenkins]
 
 ### Task 3: Nested Objects
 Create server.yaml that describes a server:
 
 + server with nested keys: name, ip, port
 + database with nested keys: host, name, credentials (nested further: user, password)
-  
+
+[server.yml](https://github.com/Sana-2026/90DaysOfDevOps-2026/new/master/2026/day-38)
+
 Verify: Try adding a tab instead of spaces — what happens when you validate it?
 
 ### Task 4: Multi-line Strings
