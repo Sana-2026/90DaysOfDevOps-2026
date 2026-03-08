@@ -69,9 +69,8 @@ In server.yaml, add a startup_script field using:
 
 [server.yml](https://github.com/Sana-2026/90DaysOfDevOps-2026/new/master/2026/day-38)
 
-When would you use | vs >?
 
-**When to use `|` vs `>` in YAML**
+**When to use `|` vs `>` in YAML ?**
 
 ➡ **`|` (Literal block style)**  
 Use when **line breaks must be preserved exactly**, such as for **scripts, commands, or configuration files**.
