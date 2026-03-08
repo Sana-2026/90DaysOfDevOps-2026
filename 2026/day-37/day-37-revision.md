@@ -90,7 +90,7 @@ Pick 2 topics you marked as shaky and redo the hands-on tasks from that day.
 I have revisted the topic and gained the clear insights.
 
 #### Create and use named volumes
-### Named Volumes in Docker
+#### Named Volumes in Docker
 
 ➡ **Named volumes** are Docker-managed storage used to persist container data independently of the container lifecycle.
 
