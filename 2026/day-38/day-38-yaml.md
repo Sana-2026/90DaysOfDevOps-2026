@@ -46,6 +46,7 @@ tools:
 ➡ Items written inside [ ] separated by commas
 
 tools: [Docker, Kubernetes, Jenkins]
+```
 
 ### Task 3: Nested Objects
 Create server.yaml that describes a server:
