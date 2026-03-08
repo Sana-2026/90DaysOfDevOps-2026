@@ -27,7 +27,8 @@ Add to person.yaml:
 + tools — a list of 5 DevOps tools you know or are learning
 + hobbies — a list using the inline format [item1, item2]
   
-[person.yml]()
+[person.yml](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-38/person.yml)
+
 
 What are the two ways to write a list in YAML?
 
@@ -65,7 +66,17 @@ In server.yaml, add a startup_script field using:
 + The | block style (preserves newlines)
 + The > fold style (folds into one line)
 
+[server.yml](https://github.com/Sana-2026/90DaysOfDevOps-2026/new/master/2026/day-38)
+
 When would you use | vs >?
+
+**When to use `|` vs `>` in YAML**
+
+➡ **`|` (Literal block style)**  
+Use when **line breaks must be preserved exactly**, such as for **scripts, commands, or configuration files**.
+
+➡ **`>` (Folded style)**  
+Use when you want **multiple lines to be treated as a single line**, useful for **long text, messages, or descriptions**.
 
 ### Task 5: Validate Your YAML
 
