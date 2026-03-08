@@ -44,6 +44,7 @@ tools:
   - Jenkins
 ```
 2️⃣ Inline style (bracket format)
+
 ➡ Items written inside [ ] separated by commas
 ```
 tools: [Docker, Kubernetes, Jenkins]
@@ -90,12 +91,12 @@ Use when you want **multiple lines to be treated as a single line**, useful for 
 
 Read both blocks and write what's wrong with the second one:
 
-# Block 1 - correct
+### Block 1 - correct
 name: devops
 tools:
   - docker
   - kubernetes
-# Block 2 - broken
+### Block 2 - broken
 name: devops
 tools:
 - docker
