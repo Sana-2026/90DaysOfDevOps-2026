@@ -7,8 +7,18 @@
 + role
 + experience_years
 + learning (a boolean)
-  
+[person.yml]()
+
  Verify: Run cat person.yaml — does it look clean? No tabs?
+
+ <img width="302" height="138" alt="image" src="https://github.com/user-attachments/assets/20e5d11c-814b-413f-afbe-4c7ba5c4f00b" />
+
++ The YAML structure looks clean
+
++ No tabs are used (YAML requires spaces for indentation)
+
++ Keys and values are properly aligned
+
 
 ### Task 2: Lists
 Add to person.yaml:
