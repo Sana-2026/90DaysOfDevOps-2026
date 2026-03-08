@@ -2,3 +2,12 @@ name: Sana Shaik
 role: DevOps & Cloud Engineer
 experience_years: 6+
 learning: true
+
+tools:
+  - Docker
+  - Kubernetes
+  - Git
+  - Jenkins
+  - Terraform
+
+hobbies: [singing, dancing, learning-new-tech,cooking]
