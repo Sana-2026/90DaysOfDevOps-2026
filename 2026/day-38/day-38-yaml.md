@@ -42,9 +42,10 @@ tools:
   - Docker
   - Kubernetes
   - Jenkins
+```
 2️⃣ Inline style (bracket format)
 ➡ Items written inside [ ] separated by commas
-
+```
 tools: [Docker, Kubernetes, Jenkins]
 ```
 
