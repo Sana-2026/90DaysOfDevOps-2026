@@ -1,10 +1,4 @@
-### Day 41 – Triggers & Matrix Builds
-Task
-Your pipeline runs on push. Today you learn every way to trigger a workflow and how to run jobs across multiple environments at once.
-
-Expected Output
-New workflow files in your github-actions-practice repo
-A markdown file: day-41-triggers.md
+## Day 41 – Triggers & Matrix Builds
 
 ### Challenge Tasks
 
@@ -62,13 +56,4 @@ Verify: Does it show up on the PR page?
 2. Set fail-fast: false — trigger a failure in one job and observe what happens to the rest
 
 3. Write in your notes: What does fail-fast: true (the default) do vs false?
-Hints
 
-4. PR trigger: on: pull_request: branches: [main]
-   
-5. Cron trigger: on: schedule: - cron: '0 0 * * *'
-   
-6. Manual trigger: on: workflow_dispatch: inputs:
-   
-7. Matrix: strategy: matrix: python-version: [...]
-Exclude: exclude: - os: windows-latest python-version: "3.10"
