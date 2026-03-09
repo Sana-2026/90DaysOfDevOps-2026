@@ -28,6 +28,6 @@ RUN chown -R spring:spring /app
 # Switch to non-root user
 USER spring
 
-EXPOSE 8080
+EXPOSE 8083
 
 ENTRYPOINT ["java","-jar","app.jar"]
