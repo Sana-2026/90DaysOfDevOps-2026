@@ -6,7 +6,7 @@
 
 1. Create .github/workflows/pr-check.yml
 
-2.Trigger it only when a pull request is opened or updated against main
+ 2.Trigger it only when a pull request is opened or updated against main
 
 3. Add a step that prints: PR check running for branch: <branch name>
 
