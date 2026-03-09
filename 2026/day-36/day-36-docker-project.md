@@ -4,21 +4,26 @@
 ### Challenge Tasks
 ### Task 1: Pick Your App
 
-A 3-tier demo application using:
+For this task, I selected an existing project from my GitHub that does not yet have Docker support.
 
- + Web App (Flask)
+### Selected Application
+**BankApp – Spring Boot Banking Application**
 
-+ Redis (Cache)
+### Tech Stack
+- Backend: Spring Boot
+- Frontend: Thymeleaf
+- Database: MySQL
+- Security: Spring Security
+- Monitoring: Spring Boot Actuator + Prometheus metrics
 
-+ Database
-  
-#### Why I choose this project ?
+### Reason for Choosing This App
+- It is a **multi-tier application** (frontend + backend + database)
+- Ideal for learning **Docker containerization**
+- Helps simulate **real-world DevOps workflows**
+- Can be extended later with **CI/CD, Kubernetes, and monitoring**
 
-- **Simple to build** – Flask is lightweight and beginner-friendly.
-- **Real-world architecture** – Includes both application and database layers.
-- **Learn container communication** – Practice how services interact in Docker.
-- **Good for Docker Compose** – Helps manage multi-container applications.
-- **Easy to extend** – Can later add Nginx, Redis, CI/CD, or Kubernetes.
+### Goal
+Dockerize the application and run it along with MySQL using **Docker Compose**.
 
 Task 2: Write the Dockerfile
 Create a Dockerfile for your application
