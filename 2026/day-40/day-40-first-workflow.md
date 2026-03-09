@@ -35,11 +35,12 @@ Yes it is green workflow was succesfull.
 
 <img width="1287" height="603" alt="task-2-part1" src="https://github.com/user-attachments/assets/22de0338-f09e-43b5-a546-4be9f0a9edc3" />
 
-<img width="1287" height="603" alt="task-2-part1" src="https://github.com/user-attachments/assets/d4127a99-031b-41cd-a446-50156e79ac5c" />
+<img width="1264" height="600" alt="task2" src="https://github.com/user-attachments/assets/855f9eec-d8d7-4c65-8335-17850ca59644" />
+
 
 ### Task 3: Understand the Anatomy
 
-# GitHub Actions Workflow Key Concepts
+####  GitHub Actions Workflow Key Concepts
 
 | Key | Purpose |
 |-----|--------|
@@ -52,7 +53,7 @@ Yes it is green workflow was succesfull.
 | `name:` (step) | Gives a readable name to a step so it is easy to understand in the Actions logs. |
 
 Workflow Execution Flow
-
+```
 Event (push)
       ↓
 Workflow Triggered
@@ -62,7 +63,7 @@ Job Runs (greet)
 Runner Created (ubuntu-latest)
       ↓
 Steps Executed
-
+```
 
 Task 4: Add More Steps
 Update hello.yml to also:
