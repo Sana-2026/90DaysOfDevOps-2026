@@ -1,1 +1,8 @@
-
+.git
+.gitignore
+README.md
+target/
+node_modules
+*.log
+Dockerfile
+docker-compose.yml
