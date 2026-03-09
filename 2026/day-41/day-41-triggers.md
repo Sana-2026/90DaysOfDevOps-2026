@@ -6,13 +6,13 @@
 
 1. Create .github/workflows/pr-check.yml
 
-3.Trigger it only when a pull request is opened or updated against main
+2.Trigger it only when a pull request is opened or updated against main
 
-4.Add a step that prints: PR check running for branch: <branch name>
+3. Add a step that prints: PR check running for branch: <branch name>
 
-5. Create a new branch, push a commit, and open a PR
+4. Create a new branch, push a commit, and open a PR
    
-6. Watch the workflow run automatically
+5. Watch the workflow run automatically
    
 Verify: Does it show up on the PR page?
 
