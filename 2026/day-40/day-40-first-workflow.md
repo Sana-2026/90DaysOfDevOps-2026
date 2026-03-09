@@ -65,14 +65,14 @@ Runner Created (ubuntu-latest)
 Steps Executed
 ```
 
-Task 4: Add More Steps
+### Task 4: Add More Steps
 Update hello.yml to also:
 
-Print the current date and time
-Print the name of the branch that triggered the run (hint: GitHub provides this as a variable)
-List the files in the repo
-Print the runner's operating system
-Push again — watch the new run.
+1. Print the current date and time
+2. Print the name of the branch that triggered the run (hint: GitHub provides this as a variable)
+3. List the files in the repo
+4. Print the runner's operating system
+5. Push again — watch the new run.
 
 Task 5: Break It On Purpose
 Add a step that runs a command that will fail (e.g., exit 1 or a misspelled command)
