@@ -138,7 +138,7 @@ Correct the command:
 ```yaml
 - name: List files
   run: ls
-
+```
 Push the changes again and the workflow should turn green ✔ (success).
 
 #### 5️⃣ What a Failed Pipeline Looks Like
