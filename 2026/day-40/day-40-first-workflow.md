@@ -73,9 +73,85 @@ Update hello.yml to also:
 3. List the files in the repo
 4. Print the runner's operating system
 5. Push again — watch the new run.
+   
+<img width="1350" height="611" alt="task-4" src="https://github.com/user-attachments/assets/ebf77675-7abd-45c2-9f6a-833d80598bc9" />
 
-Task 5: Break It On Purpose
+<img width="1366" height="655" alt="task4" src="https://github.com/user-attachments/assets/03572032-28e0-4537-ae3b-2cd9dae9e71b" />
+
+### Task 5: Break It On Purpose
+
 Add a step that runs a command that will fail (e.g., exit 1 or a misspelled command)
 Push and observe what happens in the Actions tab
 Fix it and push again
 Write in your notes: What does a failed pipeline look like? How do you read the error?
+
+<img width="1337" height="615" alt="task5" src="https://github.com/user-attachments/assets/f12a411c-f26d-4fb1-86f5-94bf7d251342" />
+
+<img width="1366" height="609" alt="task5-b" src="https://github.com/user-attachments/assets/4f0bf15c-3bd1-4baf-9ad9-6caf6f4abc37" />
+
+
+#### 1️⃣ What Happens in the Actions Tab
+
+When the workflow runs:
+
+- The job stops at the **failing step**.
+- The workflow status becomes **red ❌ (failed)**.
+- Steps before the failure show **green ✔ (success)**.
+- The failing step shows **red ❌ (error)**.
+
+---
+
+#### 2️⃣ How to Read the Error
+
+Steps to debug:
+
+1. Open the **Actions** tab in the repository.
+2. Click the **latest workflow run**.
+3. Click the **job name** (`greet`).
+4. Open the **failed step**.
+5. Read the **logs** to see the exact error message.
+
+### Example Log
+
+
+Run lss
+lss: command not found
+Error: Process completed with exit code 127
+
+
+---
+
+#### 3️⃣ What the Error Means
+
+| Error Code | Meaning |
+|------------|--------|
+| `exit code 1` | Manual failure command (e.g., `exit 1`) |
+| `exit code 127` | Command not found |
+| `exit code 2` | Incorrect command usage |
+
+---
+
+#### 4️⃣ Fix the Workflow
+
+Correct the command:
+
+```yaml
+- name: List files
+  run: ls
+
+Push the changes again and the workflow should turn green ✔ (success).
+
+#### 5️⃣ What a Failed Pipeline Looks Like
+
+Workflow run shows red ❌
+
+Failed step highlighted in red
+
+Logs show the error message and exit code
+
+The job stops executing further steps
+
+#### 📌 Key Learning
+
+A CI/CD pipeline fails when any step returns a non-zero exit code.
+Reading the logs in the failed step helps identify and fix the exact problem.
