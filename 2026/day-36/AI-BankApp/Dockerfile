@@ -15,7 +15,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jdk-alpine
 
 # Create non-root user
-RUN addgroup -S springgroup && adduser -S springuser -G spring
+RUN addgroup -S springgroup && adduser -S springuser -G springgroup
 
 WORKDIR /app
 
