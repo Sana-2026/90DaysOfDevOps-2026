@@ -1,7 +1,7 @@
 # ---------- Stage 1: Build ----------
 FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
-WORKDIR /app
+WORKDIR /build
 
 # Copy project files
 COPY pom.xml .
@@ -15,18 +15,18 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jdk-alpine
 
 # Create non-root user
-RUN addgroup -S spring && adduser -S spring -G spring
+RUN addgroup -S springgroup && adduser -S springuser -G spring
 
 WORKDIR /app
 
 # Copy jar from builder stage
-COPY --from=builder /app/target/*.jar app.jar
+COPY --from=builder /build/target/*.jar app.jar
 
 # Change ownership
-RUN chown -R spring:spring /app
+RUN chown -R springgroup:springuser /app
 
 # Switch to non-root user
-USER spring
+USER springuser
 
 EXPOSE 8083
 
