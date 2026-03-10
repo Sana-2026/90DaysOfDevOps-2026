@@ -20,10 +20,7 @@ RUN addgroup -S springgroup && adduser -S springuser -G springgroup
 WORKDIR /app
 
 # Copy jar from builder stage
-COPY --from=builder /build/target/*.jar app.jar
-
-# Change ownership
-RUN chown -R springgroup:springuser /app
+COPY --chown=springuser:springgroup --from=builder /build/target/*.jar app.jar
 
 # Switch to non-root user
 USER springuser
