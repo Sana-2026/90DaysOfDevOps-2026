@@ -1,38 +1,45 @@
-version: '3.8'
+# ---------- Stage 1: Build ----------
+FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
-networks:
-  bankapp-network:
+WORKDIR /build
+
+# Copy project files
+COPY pom.xml .
+COPY src ./src
+
+# Build the application
+RUN mvn clean package -DskipTests
+
+
+# ---------- Stage 2: Runtime ----------
+FROM eclipse-temurin:21-jdk-alpine
+
+# Create non-root user
+RUN addgroup -S springgroup && adduser -S springuser -G springgroup
+
+WORKDIR /app
+
+# Copy jar from builder stage
+COPY --chown=springuser:springgroup --from=builder /build/target/*.jar app.jar
+
+
+
+# Switch to non-root user
+USER springuser
+
+EXPOSE 8083
+
+ENTRYPOINT ["java","-jar","app.jar"]
+ubuntu@ip-172-31-24-38 ~/AI-BankApp-DevOps (start)$ cat docker-compose.yml
+
 
 services:
-  mysql-db:
-    image: mysql:8.0
-    container_name: mysql-db
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  app:
+    build: .
+    env_file:
+      - .env
     ports:
-      - "${MYSQL_PORT}:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
-    networks:
-      - bankapp-network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  bankapp:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: bankapp
-    restart: unless-stopped
-    ports:
-      - "${APP_PORT}:8083"
+      - "8083:8080"
     environment:
       MYSQL_HOST: mysql-db
       MYSQL_PORT: ${MYSQL_PORT}
@@ -43,4 +50,28 @@ services:
       mysql-db:
         condition: service_healthy
     networks:
-      - bankapp-network
+      - bankapp-net
+
+  mysql-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - bankapp-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+
+networks:
+  bankapp-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
