@@ -22,9 +22,12 @@ WORKDIR /app
 # Copy jar from builder stage
 COPY --chown=springuser:springgroup --from=builder /build/target/*.jar app.jar
 
+
+
 # Switch to non-root user
 USER springuser
 
 EXPOSE 8083
 
 ENTRYPOINT ["java","-jar","app.jar"]
+
