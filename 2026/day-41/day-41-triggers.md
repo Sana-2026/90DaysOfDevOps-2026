@@ -228,7 +228,7 @@ A failure condition was added for **Python 3.12** in the matrix workflow.
 - name: Fail only for Python 3.12
   if: matrix.python-version == '3.12'
   run: exit 1
-
+```
 #### Matrix Configuration
 
 + Operating Systems: ubuntu-latest, windows-latest
