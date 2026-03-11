@@ -13,9 +13,8 @@ The **AI BankApp** is a simple banking application that supports:
 * User registration and login
 * Account management
 * Transaction history
-* Secure authentication using Spring Security
-* Persistent storage using MySQL
-
+* Deposit & Withdrawal of money
+  
 The goal of this project is to learn how to **take an application from code → container → multi-container deployment**.
 
 ---
@@ -39,11 +38,6 @@ The goal of this project is to learn how to **take an application from code → 
 * Docker
 * Docker Compose
 * AWS EC2
-
-### Monitoring
-
-* Spring Boot Actuator
-* Prometheus metrics endpoint
 
 ---
 
@@ -235,7 +229,4 @@ DevOps learner building hands-on projects to master modern cloud, container, and
 
 ---
 
-# License
-
-This project is for learning and educational purposes.
 
