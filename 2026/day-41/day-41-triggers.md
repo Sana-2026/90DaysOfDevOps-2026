@@ -148,7 +148,7 @@ Written Version	YAML Interprets As
 3.10	3.1
 3.11	3.11
 3.12	3.12
-
+```
 Because of this, GitHub Actions tried to install Python 3.1, which does not exist.
 
 Steps to Fix the Issue
