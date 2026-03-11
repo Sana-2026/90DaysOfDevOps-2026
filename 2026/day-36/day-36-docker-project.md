@@ -4,6 +4,8 @@
 ### Challenge Tasks
 ### Task 1: Pick Your App
 
+[App](https://github.com/Sana-2026/90DaysOfDevOps-2026/tree/master/2026/day-36/AI-BankApp)
+
 For this task, I selected an existing project from my GitHub that does not yet have Docker support.
 
 ### Selected Application
@@ -25,34 +27,81 @@ For this task, I selected an existing project from my GitHub that does not yet h
 ### Goal
 Dockerize the application and run it along with MySQL using **Docker Compose**.
 
-Task 2: Write the Dockerfile
-Create a Dockerfile for your application
-Use a multi-stage build if applicable
-Use a non-root user
-Keep the image small — use alpine or slim base images
-Add a .dockerignore file
-Build and test it locally.
+### Task 2: Write the Dockerfile
+1. Create a Dockerfile for your application
+   
+2. Use a multi-stage build if applicable
+   
+3. Use a non-root user
+   
+4. Keep the image small — use alpine or slim base images
+   
+5. Add a .dockerignore file
+   
+6. Build and test it locally.
 
-Task 3: Add Docker Compose
+[Dockerfile](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-36/AI-BankApp/Dockerfile)
+
+[.dockerignore](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-36/AI-BankApp/.dockerignore)
+
+### Task 3: Add Docker Compose
+
 Write a docker-compose.yml that includes:
 
-Your app service (built from Dockerfile)
-A database service (Postgres, MySQL, MongoDB — whatever your app needs)
-Volumes for database persistence
-A custom network
-Environment variables for configuration (use .env file)
-Healthchecks on the database
-Run docker compose up and verify everything works together.
+1. Your app service (built from Dockerfile)
+   
+2. A database service (Postgres, MySQL, MongoDB — whatever your app needs)
+   
+3. Volumes for database persistence
+   
+4. A custom network
+   
+5. Environment variables for configuration (use .env file)
+   
+6. Healthchecks on the database
+   
+7. Run docker compose up and verify everything works together.
 
-Task 4: Ship It
-Tag your app image
-Push it to Docker Hub
-Share the Docker Hub link
-Write a README.md in your project with:
-What the app does
-How to run it with Docker Compose
-Any environment variables needed
-Task 5: Test the Whole Flow
-Remove all local images and containers
-Pull from Docker Hub and run using only your compose file
-Does it work fresh? If not — fix it until it does
+[docker-compose.yml](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-36/AI-BankApp/docker-compose.yml)
+
+### Task 4: Ship It
+
+1. Tag your app image
+   
+2. Push it to Docker Hub
+   
+3. Share the Docker Hub link
+
+   [Docker hub](https://hub.docker.com/repository/docker/sana2026/ai-bankapp/general)
+   
+5. Write a README.md in your project with:
+   
+   + What the app does
+   
+   + How to run it with Docker Compose
+ 
+   + Any environment variables needed
+
+[README.md](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-36/AI-BankApp/README.md)
+
+### Task 5: Test the Whole Flow
+
+1. Remove all local images and containers
+   
+2. Pull from Docker Hub and run using only your compose file
+   
+3. Does it work fresh? If not — fix it until it does
+
+<img width="1365" height="590" alt="welcomepage" src="https://github.com/user-attachments/assets/1648a811-7b90-4493-845c-3d9749f7a778" />
+
+<img width="1355" height="635" alt="dashboard-app" src="https://github.com/user-attachments/assets/4b53310e-f499-4bb5-b2f7-39fcc5718d5f" />
+
+<img width="1361" height="639" alt="run-withdrawal" src="https://github.com/user-attachments/assets/784f310b-f79b-4f9f-8927-f6dcadc805d1" />
+
+
+
+5. Challenges you faced and how you solved them
+
+[troubleshooting.md](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-36/AI-BankApp/troubleshooting.md)
+
+
