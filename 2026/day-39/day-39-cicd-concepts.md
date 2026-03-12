@@ -96,30 +96,30 @@ Trigger
 │
 ▼
 ┌─────────────────┐
-│ Stage 1: Build │
-│ - Install deps │
-│ - Build app │
+│ Stage 1: Build  │
+│ - Install deps  │
+│ - Build app     │
 └─────────────────┘
 │
 ▼
 ┌─────────────────┐
-│ Stage 2: Test │
+│ Stage 2: Test   │
 │ - Run unit tests│
 │ - Check quality │
 └─────────────────┘
 │
 ▼
 ┌──────────────────────────┐
-│ Stage 3: Docker Build │
-│ - Build Docker image │
+│ Stage 3: Docker Build    │
+│ - Build Docker image     │
 │ - Push image to registry │
 └──────────────────────────┘
 │
 ▼
 ┌─────────────────────────┐
-│ Stage 4: Deploy │
-│ - Pull image │
-│ - Deploy to staging │
+│ Stage 4: Deploy         │
+│ - Pull image            │
+│ - Deploy to staging     │
 └─────────────────────────┘
 ```
 
