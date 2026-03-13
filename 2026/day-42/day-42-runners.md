@@ -60,7 +60,7 @@ Developers only write the workflow YAML, and GitHub takes care of running it.
 
 Look up the GitHub docs for the full list of pre-installed software on ubuntu-latest
 
-# Pre-installed Software on `ubuntu-latest` (GitHub-hosted runner)
+### Pre-installed Software on `ubuntu-latest` (GitHub-hosted runner)
 
 | Category | Examples of Pre-installed Tools |
 |--------|----------------------------------|
@@ -86,19 +86,34 @@ In [GitHub Actions](https://github.com/features/actions),
 
 GitHub-hosted runners already include common development tools like **Docker, Python, Node.js, and Git**.
 
-## Key Reasons
+### Key Reasons
 
-### Faster workflow execution 🚀
+#### Faster workflow execution 🚀
 Tools are already available, so the workflow does not waste time installing them.
 
-### Simpler CI/CD configuration 🧩
+#### Simpler CI/CD configuration 🧩
 You can directly run commands without writing extra installation steps.
 
-### Consistency across runs 🔁
+#### Consistency across runs 🔁
 Every runner starts with the same environment, reducing **“works on my machine”** issues.
 
-### Less infrastructure management 🛠️
+#### Less infrastructure management 🛠️
 The environment is maintained by **GitHub**, so developers can focus only on the workflow logic.
+
+###Task 3: Set Up a Self-Hosted Runner
+1. Go to your GitHub repo → Settings → Actions → Runners → New self-hosted runner
+   
+2. Choose Linux as the OS
+  
+3. Follow the instructions to download and configure the runner on:
+ 
++ Your local machine, OR
++ A cloud VM (EC2, Utho, or any VPS)
++ Start the runner — verify it shows as Idle in GitHub
+
+Verify: Your runner appears in the Runners list with a green dot.
+
+
 
 
 
