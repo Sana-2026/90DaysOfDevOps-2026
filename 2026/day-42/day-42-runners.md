@@ -101,6 +101,7 @@ Every runner starts with the same environment, reducing **“works on my machine
 The environment is maintained by **GitHub**, so developers can focus only on the workflow logic.
 
 ###Task 3: Set Up a Self-Hosted Runner
+
 1. Go to your GitHub repo → Settings → Actions → Runners → New self-hosted runner
    
 2. Choose Linux as the OS
@@ -112,6 +113,8 @@ The environment is maintained by **GitHub**, so developers can focus only on the
 + Start the runner — verify it shows as Idle in GitHub
 
 Verify: Your runner appears in the Runners list with a green dot.
+
+<img width="1364" height="705" alt="task3" src="https://github.com/user-attachments/assets/e345deac-3038-4a75-9ee5-980b69205475" />
 
 
 
