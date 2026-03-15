@@ -130,7 +130,14 @@ Verify: Your runner appears in the Runners list with a green dot.
 4. Trigger it and watch it run on your own hardware
    
 Verify: Check your machine — is the file there?
-![image](C:\Users\pc\Desktop\90daysdevops_task\day42)
+
+### Task 5: Labels
+
+1. Add a label to your self-hosted runner (e.g., my-linux-runner)
+2. Update your workflow to use runs-on: [self-hosted, my-linux-runner]
+3. Trigger it — does it still pick up the job?
+Write in your notes: Why are labels useful when you have multiple self-hosted runners?
+
 
 
 
