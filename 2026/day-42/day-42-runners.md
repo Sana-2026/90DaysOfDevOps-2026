@@ -130,9 +130,7 @@ Verify: Your runner appears in the Runners list with a green dot.
 4. Trigger it and watch it run on your own hardware
    
 Verify: Check your machine — is the file there?
-
-
-
+![image](C:\Users\pc\Desktop\90daysdevops_task\day42)
 
 
 
