@@ -116,6 +116,24 @@ Verify: Your runner appears in the Runners list with a green dot.
 
 <img width="1364" height="705" alt="task3" src="https://github.com/user-attachments/assets/e345deac-3038-4a75-9ee5-980b69205475" />
 
+### Task 4: Use Your Self-Hosted Runner
+
+1. Create .github/workflows/self-hosted.yml
+
+2. Set runs-on: self-hosted
+
+3.Add steps that:
+ + Print the hostname of the machine (it should be YOUR machine/VM)
+ + Print the working directory
+ + Create a file and verify it exists on your machine after the run
+   
+4. Trigger it and watch it run on your own hardware
+   
+Verify: Check your machine — is the file there?
+
+
+
+
 
 
 
