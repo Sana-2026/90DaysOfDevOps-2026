@@ -131,8 +131,11 @@ Verify: Your runner appears in the Runners list with a green dot.
    
 Verify: Check your machine — is the file there?
 
+<img width="1364" height="728" alt="Image" src="https://github.com/user-attachments/assets/333c1be7-602c-4e1d-9448-d2478bf11a3a" />
 
+<img width="1357" height="620" alt="Image" src="https://github.com/user-attachments/assets/a108c3e8-26a3-4776-80fc-d22df15acefb" />
 
+<img width="1364" height="127" alt="Image" src="https://github.com/user-attachments/assets/bd65d406-f5b7-4f44-afad-8a9c7dd73ea7" />
 ### Task 5: Labels
 
 1. Add a label to your self-hosted runner (e.g., my-linux-runner)
