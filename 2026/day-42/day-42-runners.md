@@ -131,6 +131,8 @@ Verify: Your runner appears in the Runners list with a green dot.
    
 Verify: Check your machine — is the file there?
 
+
+
 ### Task 5: Labels
 
 1. Add a label to your self-hosted runner (e.g., my-linux-runner)
