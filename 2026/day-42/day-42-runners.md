@@ -144,6 +144,18 @@ Verify: Check your machine — is the file there?
 3. Trigger it — does it still pick up the job?
 Write in your notes: Why are labels useful when you have multiple self-hosted runners?
 
+Because labels help GitHub choose the correct runner based on machine type, purpose, or environment. They make sure a workflow runs on the exact self-hosted machine you want.
+
+## Task 6: GitHub-Hosted vs Self-Hosted
+
+| Feature | GitHub-Hosted | Self-Hosted |
+|---|---|---|
+| **Who manages it?** | GitHub manages and maintains the runner | You manage and maintain the runner |
+| **Cost** | Free minutes are limited, then paid based on usage | No GitHub runner-minute cost, but you pay for your own machine/server |
+| **Pre-installed tools** | Comes with many pre-installed tools like Git, Docker, Python, Node.js, etc. | Depends on what **you** install and maintain |
+| **Good for** | Quick setup, simple CI/CD, learning, small to medium projects | Custom environments, private network access, special hardware, full control |
+| **Security concern** | Less infrastructure to manage, but code runs on GitHub-managed machines | You are responsible for securing the machine, updates, secrets, and access control |
+
 
 
 
