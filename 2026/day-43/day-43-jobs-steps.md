@@ -16,9 +16,13 @@ Create `.github/workflows/multi-job.yml` with **3 jobs**:
 - Make **deploy** run **only after test succeeds**
 
 **Verify:**  
-Check the workflow graph in the **Actions** tab — does it show the dependency chain?
+Check the workflow graph in the **Actions** tab — does it show the dependency chain? yes it shows
 
 ---
+
+<img width="1359" height="455" alt="task1" src="https://github.com/user-attachments/assets/d928c565-fc1e-4840-8cc2-3fd634ef7e2b" />
+
+
 
 ### Task 2: Environment Variables
 
@@ -30,10 +34,15 @@ In a **new workflow**, use environment variables at **3 levels**:
 
 Print all three in a **single step** and verify each is accessible.
 
+<img width="1355" height="595" alt="task2-a" src="https://github.com/user-attachments/assets/32b19086-db81-4f16-a40f-652e0c0445bb" />
+
+
 Then use a **GitHub context variable** to print:
 
 - the **commit SHA**
 - the **actor** (who triggered the run)
+
+<img width="1343" height="497" alt="task2-b" src="https://github.com/user-attachments/assets/4940d26b-54ad-4a63-bb13-5330d8cf1281" />
 
 ---
 
