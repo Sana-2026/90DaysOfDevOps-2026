@@ -141,6 +141,13 @@ Verify: Check your machine — is the file there?
 
 1. Add a label to your self-hosted runner (e.g., my-linux-runner)
 2. Update your workflow to use runs-on: [self-hosted, my-linux-runner]
+
+<img width="1355" height="722" alt="task5" src="https://github.com/user-attachments/assets/94f00065-e036-4ddb-96af-31cafb8d5d55" />
+
+<img width="1335" height="411" alt="task5-b" src="https://github.com/user-attachments/assets/77ddfd33-e55d-4b41-8627-a7ceea8e9959" />
+
+<img width="872" height="267" alt="task5-c" src="https://github.com/user-attachments/assets/07f55e8a-2e62-48dc-b213-7da1133963d8" />
+
 3. Trigger it — does it still pick up the job?
 Write in your notes: Why are labels useful when you have multiple self-hosted runners?
 
