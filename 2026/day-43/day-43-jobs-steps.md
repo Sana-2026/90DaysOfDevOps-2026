@@ -119,6 +119,7 @@ What does `continue-on-error: true` do?
 
 
 ---
+```
 ✅ With continue-on-error: true
 - name: Step
   run: exit 1
