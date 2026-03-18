@@ -34,6 +34,7 @@ Verify: Does it show up on the PR page?
 
 <img width="1366" height="473" alt="new-commit-PR-workflow" src="https://github.com/user-attachments/assets/7c46e130-57d5-420a-bc62-6ac52850b804" />
 ---
+
 ### Task 2: Scheduled Trigger
 
 1. Add a schedule: trigger to any workflow using cron syntax
