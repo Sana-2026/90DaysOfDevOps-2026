@@ -69,9 +69,6 @@ The abbreviation K8s comes from replacing the 8 letters between K and s in Kuber
 
 ## Task 2: Draw the Kubernetes Architecture
 
-<img width="2000" height="2465" alt="k8-1" src="https://github.com/user-attachments/assets/ceff68bc-1ff0-48b6-9e7f-2c35d9641feb" />
-
-
 ### 🧠 Control Plane (Master Node)
 
 - **API Server** — the front door to the cluster, every command goes through it  
@@ -84,6 +81,8 @@ The abbreviation K8s comes from replacing the 8 letters between K and s in Kuber
 - **kubelet** — agent on each node that talks to API server and manages pods  
 - **kube-proxy** — handles networking rules for pod communication  
 - **Container Runtime** — runs containers (containerd, CRI-O)
+
+<img width="2000" height="2295" alt="k8-1" src="https://github.com/user-attachments/assets/a6f0cbf2-c6b9-460c-a697-1ec3e531d6d4" />
 
 ### 🔍 Verify Your Understanding
 
