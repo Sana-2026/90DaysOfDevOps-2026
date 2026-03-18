@@ -96,15 +96,53 @@ In a workflow, add:
 - A **job** that only runs on `push` events, not on pull requests
 - A **step** with `continue-on-error: true`
 
+<img width="1362" height="641" alt="task4-partb" src="https://github.com/user-attachments/assets/154d6986-039a-482a-8b4f-b2e334d30118" />
+
 **Write in your notes:**  
 What does `continue-on-error: true` do?
 
-
-
+> **It allows a step to fail without stopping the workflow.**
 
 ---
 
+#### 🧠 One-line memory
 
+> **“Fail the step → but don’t fail the job.”**
+
+---
+
+#### 🔍 Normal behavior (without it)
+
+```yaml
+- name: Step
+  run: exit 1
+
+
+---
+✅ With continue-on-error: true
+- name: Step
+  run: exit 1
+  continue-on-error: true
+
+👉 Now:
+
++ ❌ Step fails
+
++ ✅ Job continues
+
++ ✅ Next steps still run
+
+🧃 Simple analogy
+
+“Even if this step breaks, keep going.”
+
+📦 When to use it
+
++ Non-critical checks
+
+ + Optional steps (lint, warnings)
+
++ Experiments / debugging
 
 
 ### Task 5: Putting It Together
