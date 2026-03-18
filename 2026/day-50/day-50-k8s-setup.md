@@ -5,17 +5,73 @@
 Before touching a terminal, write down from memory:
 
 - Why was Kubernetes created? What problem does it solve that Docker alone cannot?
-- Who created Kubernetes and what was it inspired by?
-- What does the name "Kubernetes" mean?
 
-> ⚠️ Do not look anything up yet.  
-Write what you remember from the session, then verify against the official docs.
+
+####  Docker made it easy to:
+
+- Package applications into containers  
+- Run them consistently anywhere  
+
+But when companies started running **hundreds or thousands of containers**, things got messy.
+
+👉 That’s where Kubernetes came in.
+
+---
+
+### ⚙️ Kubernetes Purpose
+
+- **Kubernetes** was designed to efficiently manage large-scale containerized applications.
+
+---
+
+#### ❌ Limitations of Docker
+
+#### ✅ Docker can:
+- Run containers ✔️  
+- Build images ✔️  
+
+#### ❌ But Docker cannot manage containers at scale:
+
+- No automatic scaling (increase/decrease containers based on load)  
+- No self-healing (restart failed containers automatically across machines)  
+- No built-in load balancing  
+- No easy way to manage containers across multiple servers  
+- Manual deployment & updates become painful  
+
+---
+
+### 🧠 Key Takeaway
+
+👉 **Docker = Runs containers**  
+👉 **Kubernetes = Manages containers at scale**
+
+- Who created Kubernetes and what was it inspired by?
+
+ Kubernetes was created by Google in 2014, based on its years of experience running containers at scale.
+
+👉 It was inspired by Borg, Google’s internal container management system, which could schedule workloads, auto-scale applications, and handle failures across thousands of machines.
+
+👉 To make this technology available to everyone, Google open-sourced Kubernetes and later donated it to the Cloud Native Computing Foundation (CNCF), which now maintains and evolves it.
+
+ Kubernetes was created by Google, inspired by its internal system Borg, and is now maintained by CNCF as an open-source project.
+
+- What does the name "Kubernetes" mean?
+  
+The name Kubernetes comes from the Greek word “kybernētēs”, which means “helmsman” or “ship pilot.” 🚢
+
+👉 It reflects Kubernetes’ role in steering and managing containers, just like a pilot controls a ship.
+
+💡 Fun fact:
+
+The abbreviation K8s comes from replacing the 8 letters between K and s in Kubernetes.
+ 
+
 
 ---
 
 ## Task 2: Draw the Kubernetes Architecture
 
-From memory, draw or describe the Kubernetes architecture.
+
 
 ### 🧠 Control Plane (Master Node)
 
