@@ -51,9 +51,39 @@ Then use a **GitHub context variable** to print:
 - Create a job that **sets an output** — for example, **today’s date as a string**
 - Create a second job that **reads that output and prints it**
 - Pass the value using `outputs:` and `needs.<job>.outputs.<name>`
+- 
+<img width="1346" height="497" alt="task3-a" src="https://github.com/user-attachments/assets/1087cb74-debc-4d22-ad6e-d2f04ac1f76c" />
+
+<img width="1338" height="451" alt="task3-b" src="https://github.com/user-attachments/assets/2c35b64f-b392-4bb9-85b5-abae586d7bf6" />
+
 
 **Write in your notes:**  
 Why would you pass outputs between jobs?
+
+> **To share data from one job to another in a workflow.**
+
+---
+
+#### 🧠 One-line memory
+
+> **“One job produces → another job uses.”**
+
+---
+
+#### 🔥 Why it’s needed
+
+- Jobs run **separately (isolated)**
+- They **don’t share data automatically**
+- Outputs act as a **bridge between jobs**
+
+---
+
+#### 📦 Simple examples
+
+- Pass **build version** → use in deploy  
+- Pass **Docker image tag** → push to registry  
+- Pass **test result/status** → decide deployment  
+- Pass **generated date/ID** → reuse later  
 
 ---
 
@@ -69,7 +99,13 @@ In a workflow, add:
 **Write in your notes:**  
 What does `continue-on-error: true` do?
 
+
+
+
 ---
+
+
+
 
 ### Task 5: Putting It Together
 
