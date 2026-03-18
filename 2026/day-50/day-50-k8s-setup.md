@@ -1,10 +1,8 @@
-# Kubernetes Challenge Tasks 🚀
+## Kubernetes Challenge Tasks 🚀
 
-## Task 1: Recall the Kubernetes Story
+### Task 1: Recall the Kubernetes Story
 
-Before touching a terminal, write down from memory:
-
-- Why was Kubernetes created? What problem does it solve that Docker alone cannot?
+#### 1. Why was Kubernetes created? What problem does it solve that Docker alone cannot?
 
 
 ####  Docker made it easy to:
@@ -45,7 +43,7 @@ But when companies started running **hundreds or thousands of containers**, thin
 👉 **Docker = Runs containers**  
 👉 **Kubernetes = Manages containers at scale**
 
-- Who created Kubernetes and what was it inspired by?
+#### 2. Who created Kubernetes and what was it inspired by?
 
  Kubernetes was created by Google in 2014, based on its years of experience running containers at scale.
 
@@ -71,6 +69,7 @@ The abbreviation K8s comes from replacing the 8 letters between K and s in Kuber
 
 ## Task 2: Draw the Kubernetes Architecture
 
+<img width="2000" height="2465" alt="k8-1" src="https://github.com/user-attachments/assets/ceff68bc-1ff0-48b6-9e7f-2c35d9641feb" />
 
 
 ### 🧠 Control Plane (Master Node)
