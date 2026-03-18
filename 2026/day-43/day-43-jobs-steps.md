@@ -100,49 +100,40 @@ In a workflow, add:
 
 **Write in your notes:**  
 What does `continue-on-error: true` do?
+## continue-on-error: true
 
-> **It allows a step to fail without stopping the workflow.**
+- Allows a step to fail without stopping the workflow
 
+---
 
+### 🧠 One-line memory
+- Fail the step → but don’t fail the job
 
-#### 🧠 One-line memory
+---
 
-> **“Fail the step → but don’t fail the job.”**
+### 🔍 Without continue-on-error
+- Step fails
+- Job stops immediately
+- Next steps do not run
 
+---
 
+#### ✅ With continue-on-error: true
+- Step fails
+- Job continues
+- Next steps still run
 
-#### 🔍 Normal behavior (without it)
+---
 
-```yaml
-- name: Step
-  run: exit 1
+#### 🧃 Simple idea
+- Even if this step breaks, keep going
 
-```
-✅ With continue-on-error: true
-- name: Step
-  run: exit 1
-  continue-on-error: true
+---
 
-👉 Now:
-
-+ ❌ Step fails
-
-+ ✅ Job continues
-
-+ ✅ Next steps still run
-
-🧃 Simple analogy
-
-“Even if this step breaks, keep going.”
-
-📦 When to use it
-
-+ Non-critical checks
-
- + Optional steps (lint, warnings)
-
-+ Experiments / debugging
-
+#### 📦 When to use
+- Non-critical checks
+- Optional steps (like lint)
+- Testing or debugging
 
 ### Task 5: Putting It Together
 
