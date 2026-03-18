@@ -16,23 +16,24 @@
    
 Verify: Does it show up on the PR page?
 
-<img width="1356" height="382" alt="task1" src="https://github.com/user-attachments/assets/e7710bf0-6ef2-432b-a992-6d0c094ece68" />
 
+<img width="1356" height="382" alt="task1" src="https://github.com/user-attachments/assets/e7710bf0-6ef2-432b-a992-6d0c094ece68" />
+---
 
 <img width="1346" height="636" alt="task-1-partb" src="https://github.com/user-attachments/assets/51d7521e-2669-49c9-8dd3-675b63c0e036" />
-
+---
 
 
 <img width="1363" height="646" alt="task-1-partc" src="https://github.com/user-attachments/assets/3b44eba2-5cab-47e6-bb93-4c3546d333db" />
-
+---
 
 
 <img width="1366" height="615" alt="task-1-partd" src="https://github.com/user-attachments/assets/cc9beef1-97b1-4528-b848-2012560d3c0e" />
-
+---
 
 
 <img width="1366" height="473" alt="new-commit-PR-workflow" src="https://github.com/user-attachments/assets/7c46e130-57d5-420a-bc62-6ac52850b804" />
-
+---
 ### Task 2: Scheduled Trigger
 
 1. Add a schedule: trigger to any workflow using cron syntax
