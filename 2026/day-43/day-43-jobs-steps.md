@@ -103,13 +103,13 @@ What does `continue-on-error: true` do?
 
 > **It allows a step to fail without stopping the workflow.**
 
----
+
 
 #### 🧠 One-line memory
 
 > **“Fail the step → but don’t fail the job.”**
 
----
+
 
 #### 🔍 Normal behavior (without it)
 
@@ -117,8 +117,6 @@ What does `continue-on-error: true` do?
 - name: Step
   run: exit 1
 
-
----
 ```
 ✅ With continue-on-error: true
 - name: Step
