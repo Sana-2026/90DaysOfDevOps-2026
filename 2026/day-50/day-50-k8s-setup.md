@@ -86,6 +86,9 @@ The abbreviation K8s comes from replacing the 8 letters between K and s in Kuber
 
 ### 🔍 Verify Your Understanding
 
-- What happens when you run:  
-  ```bash
-  kubectl apply -f pod.yaml
+
+1. What happens when you run kubectl apply -f pod.yaml? Trace the request through each component.
+
+2. What happens if the API server goes down?
+
+3. What happens if a worker node goes down?
