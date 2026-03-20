@@ -459,9 +459,158 @@ kubectl get pods -A
 
 <img width="1196" height="297" alt="pod-running" src="https://github.com/user-attachments/assets/a38db639-92df-4ab4-974b-e7f434bbcd27" />
 
+#### 🔹 kube-system (Core Kubernetes components)
+
+These are internal system pods 👇
+
++ coredns → DNS service (resolves service names)
+
++ etcd → Cluster database
+
++ kube-apiserver → Main API entry point
+
++ kube-controller-manager → Maintains desired state
+
++ kube-scheduler → Assigns pods to nodes
+
++ kube-proxy → Networking rules
+
++ kindnet → Networking plugin (Kind cluster)
+
+✅ Overall Health
+
++ All pods are Running ✔
+
++ All are 1/1 Ready ✔
+
++ No restarts ✔
+
+👉 Cluster is healthy and working perfectly 🎉
+
+Look at the pods running in the kube-system namespace:
+``
+kubectl get pods -n kube-system
+``
+<img width="1111" height="351" alt="task5-6" src="https://github.com/user-attachments/assets/74d9ca24-5193-4daf-88ba-9c4134920c05" />
 
 
+🧠 Control Plane Components
 
++ Pod	Component	Responsibility
++ kube-apiserver-*	API Server	Entry point for all cluster communication
++ etcd-*	etcd	Stores cluster state (key-value DB)
++ kube-controller-manager-*	Controller Manager	Maintains desired state (reconciliation loop)
++ kube-scheduler-*	Scheduler	Assigns Pods to nodes based on resources
+
+💻 Node-Level Components
+
++ Pod	Component	Responsibility
++ kube-proxy-*	kube-proxy	Handles networking and service routing
++ kindnet-*	CNI Plugin	Provides Pod-to-Pod networking
+
+🌐 Cluster Add-ons
+
++ Pod	Component	Responsibility
++ coredns-*	CoreDNS	Internal DNS for service discovery
++ local-path-provisioner-*	Storage Provisioner	Dynamically provisions Persistent Volumes
+
+🧠 Architecture Mapping
+
++ Control Plane → API Server, etcd, Scheduler, Controller Manager
+
++ Node Layer → kube-proxy, CNI (kindnet)
+
++ Add-ons Layer → CoreDNS, Storage Provisioner
+
+✅ Observation
+
++ All components are running in kube-system namespace
+
++ All pods are in Running state
+
++ Cluster is healthy and fully functional
+
+🔥 One-Line Summary
+
+Each pod in the kube-system namespace represents a core Kubernetes component, covering control plane, node networking, and essential add-ons required for cluster operations.
+
+### Task 6: Practice Cluster Lifecycle
+
+Build muscle memory with cluster operations:
+```
+# Delete your cluster
+kind delete cluster --name devops-cluster
+# (or: minikube delete)
+
+# Recreate it
+kind create cluster --name devops-cluster
+# (or: minikube start)
+
+# Verify it is back
+kubectl get nodes
+```
+<img width="1366" height="694" alt="task6-a" src="https://github.com/user-attachments/assets/6488d4d5-bcfd-42c8-8e43-c6ad6f43f4f1" />
+
+```
+# Check which cluster kubectl is connected to
+kubectl config current-context
+
+# List all available contexts (clusters)
+kubectl config get-contexts
+
+# See the full kubeconfig
+kubectl config view
+
+```
+### 📄 What is a kubeconfig? Where is it stored?
+
+A **kubeconfig** is a configuration file used by `kubectl` to connect to a Kubernetes cluster.
+
+It contains:
+- Cluster details (API server endpoint)
+- User credentials (certificates/tokens)
+- Contexts (which cluster + user + namespace to use)
+
+👉 It tells `kubectl` **how and where to communicate with the cluster**
+
+---
+
+#### 📍 Where is it stored?
+
+#### 🔹 Default Location
+
+On Linux / WSL / macOS:
+
+~/.kube/config
+
+
+On Windows:
+
+C:\Users<username>.kube\config
+
+
+---
+
+## 🧩 What is inside kubeconfig?
+
+### 1. Clusters
+- API server URL
+- Certificate authority data
+
+### 2. Users
+- Authentication info (certs/tokens)
+
+### 3. Contexts
+- Combination of cluster + user + namespace
+
+---
+
+## 🔍 Useful Commands
+
+```bash
+kubectl config view             # View full config
+kubectl config current-context # Show active context
+kubectl config get-contexts    # List all contexts
 
 
 
