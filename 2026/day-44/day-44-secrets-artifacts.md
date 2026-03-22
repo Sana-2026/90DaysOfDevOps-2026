@@ -72,6 +72,9 @@ Attackers may modify or delete infrastructure, causing downtime
 
 <img width="997" height="323" alt="task2-b" src="https://github.com/user-attachments/assets/df87513c-9059-4118-85c8-d83c582adf0d" />
 
+<img width="1203" height="591" alt="task2-c" src="https://github.com/user-attachments/assets/3c2170e4-3461-4f26-9bde-22bddce200e4" />
+
+
 ---
 
 ## 🔹 Task 3: Upload Artifacts
