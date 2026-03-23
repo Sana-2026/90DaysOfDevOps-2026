@@ -187,6 +187,7 @@ Store generated:
 
 <img width="1354" height="622" alt="task6" src="https://github.com/user-attachments/assets/1f178c3e-4be4-49a2-b119-e4ccb773e0d8" />
 
+[test-CI.yml](https://github.com/Sana-2026/90DaysOfDevOps-2026/tree/master/2026/day-44)
 ---
 
 ## 🔹 Task 6: Caching
