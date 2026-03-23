@@ -1,0 +1,33 @@
+name: Test CI 
+on: workflow_dispatch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Give Execute Permissions
+        run: chmod +x ./system-info.sh
+
+      - name: Run script
+        run: ./system-info.sh
+    
+
+  run-python-script:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout code
+         uses : actions/checkout@v4
+
+       - name: Setup python
+         uses: actions/setup-python@v5
+         with:
+           python-version: '3.12'
+
+       - name: Install Dependencies
+         run: |
+           python -m pip install --upgrade pip
+           pip install -r requirements.txt
+         
