@@ -18,8 +18,9 @@
 - Observe what GitHub shows  
 
 👉 Output in logs:
-
+```
 ***
+```
 
 ##### Why does this happen?
 
