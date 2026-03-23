@@ -214,7 +214,7 @@ Store generated:
 #### 🔹 What is being cached?
 
 When we use:
-```yaml
+
 cache: 'pip'
 
 👉 GitHub caches:
