@@ -213,7 +213,7 @@ Store generated:
 ### Notes:
 #### 🔹 What is being cached?
 
-When you use:
+When we use:
 ```yaml
 cache: 'pip'
 
