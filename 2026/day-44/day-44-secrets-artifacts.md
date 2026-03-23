@@ -179,7 +179,13 @@ Store generated:
 
 ### Practice:
 - Intentionally break the script → see failure  
-- Fix it → see success  
+- Fix it → see success
+- 
+<img width="1366" height="654" alt="task5" src="https://github.com/user-attachments/assets/caa36742-215d-479c-a8b5-84384c8e2b2b" />
+
+<img width="1366" height="588" alt="task5-b" src="https://github.com/user-attachments/assets/7bc43888-2e7d-4bf6-857d-40b34216268c" />
+
+<img width="1354" height="622" alt="task6" src="https://github.com/user-attachments/assets/1f178c3e-4be4-49a2-b119-e4ccb773e0d8" />
 
 ---
 
@@ -188,10 +194,77 @@ Store generated:
 
 ### Steps:
 - Run workflow twice  
-- Compare execution time  
+- Compare execution time
+
+### First Run
+<img width="1279" height="514" alt="task6-time-first" src="https://github.com/user-attachments/assets/6350ecba-8e18-4c6f-a903-a311e71549f0" />
+
+<img width="1357" height="638" alt="task6-first-run" src="https://github.com/user-attachments/assets/0521ecf6-c9a9-4736-8df1-7833c645340e" />
+
+### Second Run
+
+<img width="1343" height="637" alt="task6-secondrun" src="https://github.com/user-attachments/assets/988a5b92-ea4a-4610-93b8-5d1f617a33a9" />
+
+
+<img width="1357" height="608" alt="task6-cache" src="https://github.com/user-attachments/assets/702fc2fb-851e-4eb8-acda-badcb4098afb" />
+
+
 
 ### Notes:
-- What is cached?
-  - Dependencies (e.g., pip packages, node_modules)  
-- Where is it stored?
-  - GitHub’s cache storage (remote, tied to repo & key)  
+#### 🔹 What is being cached?
+
+When you use:
+```yaml
+cache: 'pip'
+
+👉 GitHub caches:
+
+📦 Downloaded Python packages (used by pip)
+
+📁 Files stored in:
+
+~/.cache/pip
+📌 Includes:
++ .whl files (pre-built packages)
++ Source files
++ Dependency metadata
+🔹 Where is it stored?
+
+🖥️ Inside the runner (temporary)
+
+/home/runner/.cache/pip
+
+☁️ GitHub Cloud (main storage)
+
++ Stored outside your repo
++ Managed by GitHub Actions
++ Linked with:
+   + OS (ubuntu-latest)
+   + Python version
+   + requirements.txt
+
+🔄 How caching works (Easy Flow)
+
+1. 🔍 GitHub tries to find cache
+
+2. ❌ If not found → installs dependencies normally
+
+3. 💾 Cache gets saved after job
+
+4. ⚡ Next run → cache is reused (faster)
+
+❗ Important Points
+1. ❌ Cache is NOT installed packages
+
+2. ✅ Cache is only downloaded files
+
+3. ❌ Not permanent (can be deleted by GitHub)
+
+4. ✅ Used to speed up future runs
+
+🧠 Easy Memory Trick
+
+“Cache = downloads saved → faster installs later”
+
+⚡ Simple Flow
+pip install → download → cache saved → reuse next time
