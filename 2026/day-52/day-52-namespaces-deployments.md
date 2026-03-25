@@ -127,6 +127,7 @@ Notice that kubectl get pods without -n only shows the default namespace. You mu
 <img width="1160" height="236" alt="task2-d" src="https://github.com/user-attachments/assets/2f12a333-d3be-4949-a970-ad411a014359" />
 
 Verify: Does kubectl get pods show these pods? no it did not show
+
 What about kubectl get pods -A? here all pods are shown
 
 <img width="1366" height="430" alt="task2-e" src="https://github.com/user-attachments/assets/77ea3f8b-df11-4305-b4d7-211fca42c6c5" />
