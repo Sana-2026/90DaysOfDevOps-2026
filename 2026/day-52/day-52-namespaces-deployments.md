@@ -173,3 +173,86 @@ You should see 3 pods with names like nginx-deployment-xxxxx-yyyyy.
 **Verify**: What do the READY, UP-TO-DATE, and AVAILABLE columns mean in the deployment output?
 
 ---
+
+### Task 4: Self-Healing — Delete a Pod and Watch It Come Back
+This is the key difference between a Deployment and a standalone Pod.
+
+#### List pods
+``kubectl get pods -n dev``
+
+#### Delete one of the deployment's pods (use an actual pod name from your output)
+
+``kubectl delete pod <pod-name> -n dev``
+
+#### Immediately check again
+
+``kubectl get pods -n dev``
+
+The Deployment controller detects that only 2 of 3 desired replicas exist and immediately creates a new one. The deleted pod is replaced within seconds.
+
+Verify: Is the replacement pod's name the same as the one you deleted, or different?
+---
+
+### Task 5: Scale the Deployment
+
+Change the number of replicas:
+
+#### Scale up to 5
+```
+kubectl scale deployment nginx-deployment --replicas=5 -n dev
+kubectl get pods -n dev
+```
+
+#### Scale down to 2
+```
+kubectl scale deployment nginx-deployment --replicas=2 -n dev
+kubectl get pods -n dev
+```
+Watch how Kubernetes creates or terminates pods to match the desired count.
+
+You can also scale by editing the manifest — change replicas: 4 in your YAML file and run kubectl apply -f nginx-deployment.yaml again.
+
+**Verify**: When you scaled down from 5 to 2, what happened to the extra pods?
+
+---
+### Task 6: Rolling Update
+
+Update the Nginx image version to trigger a rolling update:
+
+``kubectl set image deployment/nginx-deployment nginx=nginx:1.25 -n dev``
+
+Watch the rollout in real time:
+```
+kubectl rollout status deployment/nginx-deployment -n dev
+Kubernetes replaces pods one by one — old pods are terminated only after new ones are healthy. This means zero downtime.
+```
+Check the rollout history:
+
+``kubectl rollout history deployment/nginx-deployment -n dev``
+
+Now roll back to the previous version:
+```
+kubectl rollout undo deployment/nginx-deployment -n dev
+kubectl rollout status deployment/nginx-deployment -n dev
+```
+Verify the image is back to the previous version:
+
+``kubectl describe deployment nginx-deployment -n dev | grep Image``
+
+**Verify**: What image version is running after the rollback?
+---
+
+### Task 7: Clean Up
+```
+kubectl delete deployment nginx-deployment -n dev
+kubectl delete pod nginx-dev -n dev
+kubectl delete pod nginx-staging -n staging
+kubectl delete namespace dev staging production
+```
+Deleting a namespace removes everything inside it. Be very careful with this in production.
+```
+kubectl get namespaces
+kubectl get pods -A
+```
+**Verify**: Are all your resources gone?
+
