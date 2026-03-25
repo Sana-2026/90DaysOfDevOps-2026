@@ -28,7 +28,7 @@ These are the control plane components keeping your cluster alive. Do not touch 
 
 Verify: How many pods are running in ``kube-system``? 8 Pods are running
 
-
+---
 ### Task 2: Create and Use Custom Namespaces
 Create two namespaces — one for a development environment and one for staging:
 ```
@@ -65,13 +65,8 @@ kubectl run nginx-staging --image=nginx:latest -n staging
 #### 1️⃣ `kubectl run`
 👉 Creates a **Pod** (quick way, mostly for testing/debugging)
 
----
-
 #### 2️⃣ `nginx-dev`
 👉 This is the **name of the Pod**
-
-
----
 
 #### 3️⃣ `--image=nginx:latest`
 👉 Specifies the **container image**
@@ -81,15 +76,11 @@ kubectl run nginx-staging --image=nginx:latest -n staging
 
 📦 Kubernetes will pull the image from **Docker Hub**
 
----
-
 #### 4️⃣ `-n dev`
 👉 Namespace flag
 
 - Creates the Pod inside the **dev namespace**
 - Instead of the default namespace
-
----
 
 ### 📦 What actually happens behind the scenes
 
@@ -97,8 +88,6 @@ kubectl run nginx-staging --image=nginx:latest -n staging
 - Inside it → **1 container running nginx**
 - Scheduled to a node
 - Image pulled (if not already present)
-
----
 
 ## ✅ Equivalent YAML 
 
@@ -132,3 +121,55 @@ What about kubectl get pods -A? here all pods are shown
 
 <img width="1366" height="430" alt="task2-e" src="https://github.com/user-attachments/assets/77ea3f8b-df11-4305-b4d7-211fca42c6c5" />
 
+---
+
+### Task 3: Create Your First Deployment
+A Deployment tells Kubernetes: "I want X replicas of this Pod running at all times." If a Pod crashes, the Deployment controller recreates it automatically.
+
+Create a file nginx-deployment.yaml:
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: dev
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.24
+        ports:
+        - containerPort: 80
+```
+Key differences from a standalone Pod:
+
++ kind: Deployment instead of kind: Pod
++ apiVersion: apps/v1 instead of v1
++ replicas: 3 tells Kubernetes to maintain 3 identical pods
++ selector.matchLabels connects the Deployment to its Pods
++ template is the Pod template — the Deployment creates Pods using this blueprint
+
+**Apply it**:
+```
+kubectl apply -f nginx-deployment.yaml
+```
+**Check the result**:
+```
+kubectl get deployments -n dev
+kubectl get pods -n dev
+```
+You should see 3 pods with names like nginx-deployment-xxxxx-yyyyy.
+
+**Verify**: What do the READY, UP-TO-DATE, and AVAILABLE columns mean in the deployment output?
+
+---
