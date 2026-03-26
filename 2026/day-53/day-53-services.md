@@ -202,7 +202,44 @@ kubectl get nodes -o wide
 curl http://localhost:30080
 ```
 **Verify**: Can you see the Nginx welcome page from your browser or terminal using the NodePort?
+<img width="1371" height="645" alt="task4" src="https://github.com/user-attachments/assets/c83d6ef0-5310-4979-9734-b2cc22dc9716" />
 
+---
+
+### Task 5: LoadBalancer Service (Cloud External Access)
+
+In a cloud environment (AWS, GCP, Azure), a LoadBalancer Service provisions a real external load balancer that routes traffic to your nodes.
+
+Create ``loadbalancer-service.yaml``:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: web-app
+  ports:
+  - port: 80
+    targetPort: 80
+```
+```
+kubectl apply -f loadbalancer-service.yaml
+kubectl get services
+```
+On a local cluster (Minikube, Kind, Docker Desktop), the EXTERNAL-IP will show <pending> because there is no cloud provider to create a real load balancer. This is expected.
+
+If you are using Minikube:
+```
+# Minikube can simulate a LoadBalancer
+minikube tunnel
+# In another terminal, check again:
+kubectl get services
+```
+In a real cloud cluster, the EXTERNAL-IP would be a public IP address or hostname provisioned by the cloud provider.
+
+Verify: What does the EXTERNAL-IP column show? Why is it <pending> on a local cluster?
 
 ---
 
