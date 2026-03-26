@@ -123,10 +123,86 @@ web-app-66cb479f59-xkndl   → 10.244.0.165
 👉 Kubernetes does:
 
 Request → Service → (one of these 3 Pods)
-Could go to 10.244.0.165
-Or 10.244.0.166
-Or 10.244.0.167
+
++ Could go to 10.244.0.165
+
++ Or 10.244.0.166
+
++ Or 10.244.0.167
+---
+### Task 3: Discover Services with DNS
+
+Kubernetes has a built-in DNS server. Every Service gets a DNS entry automatically:
+
+``<service-name>.<namespace>.svc.cluster.local``
+Test this:
+```
+kubectl run dns-test --image=busybox:latest --rm -it --restart=Never -- sh
+
+# Inside the pod:
+# Short name (works within the same namespace)
+wget -qO- http://web-app-clusterip
+
+# Full DNS name
+wget -qO- http://web-app-clusterip.default.svc.cluster.local
+
+<img width="1333" height="664" alt="task3-a" src="https://github.com/user-attachments/assets/ccd22e02-acf8-4d59-a105-f24fe2e104cb" />
+
+# Look up the DNS entry
+nslookup web-app-clusterip
+exit
+```
+Both the short name and the full DNS name resolve to the same ClusterIP. In practice, you use the short name when communicating within the same namespace and the full name when reaching across namespaces.
+
+<img width="909" height="282" alt="image" src="https://github.com/user-attachments/assets/25aed58b-fbaa-49f6-9717-14fc765ba18c" />
+
+Verify: What IP does nslookup return? 10.96.60.95
+Does it match the CLUSTER-IP from kubectl get services? yes it match
+
+<img width="1333" height="664" alt="task3-a" src="https://github.com/user-attachments/assets/a1bbfd34-0c71-491f-a987-3ac71083062e" />
+
 ---
 
+### Task 4: NodePort Service (External Access via Node)
+A NodePort Service exposes your application on a port on every node in the cluster. This lets you access the Service from outside the cluster.
 
+Create ``nodeport-service.yaml``:
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-nodeport
+spec:
+  type: NodePort
+  selector:
+    app: web-app
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
+```
++ ``nodePort: 30080`` — the port opened on every node (must be in range 30000-32767)
++ Traffic flow: ``<NodeIP>:30080`` -> Service -> Pod:80
+
+``
+kubectl apply -f nodeport-service.yaml
+kubectl get services
+``
+Access the service:
+```
+# If using Minikube
+minikube service web-app-nodeport --url
+
+# If using Kind, get the node IP first
+kubectl get nodes -o wide
+# Then curl <node-internal-ip>:30080
+
+# If using Docker Desktop
+curl http://localhost:30080
+```
+**Verify**: Can you see the Nginx welcome page from your browser or terminal using the NodePort?
+
+
+---
 
