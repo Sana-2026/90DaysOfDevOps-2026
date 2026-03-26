@@ -107,7 +107,26 @@ exit
 
 You should see the Nginx welcome page. The Service load-balanced your request to one of the 3 Pods.
 
-**Verify**: Does the Service respond? Try running the wget command multiple times — the Service distributes traffic across all healthy Pods
+**Verify**: Does the Service respond? Try running the wget command multiple times — the Service distributes traffic across all healthy Pods 
 
+<img width="1352" height="149" alt="task-b" src="https://github.com/user-attachments/assets/8777f7bc-ab17-4a9e-9895-af2068211505" />
+
+web-app-66cb479f59-jl94f   → 10.244.0.167
+web-app-66cb479f59-jn9hf   → 10.244.0.166
+web-app-66cb479f59-xkndl   → 10.244.0.165
+3 running Pods, each with a different IP
+
+1. Deployment is healthy ✅
+2. Multiple replicas are running ✅
+3. Each Pod has its own IP (important concept)
+
+👉 Kubernetes does:
+
+Request → Service → (one of these 3 Pods)
+Could go to 10.244.0.165
+Or 10.244.0.166
+Or 10.244.0.167
 ---
+
+
 
