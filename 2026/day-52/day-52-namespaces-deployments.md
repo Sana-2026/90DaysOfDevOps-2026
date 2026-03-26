@@ -170,9 +170,59 @@ kubectl get pods -n dev
 ```
 You should see 3 pods with names like nginx-deployment-xxxxx-yyyyy.
 
+this one is with error **InvalidImageName** 
+<img width="976" height="230" alt="task3" src="https://github.com/user-attachments/assets/341122fb-141f-43d7-ab0d-0fc4aa7bf8bd" />
+
+<img width="1217" height="271" alt="task3-correct" src="https://github.com/user-attachments/assets/fd3f88ba-cbe9-4929-a5f4-0fa722270d34" />
+
 **Verify**: What do the READY, UP-TO-DATE, and AVAILABLE columns mean in the deployment output?
 
----
+#### 📊 Deployment Columns 
+
+#### 🔁 Think in this order:
+
+👉 **1. UP-TO-DATE → 2. READY → 3. AVAILABLE**
+
+
+
+#### 1️⃣ UP-TO-DATE (Updated?)
+👉 Are Pods running the **latest version**?
+
+- Shows how many Pods got the **new image/config**
+- Used during **rolling updates**
+
+🧠 Memory:
+ First update the Pods
+
+#### 2️⃣ READY (Healthy?)
+👉 Are Pods **running and ready**?
+
+- Format: `ready/desired`
+- Example: `3/3`
+
+🧠 Memory:
+Then check if they are healthy
+
+#### 3️⃣ AVAILABLE (Serving?)
+👉 Are Pods **serving traffic**?
+
+- Must be ready + stable
+- Used by Service to send traffic
+
+🧠 Memory:
+ Finally, can users use them?
+
+#### 🎯 One-Line Flow 
+
+👉 **Updated → Healthy → Serving**
+
+## 🔥 Real Example
+
+```text
+READY   UP-TO-DATE   AVAILABLE
+2/3     3            2
+```
+
 
 ### Task 4: Self-Healing — Delete a Pod and Watch It Come Back
 This is the key difference between a Deployment and a standalone Pod.
@@ -214,6 +264,41 @@ You can also scale by editing the manifest — change replicas: 4 in your YAML f
 
 **Verify**: When you scaled down from 5 to 2, what happened to the extra pods?
 
+<img width="815" height="147" alt="down-scale-pods" src="https://github.com/user-attachments/assets/5278f9a5-ed7a-433f-81f1-39a10423c0fa" />
+
+
+#### 🔻 Scale Down Behavior
+
+When you scale a Kubernetes Deployment down (e.g., from 5 replicas to 2), the **extra pods are terminated (deleted)** by Kubernetes.
+
+#### Step-by-step:
+- Kubernetes compares **desired state (2 replicas)** vs **current state (5 replicas)**
+- It identifies **3 extra pods**
+- Those extra pods are **gracefully terminated**
+
+---
+
+#### ⚙️ What “graceful termination” means
+
+- Kubernetes sends a **SIGTERM signal** to the containers  
+- Gives them time (default **30 seconds**) to shut down cleanly  
+- If they don’t stop in time → Kubernetes force kills them (**SIGKILL**)  
+
+---
+
+#### 🧠 Important Notes (DevOps perspective)
+
+- Pods are **ephemeral** → they are not preserved unless backed by storage  
+- If using a **Deployment**, pods are interchangeable → any 3 pods can be deleted  
+- If using a **StatefulSet**, Kubernetes deletes pods in **reverse order**  
+  - Example: `pod-4`, `pod-3`, `pod-2`  
+
+---
+
+#### 📌 One-line Memory Trick
+
+> **Scale down = Kubernetes deletes extra pods to match desired state**
+
 ---
 ### Task 6: Rolling Update
 
@@ -226,9 +311,13 @@ Watch the rollout in real time:
 kubectl rollout status deployment/nginx-deployment -n dev
 Kubernetes replaces pods one by one — old pods are terminated only after new ones are healthy. This means zero downtime.
 ```
+<img width="1334" height="450" alt="task6-a" src="https://github.com/user-attachments/assets/9f7823a6-88e2-4e86-a887-fd00b00c482d" />
+
 Check the rollout history:
 
 ``kubectl rollout history deployment/nginx-deployment -n dev``
+
+<img width="1249" height="131" alt="task6-b" src="https://github.com/user-attachments/assets/5075985d-da16-48d9-8399-5d2414d65331" />
 
 Now roll back to the previous version:
 ```
@@ -239,7 +328,10 @@ Verify the image is back to the previous version:
 
 ``kubectl describe deployment nginx-deployment -n dev | grep Image``
 
+<img width="1300" height="168" alt="task6-c" src="https://github.com/user-attachments/assets/defa7a10-0da2-4046-b312-0fd082ba0570" />
+
 **Verify**: What image version is running after the rollback?
+old version nginx: 1.24
 ---
 
 ### Task 7: Clean Up
@@ -249,10 +341,14 @@ kubectl delete pod nginx-dev -n dev
 kubectl delete pod nginx-staging -n staging
 kubectl delete namespace dev staging production
 ```
+<img width="1203" height="251" alt="task7" src="https://github.com/user-attachments/assets/375f68d3-78bc-4ae5-b264-e7283278a3bb" />
+
 Deleting a namespace removes everything inside it. Be very careful with this in production.
 ```
 kubectl get namespaces
 kubectl get pods -A
 ```
-**Verify**: Are all your resources gone?
+**Verify**: Are all your resources gone? yes gone
+
+<img width="1283" height="410" alt="task7a" src="https://github.com/user-attachments/assets/fa5f0747-67dc-4f1a-a6bb-e65c111a9214" />
 
