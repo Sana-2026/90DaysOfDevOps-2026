@@ -60,6 +60,8 @@ Note the individual Pod IPs. These will change if pods restart — that is the p
 
 <img width="1344" height="347" alt="task1" src="https://github.com/user-attachments/assets/20425e97-d57b-45d5-840d-607d74defb9f" />
 
+<img width="1237" height="524" alt="task1b" src="https://github.com/user-attachments/assets/e2d612ab-d2f7-4eb0-9aea-3a91878ec7dc" />
+
 ---
 
 ### Task 2: ClusterIP Service (Internal Access)
