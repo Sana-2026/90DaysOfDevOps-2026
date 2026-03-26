@@ -15,11 +15,11 @@ A **Service** solves both problems by providing:
 - **Load balancing** across all Pods that match its selector  
 
 ### 🔁 Traffic Flow
-
+```
 [Client] --> [Service (stable IP)] --> [Pod 1]
---> [Pod 2]
---> [Pod 3]
-
+                                   --> [Pod 2]
+                                   --> [Pod 3]
+```
 ---
 
 ### Challenge Tasks
