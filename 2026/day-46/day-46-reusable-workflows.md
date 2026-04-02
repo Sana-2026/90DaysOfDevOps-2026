@@ -123,7 +123,7 @@ steps:
 
 
  
-4. Where must a reusable workflow file live?
+**4. Where must a reusable workflow file live?**
 
 👉 A reusable workflow must be stored inside:
 
@@ -136,4 +136,29 @@ If it’s not inside ``.github/workflows/`` → it cannot be called as a reusabl
 + GitHub only recognizes workflows from this directory
 + Required for workflow_call to work
 + Other workflows reference this exact path when calling it
+
+---
+
+Task 2: Create Your First Reusable Workflow
+
+Create ``.github/workflows/reusable-build.yml``:
+
+1.Set the trigger to``workflow_call``
+
+2.Add an ``inputs``: section with:
+   + ``app_name`` (string, required)
+   + ``environment`` (string, required, default: ``staging``)
+     
+3.Add a ``secrets``: section with:
+  + ``docker_token`` (required)
+
+4. Create a job that:
+  + Checks out the code
+  + Prints Building <app_name> for <environment>
+  + Prints Docker token is set: true (never print the actual secret)
+
+**Verify**: This file alone won't run — it needs a caller. That's next.
+
+---
+
 
