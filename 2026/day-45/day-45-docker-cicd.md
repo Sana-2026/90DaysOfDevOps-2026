@@ -8,6 +8,7 @@ Make sure DOCKER_USERNAME and DOCKER_TOKEN secrets are set from Day 44 added sec
 
 <img width="1021" height="582" alt="task1" src="https://github.com/user-attachments/assets/f5d47e85-fe34-4ebc-b034-66f0c944e50a" />
 ---
+
 ### Task 2: Build the Docker Image in CI
 Create ``.github/workflows/docker-publish.yml`` that:
 
