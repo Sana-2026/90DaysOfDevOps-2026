@@ -4,7 +4,7 @@
 
 ### Task 1: Understand workflow_call
 
-1. What is a reusable workflow?
+**1. What is a reusable workflow?**
 
 A reusable workflow in GitHub Actions is:
 
@@ -36,7 +36,7 @@ jobs:
 ```
 
 
-2. What is the workflow_call trigger?
+**2. What is the workflow_call trigger?**
 
 👉 workflow_call is a trigger that allows one workflow to be called by another workflow.
 
@@ -72,7 +72,7 @@ jobs:
 
 ```
 
-4. How is calling a reusable workflow different from using a regular action (uses:)?
+**3. How is calling a reusable workflow different from using a regular action (uses:)?**
 
 #### 🔁 Calling a Reusable Workflow vs Using a Regular Action
 
@@ -123,7 +123,7 @@ steps:
 
 
  
-6. Where must a reusable workflow file live?
+4. Where must a reusable workflow file live?
 
 👉 A reusable workflow must be stored inside:
 
