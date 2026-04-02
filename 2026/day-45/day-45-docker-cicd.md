@@ -17,12 +17,17 @@ Create ``.github/workflows/docker-publish.yml`` that:
 3. Builds the Docker image and tags it
 Verify: Check the build step logs — does the image build successfully?
 ---
+
 ### Task 3: Push to Docker Hub
+
 Add steps to:
 
-Log in to Docker Hub using your secrets
-Tag the image as username/repo:latest and also username/repo:sha-<short-commit-hash>
-Push both tags
+1. Log in to Docker Hub using your secrets
+
+2. Tag the image as username/repo:latest and also username/repo:sha-<short-commit-hash>
+
+3. Push both tags
+   
 Verify: Go to Docker Hub — is your image there with both tags?
 
 <img width="1366" height="620" alt="task2-c" src="https://github.com/user-attachments/assets/effc8d66-813e-44b7-ba85-2d09bdfa1e9f" />
