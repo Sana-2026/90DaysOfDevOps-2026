@@ -7,6 +7,7 @@ Add the Dockerfile to your github-actions-practice repo
 Make sure DOCKER_USERNAME and DOCKER_TOKEN secrets are set from Day 44 added secrets for Bank AI repo
 
 <img width="1021" height="582" alt="task1" src="https://github.com/user-attachments/assets/f5d47e85-fe34-4ebc-b034-66f0c944e50a" />
+
 ---
 
 ### Task 2: Build the Docker Image in CI
@@ -16,6 +17,7 @@ Create ``.github/workflows/docker-publish.yml`` that:
 2. Checks out the code
 3. Builds the Docker image and tags it
 Verify: Check the build step logs — does the image build successfully?
+
 ---
 
 ### Task 3: Push to Docker Hub
