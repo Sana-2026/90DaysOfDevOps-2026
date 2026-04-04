@@ -180,7 +180,37 @@ jobs:
 ```
 3. Push to main and watch it run
 
-Verify: In the Actions tab, do you see the caller triggering the reusable workflow? Click into the job — can you see the inputs printed?
+Verify: In the Actions tab, do you see the caller triggering the reusable workflow? Click into the job — can you see the inputs printed? yes 
 
 <img width="1329" height="619" alt="task3" src="https://github.com/user-attachments/assets/f5091c1c-5402-4d66-b80e-b874ad811de4" />
+
+<img width="1341" height="554" alt="task-4a" src="https://github.com/user-attachments/assets/0a35e8cc-2af8-4133-ba89-06ff61e36911" />
+
+<img width="1329" height="486" alt="task-4b" src="https://github.com/user-attachments/assets/62a8389c-aaf2-4345-b37c-966480127826" />
+
+
+### Task 5: Create a Composite Action
+Create a custom composite action in your repo at ``.github/actions/setup-and-greet/action.yml``:
+
+1. Define inputs: ``name`` and ``language`` (default: ``en``)
+2. Add steps that:
+  + Print a greeting in the specified language
+  + Print the current date and runner OS
+  + Set an output called ``greeted`` with value ``true``
+3. Use the composite action in a new workflow with ``uses: ./.github/actions/setup-and-greet``
+Verify: Does your custom action run and print the greeting?
+
+<img width="1354" height="591" alt="task5" src="https://github.com/user-attachments/assets/0972f4bb-88fc-4cd1-80cd-2d83b4be47ae" />
+
+### Task 6: Reusable Workflow vs Composite Action
+Fill this in your notes:
+
+| Feature                      | Reusable Workflow            | Composite Action                    |
+| ---------------------------- | ---------------------------- | ----------------------------------- |
+| Triggered by                 | `workflow_call`              | `uses:` in a step                   |
+| Can contain jobs?            | ✅ Yes (multiple jobs)        | ❌ No                                |
+| Can contain multiple steps?  | ✅ Yes                        | ✅ Yes                               |
+| Lives where?                 | `.github/workflows/`         | `.github/actions/<name>/action.yml` |
+| Can accept secrets directly? | ✅ Yes                        | ❌ No (passed via workflow)          |
+| Best for                     | Reusing full CI/CD pipelines | Reusing repeated steps              |
 
