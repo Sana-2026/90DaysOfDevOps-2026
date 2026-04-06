@@ -1,4 +1,4 @@
-Day 47 – Advanced Triggers: PR Events, Cron Schedules & Event-Driven Pipelines
+# Day 47 – Advanced Triggers: PR Events, Cron Schedules & Event-Driven Pipelines
 ## Task 1: Pull Request Event Types
 
 Create `.github/workflows/pr-lifecycle.yml` that triggers on `pull_request` with **specific activity types**:
