@@ -48,3 +48,37 @@ Create `.github/workflows/pr-checks.yml` — a real-world PR gate:
    - Warns (but doesn't fail) if the PR description is empty
 
 **Verify:** Open a PR from a badly named branch — does the check fail?
+
+<img width="1345" height="629" alt="task2" src="https://github.com/user-attachments/assets/c6a9c6c5-14a9-4cf3-b16b-984bea275b2e" />
+
+### Task 3: Scheduled Workflows (Cron Deep Dive)
+
+Create ``.github/workflows/scheduled-tasks.yml``:
+
+Add a ``schedule`` trigger with cron: ``'30 2 * * 1'`` (every Monday at 2:30 AM UTC)
+Add another cron entry: ``'0 */6 * * *'`` (every 6 hours)
+In the job, print which schedule triggered using ``${{ github.event.schedule }}``
+Add a step that acts as a **health check** — curl a URL and check the response code
+**Important**: Also add ``workflow_dispatch`` so you can test it manually without waiting for the schedule.
+
+<img width="1318" height="616" alt="task3" src="https://github.com/user-attachments/assets/4777fd77-42c9-48eb-9eac-9a092506c5e5" />
+
+Write in your notes:
+
++ The cron expression for: every weekday at 9 AM IST ``30 3 * * 1-5``
+     + 30 → minute 30
+     + 3 → 3 AM UTC
+     + * * → every day/month
+     + 1-5 → Monday to Friday
+    
++ The cron expression for: first day of every month at midnight ``30 18 28-31 * *``
++ Why GitHub says scheduled workflows may be delayed or skipped on inactive repos
+ + Not exact timing (best-effort system)
+ + Less priority for inactive repos
+ + GitHub server load can delay jobs
+ + Only runs from default branch
+ + Disabled Actions = no schedule run
+
+
+
+
