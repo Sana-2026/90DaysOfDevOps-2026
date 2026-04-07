@@ -79,6 +79,25 @@ Write in your notes:
  + Only runs from default branch
  + Disabled Actions = no schedule run
 
+### Task 4: Path & Branch Filters
+Create ``.github/workflows/smart-triggers.yml:``
 
+Trigger on push but only when files in src/ or app/ change:
+```
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'app/**'
+```
+Add ``paths-ignore`` in a second workflow that skips runs when only docs change:
+paths-ignore:
+```
+  - '*.md'
+  - 'docs/**'
+```
+Add branch filters to only trigger on main and release/* branches
+Test it: push a change to a .md file — does the workflow skip?
+Write in your notes: When would you use paths vs paths-ignore?
 
 
