@@ -1,0 +1,33 @@
+name: Scheduled Task
+
+on:
+  schedule:
+    - cron: '30 2 * * 1' # Runs every Monday at 2:30 AM UTC
+    - cron: '0 */6 * * *' # Runs every 6 hours
+  workflow_dispatch: # Allows manual triggering of the workflow 
+
+jobs:
+  scheduled-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+     
+      - name: Print which Scheduled triggered
+        run: |
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+            echo "This workflow was triggered by a schedule event."
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then  
+            echo "This workflow was triggered manually."
+          fi
+      - name: Health check
+        run: |
+          echo "Performing health check..."
+        
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://www.trainwithshubham.com/)
+          If [ "$RESPONSE" -ne 200 ]; then
+            echo "Health check failed with status code: $RESPONSE"
+            exit 1
+          fi
+        
+           echo "Health check completed successfully: $RESPONSE "
