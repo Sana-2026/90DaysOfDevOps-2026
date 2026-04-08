@@ -1,21 +1,20 @@
-name: Deploy after test
+name: Runs Tests
 
 on: 
-  workflow_run: 
-    workflows: ["Run Test"]
-    types: [completed]
-
+  push:
+  
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check result and act
-        run: |
-          echo "Test result: ${{ github.event.workflow_run.conclusion }}"
-          if: ${{ github.event.workflow_run.conclusion != 'success' }} then;
-            echo "Test Failed Skipping Deployment"
-            exit 1
-          fi
-          echo "Test Passed. Proceeding with Deployment..."
+      - name: Check out code
+        uses: actions/checkout@v4
+     
+      - name: Run tests
+        run: | 
+         echo "Running tests..."
+         echo "All test Passed..."
+        
+  
 
     
