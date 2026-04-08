@@ -1,0 +1,20 @@
+name: Docs ignore workflow
+on:
+  push:
+    branches:
+      - main
+      - release/*
+    paths-ignore:
+      - 'docs/**'  # Ignore changes in the docs/ directory
+      - *.md  # Ignore changes to markdown files
+    
+jobs:
+  ignore-docs-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+     
+      - name: Print message
+        run: |
+          echo "This workflow was triggered by a push to the main branch or release branches, but changes in the docs and markdown files are ignored."
