@@ -1,0 +1,20 @@
+name: Smart Triggers workflow
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'  
+      - 'app/**'
+
+
+jobs:
+  triggers-on-src-or-app-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+     
+      - name: Print message
+        run: |
+          echo "This workflow was triggered by a push to the main branch with changes in src/ or app/ directories." 
