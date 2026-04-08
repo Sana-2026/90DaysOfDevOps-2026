@@ -1,0 +1,45 @@
+name: PR Check
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  file-size-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out Code
+        uses: actions/checkout@v3
+
+      - name: Check for Large Files
+        run: |
+          # check for files larger than 1MB and fail if any are found
+           file=$(find . -type f -size +1M)
+            if [ -n "$file" ]; then
+              echo "Error: The following files are larger than 1MB:"
+              echo "$file"
+              exit 1
+            fi
+  
+  branch-name-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Branch Name Pattern
+        run: |
+          branch_name="${GITHUB_HEAD_REF}"
+          # Fails if it doesn't follow the pattern `feature/*`, `fix/*`, or `docs/*`
+          if [[ ! $branch_name =~ ^(feature|fix|docs)\/.+$ ]]; then
+            echo "Error: Branch name must follow the pattern 'feature/*', 'fix/*', or 'docs/*'."
+            exit 1
+          fi
+  
+  pr-body-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR Body Length
+        run: |
+          pr_body="${{ github.event.pull_request.body }}"
+          # Warn if the PR body empty 
+          if [ -z "$pr_body" ]; then
+            echo "Warning: PR body is empty. Please provide a description of the changes."
+          fi
+
