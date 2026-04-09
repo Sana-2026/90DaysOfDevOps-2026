@@ -50,6 +50,7 @@ Create `.github/workflows/pr-checks.yml` — a real-world PR gate:
 **Verify:** Open a PR from a badly named branch — does the check fail?
 
 <img width="1345" height="629" alt="task2" src="https://github.com/user-attachments/assets/c6a9c6c5-14a9-4cf3-b16b-984bea275b2e" />
+---
 
 ### Task 3: Scheduled Workflows (Cron Deep Dive)
 
@@ -78,6 +79,7 @@ Write in your notes:
  + GitHub server load can delay jobs
  + Only runs from default branch
  + Disabled Actions = no schedule run
+---
 
 ### Task 4: Path & Branch Filters
 Create ``.github/workflows/smart-triggers.yml:``
@@ -98,6 +100,85 @@ paths-ignore:
 ```
 Add branch filters to only trigger on main and release/* branches
 Test it: push a change to a .md file — does the workflow skip?
+
+<img width="1365" height="566" alt="task4" src="https://github.com/user-attachments/assets/53762c59-749b-46e0-9bc0-1e7f2235e8ab" />
+
 Write in your notes: When would you use paths vs paths-ignore?
+
+#### 🆚 paths vs paths-ignore
+
+#### ✅ Use `paths` (Allowlist)
+Use this when you want the workflow to run **only for specific files or folders**.
+
+👉 Think:
+> Trigger the workflow **ONLY IF these files change**
+
+```
+paths:
+  - 'src/**'
+  - 'app/**'
+```
+🔹 Common Use Cases
++ Run CI only for application code
++ Separate frontend and backend pipelines
++ Work with microservices-based repositories
+
+❌ Use paths-ignore (Blocklist)
+
+Use this when you want the workflow to run for everything except certain files.
+
+👉 Think:
+
+Trigger the workflow for all changes EXCEPT these files
+```
+paths-ignore:
+  - '**/*.md'
+  - 'docs/**'
+
+```
+
+🔹 Common Use Cases
++ Ignore documentation updates
++ Skip README-only changes
++ Reduce unnecessary CI runs
+---
+
+## Task 5: workflow_run — Chain Workflows Together
+Create two workflows:
+
+1. ``.github/workflows/tests.yml`` — runs tests on every push
+2. ``.github/workflows/deploy-after-tests.yml`` — triggers only after tests.yml completes successfully:
+```
+on:
+  workflow_run:
+    workflows: ["Run Tests"]
+    types: [completed]
+```
+3. In the deploy workflow, add a conditional:
+   
++ Only proceed if the triggering workflow succeeded (${{ github.event.workflow_run.conclusion == 'success' }})
++ Print a warning and exit if it failed
+
+**Verify**: Push a commit — does the test workflow run first, then trigger the deploy workflow?
+
+<img width="1366" height="686" alt="task5" src="https://github.com/user-attachments/assets/f5bea911-5f48-4ad0-a756-f71f1530287e" />
+
+---
+
+### Task 6: repository_dispatch — External Event Triggers
+
+1. Create ``.github/workflows/external-trigger.yml`` with trigger ``repository_dispatch``
+2. Set it to respond to event type: ``deploy-request``
+Print the client payload: ``${{ github.event.client_payload.environment }}``
+
+Trigger it using ``curl`` or ``gh``:
+```
+gh api repos/Sana-2026/<repo>/dispatches \
+  -f event_type=deploy-request \
+  -f client_payload='{"environment":"production"}'
+```
+Write in your notes: When would an external system (like a Slack bot or monitoring tool) trigger a pipeline?
+
+
 
 
