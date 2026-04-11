@@ -1,8 +1,10 @@
 # AI-BankApp-DevOps
 
+![Docker Build & Push](https://github.com/Sana-2026/AI-BankApp-DevOps/actions/workflows/docker-publish.yml/badge.svg)
+
 A production-ready full-stack banking application built with Spring Boot and MySQL, featuring secure authentication, account management, and transaction processing. Integrated with a complete DevOps pipeline using Docker, GitHub Actions CI/CD, Kubernetes, Helm, Terraform, Prometheus, and ArgoCD for scalable, automated, and observable deployments.
 
-<img width="1355" height="635" alt="dashboard-app" src="https://github.com/user-attachments/assets/28458f41-f104-4acd-9f86-e16fd49536de" />
+<img width="1355" height="635" alt="dashboard-app" src="https://github.com/user-attachments/assets/78a0e023-bfab-4b2e-907d-d1f746a989ac" />
 
 ## 🏗️ Architecture 
 
@@ -11,7 +13,6 @@ A cloud-native AI banking application built with Spring Boot, containerized usin
 ![architecture](https://github.com/user-attachments/assets/3daa07a3-51b6-4918-b87f-63cb48d7a278)
 
 ---
-
 ## 🧰 Tech Stack
 
 | Category        | Technologies |
@@ -30,55 +31,55 @@ A cloud-native AI banking application built with Spring Boot, containerized usin
 
 ---
 
-## ⚙️ Features
+## Branches
+| Branch | Description |
+|--------|-------------|
+| `start` | Modernized app — full backend + frontend (developer handoff) |
+| `docker` | Adds Dockerfile, multi-stage build, docker-compose |
+| `ai` | Adds AI chatbot powered by Ollama |
+| `main` | End-to-end DevOps (WIP) |
 
-- 🤖 AI-powered banking assistant  
-- 🔐 Secure authentication  
-- 🌗 Dark/Light themed UI  
-- 🐳 Dockerized application  
-- ☁️ Cloud-ready architecture  
-- 📊 Monitoring-ready setup
 
----
+## Quick Start
 
-## Getting Started
-Run with Docker Compose 
+### Run locally (needs Java 21 + MySQL)
+```bash
+# Create database
+mysql -u root -p -e "CREATE DATABASE bankappdb;"
+# Run the app
+./mvnw spring-boot:run
 ```
-git clone https://github.com/Sana-2026/AI-BankApp-DevOps
-AI-BankApp-DevOps
-docker compose up --build
+
+### Run with Docker (recommended)
+```bash
+# Switch to docker branch
+git checkout docker
+# Start everything
+docker compose up -d --build
+# Visit http://localhost:8080
 ```
----
 
-## ☁️ Deployment
+### Run with AI Chatbot
+```bash
+# Switch to ai branch
+git checkout ai
+# Start everything (includes Ollama)
+docker compose up -d --build
+# Pull the AI model (one-time)
+docker exec bankapp-ollama ollama pull tinyllama
+# Visit http://localhost:8080
+```
 
-* Hosted on AWS EC2
-* Containerized using Docker
-* Future-ready for Kubernetes deployment
+## Features
+- User registration & login with BCrypt passwords
+- Deposit, withdraw, transfer between accounts
+- Transaction history with color-coded entries
+- Dark/light theme toggle (persists across sessions)
+- AI chatbot that knows your balance and recent transactions
+- Prometheus metrics at `/actuator/prometheus`
+- Health check at `/actuator/health`
 
----
-
-## 🔄 CI/CD Pipeline
-
-A fully automated CI/CD pipeline is implemented using GitHub Actions, triggered on every push and pull request to the `main` branch:
-
-- 🏗️ **Build & Test:** Compile the application and run unit tests using Maven  
-- 🐳 **Docker Build:** Create optimized multi-stage Docker images  
-- 🧪 **Health Check:** Validate application using `test-health.sh`  
-- 📦 **Image Push:** Push Docker image to Docker Hub with:
-  - Unique tag (`git SHA`)
-  - Stable tag (`latest`)
-    
----
-
-## 📊 Monitoring & Observability
-
-* Prometheus (Metrics collection)
-* Grafana (Visualization dashboards)
-
----
-
-## 🚀 Future Enhancements
+- ## 🚀 Future Enhancements
 
 * Kubernetes auto-deployment with Helm
 * GitOps using ArgoCD
@@ -95,6 +96,3 @@ Sana Shaik
 
 🔥 Built as part of DevOps Capstone Project
 
-
-
-   
