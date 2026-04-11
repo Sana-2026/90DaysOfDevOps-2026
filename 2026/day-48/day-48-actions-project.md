@@ -12,3 +12,19 @@
 4. Add a ``README.md`` with a project description
 
 [README](https://github.com/Sana-2026/90DaysOfDevOps-2026/blob/master/2026/day-48/AI-Bankapp/README.md)
+
+
+### Task 2: Reusable Workflow — Build & Test
+Create `.github/workflows/reusable-build-test.yml`:
+1. Trigger: `workflow_call`
+2. Inputs: `python_version` (or `node_version`), `run_tests` (boolean, default: true)
+3. Steps:
+   - Check out code
+   - Set up the language runtime
+   - Install dependencies
+   - Run tests (only if `run_tests` is true)
+   - Set output: `test_result` with value `passed` or `failed`
+
+This workflow does NOT deploy — it only builds and tests.
+
+---
