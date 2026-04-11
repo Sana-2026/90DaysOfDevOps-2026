@@ -10,6 +10,7 @@ A cloud-native AI banking application built with Spring Boot, containerized usin
 
 ![architecture](https://github.com/user-attachments/assets/3daa07a3-51b6-4918-b87f-63cb48d7a278)
 
+---
 
 ## 🧰 Tech Stack
 
@@ -27,6 +28,7 @@ A cloud-native AI banking application built with Spring Boot, containerized usin
 | **Monitoring**  | Prometheus, Grafana |
 | **GitOps**      | ArgoCD |
 
+---
 
 ## ⚙️ Features
 
@@ -36,6 +38,8 @@ A cloud-native AI banking application built with Spring Boot, containerized usin
 - 🐳 Dockerized application  
 - ☁️ Cloud-ready architecture  
 - 📊 Monitoring-ready setup
+
+---
 
 ## Getting Started
 Run with Docker Compose 
