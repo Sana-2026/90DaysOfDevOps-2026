@@ -27,4 +27,19 @@ Create `.github/workflows/reusable-build-test.yml`:
 
 This workflow does NOT deploy — it only builds and tests.
 
+[reusable-build-test.yml](https://github.com/Sana-2026/AI-BankApp-DevOps/blob/start/.github/workflows/reusable-build-test.yml)
+
+---
+
+### Task 3: Reusable Workflow — Docker Build & Push
+Create `.github/workflows/reusable-docker.yml`:
+1. Trigger: `workflow_call`
+2. Inputs: `image_name` (string), `tag` (string)
+3. Secrets: `docker_username`, `docker_token`
+4. Steps:
+   - Check out code
+   - Log in to Docker Hub
+   - Build and push the image with the given tag
+   - Set output: `image_url` with the full image path
+
 ---
