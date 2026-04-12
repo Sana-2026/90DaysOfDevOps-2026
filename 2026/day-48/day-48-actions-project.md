@@ -32,6 +32,7 @@ This workflow does NOT deploy — it only builds and tests.
 ---
 
 ### Task 3: Reusable Workflow — Docker Build & Push
+
 Create `.github/workflows/reusable-docker.yml`:
 1. Trigger: `workflow_call`
 2. Inputs: `image_name` (string), `tag` (string)
@@ -42,4 +43,22 @@ Create `.github/workflows/reusable-docker.yml`:
    - Build and push the image with the given tag
    - Set output: `image_url` with the full image path
 
+[reusable-docker.yml](https://github.com/Sana-2026/AI-BankApp-DevOps/blob/start/.github/workflows/reusable-docker.yml)
+
 ---
+
+
+### Task 4: PR Pipeline
+Create `.github/workflows/pr-pipeline.yml`:
+1. Trigger: `pull_request` to `main` (types: `opened`, `synchronize`)
+2. Call the reusable build-test workflow:
+   - Run tests: `true`
+3. Add a standalone job `pr-comment` that:
+   - Runs after the build-test job
+   - Prints a summary: "PR checks passed for branch: `<branch>`"
+4. Do **NOT** build or push Docker images on PRs
+
+**Verify:** Open a PR — does it run tests only (no Docker push)?
+
+---
+
