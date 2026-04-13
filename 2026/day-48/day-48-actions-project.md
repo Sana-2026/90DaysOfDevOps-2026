@@ -60,5 +60,22 @@ Create `.github/workflows/pr-pipeline.yml`:
 
 **Verify:** Open a PR — does it run tests only (no Docker push)?
 
+[pr-pipeline.yml](https://github.com/Sana-2026/AI-BankApp-DevOps/blob/start/.github/workflows/pr-pipeline.yml)
+
+<img width="1351" height="543" alt="task4" src="https://github.com/user-attachments/assets/4a1835c5-c13f-4bac-884c-c283363dfae8" />
+
+
 ---
+### Task 5: Main Branch Pipeline
+Create `.github/workflows/main-pipeline.yml`:
+1. Trigger: `push` to `main`
+2. Job 1: Call the reusable build-test workflow
+3. Job 2 (depends on Job 1): Call the reusable Docker workflow
+   - Tag: `latest` and `sha-<short-commit-hash>`
+4. Job 3 (depends on Job 2): `deploy` job that:
+   - Prints "Deploying image: `<image_url>` to production"
+   - Uses `environment: production` (set this up in repo Settings → Environments)
+   - Requires manual approval if you've set up environment protection rules
+
+**Verify:** Merge a PR to `main` — does it run tests → build Docker → deploy in sequence?
 
