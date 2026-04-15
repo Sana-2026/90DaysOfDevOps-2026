@@ -79,3 +79,26 @@ Create `.github/workflows/main-pipeline.yml`:
 
 **Verify:** Merge a PR to `main` — does it run tests → build Docker → deploy in sequence?
 
+<img width="1343" height="521" alt="task5" src="https://github.com/user-attachments/assets/ce49ad14-068e-4a3d-a659-0644a05f5e28" />
+
+### Task 6: Scheduled Health Check
+Create `.github/workflows/health-check.yml`:
+1. Trigger: `schedule` with cron `'0 */12 * * *'` (every 12 hours) + `workflow_dispatch` for manual testing
+2. Steps:
+   - Pull your latest Docker image
+   - Run the container in detached mode
+   - Wait 5 seconds, then curl the health endpoint
+   - Print pass/fail based on the response
+   - Stop and remove the container
+3. Add a step that creates a summary using `$GITHUB_STEP_SUMMARY`:
+   ```bash
+   echo "## Health Check Report" >> $GITHUB_STEP_SUMMARY
+   echo "- Image: myapp:latest" >> $GITHUB_STEP_SUMMARY
+   echo "- Status: PASSED" >> $GITHUB_STEP_SUMMARY
+   echo "- Time: $(date)" >> $GITHUB_STEP_SUMMARY
+   ```
+
+---
+
+
+
