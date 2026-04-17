@@ -78,6 +78,7 @@ Create `.github/workflows/main-pipeline.yml`:
    - Requires manual approval if you've set up environment protection rules
 
 **Verify:** Merge a PR to `main` — does it run tests → build Docker → deploy in sequence?
+
 [main-pipeline.yml](https://github.com/Sana-2026/AI-BankApp-DevOps/blob/start/.github/workflows/main-pipeline.yml)
 
 <img width="1343" height="521" alt="task5" src="https://github.com/user-attachments/assets/ce49ad14-068e-4a3d-a659-0644a05f5e28" />
