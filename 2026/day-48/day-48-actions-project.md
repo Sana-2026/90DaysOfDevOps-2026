@@ -78,8 +78,10 @@ Create `.github/workflows/main-pipeline.yml`:
    - Requires manual approval if you've set up environment protection rules
 
 **Verify:** Merge a PR to `main` — does it run tests → build Docker → deploy in sequence?
+[main-pipeline.yml](https://github.com/Sana-2026/AI-BankApp-DevOps/blob/start/.github/workflows/main-pipeline.yml)
 
 <img width="1343" height="521" alt="task5" src="https://github.com/user-attachments/assets/ce49ad14-068e-4a3d-a659-0644a05f5e28" />
+---
 
 ### Task 6: Scheduled Health Check
 Create `.github/workflows/health-check.yml`:
@@ -97,6 +99,7 @@ Create `.github/workflows/health-check.yml`:
    echo "- Status: PASSED" >> $GITHUB_STEP_SUMMARY
    echo "- Time: $(date)" >> $GITHUB_STEP_SUMMARY
    ```
+<img width="1334" height="605" alt="task 6" src="https://github.com/user-attachments/assets/da5396e1-ab46-4b68-831e-e726fe3bd6e2" />
 
 ---
 
@@ -110,6 +113,7 @@ Create `.github/workflows/health-check.yml`:
    ```
 3. Fill in your notes: What would you add next? (Slack notifications? Multi-environment? Rollback?)
 
+<img width="1047" height="591" alt="task7" src="https://github.com/user-attachments/assets/2b16e51c-24de-41c8-9462-6f8df5bc3d36" />
 
 ---
 
