@@ -100,5 +100,16 @@ Create `.github/workflows/health-check.yml`:
 
 ---
 
+### Task 7: Add Badges & Documentation
+1. Add status badges for all your workflows to the repo `README.md`
+2. Add a **pipeline architecture diagram** in your notes — draw (or describe) the flow:
+   ```
+   PR opened → build & test → PR checks pass
+   Merge to main → build & test → Docker build & push → deploy
+   Every 12 hours → health check
+   ```
+3. Fill in your notes: What would you add next? (Slack notifications? Multi-environment? Rollback?)
 
+
+---
 
