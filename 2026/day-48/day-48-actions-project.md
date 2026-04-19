@@ -112,9 +112,33 @@ Create `.github/workflows/health-check.yml`:
    Merge to main → build & test → Docker build & push → deploy
    Every 12 hours → health check
    ```
+   
+<img width="1047" height="591" alt="task7" src="https://github.com/user-attachments/assets/2b16e51c-24de-41c8-9462-6f8df5bc3d36" />
+
 3. Fill in your notes: What would you add next? (Slack notifications? Multi-environment? Rollback?)
 
-<img width="1047" height="591" alt="task7" src="https://github.com/user-attachments/assets/2b16e51c-24de-41c8-9462-6f8df5bc3d36" />
+### 🔔 Slack Notifications Integration
+
+Added a Slack notification step to the CI/CD pipeline to send real-time updates on workflow execution status.
+
+#### ✅ What was implemented
+- Configured Slack Incoming Webhook  
+- Stored webhook URL securely using GitHub Secrets  
+- Added a `notify` job that runs after build, Docker, and deploy stages  
+- Sends success ✅ or failure ❌ status to Slack  
+
+#### 🚀 Why it’s useful
+- Enables **real-time monitoring** of pipeline status  
+- Quickly detects failures without checking GitHub manually  
+- Improves **visibility and team collaboration**  
+- Makes the pipeline more **production-ready**
+
+<img width="1349" height="465" alt="task7-slack-run" src="https://github.com/user-attachments/assets/a72ee215-2ad0-456f-a19d-a7abc4b5bdde" />
+
+<img width="1321" height="502" alt="task7-slack" src="https://github.com/user-attachments/assets/c45e2b8b-798c-44dd-a802-5aa6e931b08b" />
+
+<img width="1350" height="597" alt="task7- slack channel" src="https://github.com/user-attachments/assets/06c5e3f1-5db7-45c4-9e96-03203400d5c7" />
+
 
 ---
 
