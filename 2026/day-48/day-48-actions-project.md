@@ -144,3 +144,21 @@ Added a Slack notification step to the CI/CD pipeline to send real-time updates 
 
 ---
 
+## Brownie Points: Add Security to Your Pipeline
+Want to go above and beyond? Add a **DevSecOps** step to your main pipeline:
+1. Add `aquasecurity/trivy-action` after the Docker build step to scan your image for vulnerabilities
+2. Fail the pipeline if any **CRITICAL** severity CVE is found
+3. Upload the scan report as an artifact
+
+This is a preview of what you'll do in depth on **Day 49**. If you get this working today, you're already thinking like a DevSecOps engineer.
+
+<img width="1343" height="641" alt="task8" src="https://github.com/user-attachments/assets/7025999c-ae8e-457f-828e-38d3b1e6fb92" />
+
+<img width="1357" height="273" alt="task8-a" src="https://github.com/user-attachments/assets/3665e20e-38a2-408b-a586-8ef96f573b97" />
+
+<img width="1345" height="599" alt="task8-c" src="https://github.com/user-attachments/assets/d136eb84-f9ed-4d6e-9add-a9e1eca8cf6c" />
+
+
+
+---
+
