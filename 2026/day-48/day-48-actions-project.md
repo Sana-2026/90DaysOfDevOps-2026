@@ -115,6 +115,8 @@ Create `.github/workflows/health-check.yml`:
    
 <img width="1047" height="591" alt="task7" src="https://github.com/user-attachments/assets/2b16e51c-24de-41c8-9462-6f8df5bc3d36" />
 
+
+
 3. Fill in your notes: What would you add next? (Slack notifications? Multi-environment? Rollback?)
 
 ### 🔔 Slack Notifications Integration
