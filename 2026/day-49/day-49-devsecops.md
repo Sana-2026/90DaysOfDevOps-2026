@@ -111,3 +111,25 @@ Write in your notes:
 - Always rotate exposed keys 🔑
 
 ---
+
+### Task 3: Scan Dependencies for Known Vulnerabilities
+If your app uses packages (pip, npm, etc.), those packages might have known vulnerabilities.
+
+Add this to your **PR pipeline** (not the main pipeline):
+```yaml
+- name: Check Dependencies for Vulnerabilities
+  uses: actions/dependency-review-action@v4
+  with:
+    fail-on-severity: critical
+```
+
+This checks any **new** dependencies added in the PR against a vulnerability database. If a dependency has a critical CVE, the PR check fails.
+
+Test it:
+1. Open a PR that adds a package to your app
+2. Check the Actions tab — did the dependency review run?
+
+**Verify:** Does the dependency review show up as a check on your PR?
+
+---
+
