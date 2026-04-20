@@ -131,5 +131,7 @@ Test it:
 
 **Verify:** Does the dependency review show up as a check on your PR?
 
+<img width="1341" height="630" alt="task3" src="https://github.com/user-attachments/assets/0443a84e-2970-4edf-8351-81d31ff8f5d7" />
 ---
+
 
