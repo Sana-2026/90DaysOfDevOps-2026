@@ -1,3 +1,30 @@
+
+## What is DevSecOps?
+
+Think of it like this:
+
+**Without DevSecOps:**
+> You build the app → deploy it → a security team finds a vulnerability weeks later → you scramble to fix it
+
+**With DevSecOps:**
+> You open a PR → the pipeline automatically checks for vulnerabilities → you fix it before it ever gets merged
+
+**That's it.** DevSecOps = adding security checks to the pipeline you already have. Not a separate process — just a few extra steps.
+
+---
+
+## Key Principles (Keep These in Mind)
+
+1. **Catch problems early** — A vulnerability found in a PR takes 5 minutes to fix. The same vulnerability found in production takes days.
+
+2. **Automate the checks** — Don't rely on someone remembering to check. Let the pipeline do it every time.
+
+3. **Block on critical issues** — If a scan finds a serious vulnerability, the pipeline should fail — just like a failing test.
+
+4. **Never put secrets in code** — Use GitHub Secrets (you learned this on Day 44). No `.env` files, no hardcoded API keys.
+
+5. **Give only the access needed** — Your workflow doesn't need write access to everything. Limit permissions.
+
 ## Challenge Tasks
 
 ### Task 1: Scan Your Docker Image for Vulnerabilities
@@ -33,14 +60,36 @@ Push and check the Actions tab. Read the scan output.
 Write in your notes: What CVEs (if any) were found? What base image are you using?
 
 📝 **DevSecOps Scan Notes**
+## 🚨 CVEs Identified (Day 49 - Security Scan)
 
-🔍 CVEs Found:
+| Library                          | CVE ID          | Severity  | Description                                                                 | Fixed Version        |
+|----------------------------------|-----------------|-----------|----------------------------------------|---------------------|
+| tomcat-embed-core                | CVE-2025-24813  | CRITICAL  | Potential RCE / info disclosure via partial PUT                            | 10.1.35+            |
+| tomcat-embed-core                | CVE-2026-29145  | CRITICAL  | Authentication bypass (CLIENT_CERT misconfiguration)                       | 10.1.53+            |
+| spring-security-core             | CVE-2025-41232  | CRITICAL  | Authorization bypass in method security                                    | 6.4.6+              |
+| spring-security-web              | CVE-2026-22732  | CRITICAL  | Security policy bypass & information disclosure                            | 6.5.9+              |
+| thymeleaf                        | CVE-2026-40477  | CRITICAL  | Improper access control in expressions                                     | 3.1.4.RELEASE+      |
+| thymeleaf                        | CVE-2026-40478  | CRITICAL  | Expression injection / improper neutralization                             | 3.1.4.RELEASE+      |
+| thymeleaf-spring6                | CVE-2026-40477  | CRITICAL  | Same vulnerability via Spring integration                                  | 3.1.4.RELEASE+      |
+| thymeleaf-spring6                | CVE-2026-40478  | CRITICAL  | Same vulnerability via Spring integration                                  | 3.1.4.RELEASE+      |
 
-+ CVE-2025-41232 → Spring Security (authorization bypass)
-+ CVE-2026-40477 → Thymeleaf (expression access issue)
-+ CVE-2026-40478 → Thymeleaf (expression injection issue)
+---
 
-👉 Total: 3 CRITICAL vulnerabilities
+## 📊 Summary
+
+- 🔴 Total Critical CVEs: **8 → reduced to 3 after fixes**
+- 🛠️ Action Taken:
+  - Upgraded dependencies via `dependencyManagement`
+  - Rebuilt JAR
+  - Re-ran Trivy scan
+
+---
+
+## 🧠 Key Learning
+
+> Vulnerabilities often come from **transitive dependencies**, not just direct ones.
+
+👉 Fix = Upgrade dependency versions or override using `dependencyManagement`
 
 
 ### Task 2: Enable GitHub's Built-in Secret Scanning
@@ -133,6 +182,8 @@ Test it:
 
 <img width="1341" height="630" alt="task3" src="https://github.com/user-attachments/assets/0443a84e-2970-4edf-8351-81d31ff8f5d7" />
 ---
+
+
 ### Task 4: Add Permissions to Your Workflows
 By default, workflows get broad permissions. Lock them down.
 
@@ -153,5 +204,100 @@ Update at least 2 of your existing workflow files with a `permissions` block.
 
 Write in your notes: Why is it a good practice to limit workflow permissions? What could go wrong if a compromised action has write access to your repo?
 
+
+#### 🔐 Why is it a good practice to limit workflow permissions?
+
+Limiting workflow permissions follows the **Principle of Least Privilege**.
+
+This means:
+- Give only the **minimum access required**
+- Reduce the risk if something goes wrong
+
+#### ✅ Benefits:
+- Prevents unauthorized changes to the repository
+- Reduces impact of security breaches
+- Keeps CI/CD pipelines more secure and controlled
+- Avoids accidental deletions or modifications
+
 ---
+
+#### ⚠️ What could go wrong if a compromised action has write access?
+
+If a GitHub Action is compromised and has **write access**, it can:
+
+- ❌ Modify or delete your source code
+- ❌ Push malicious code into your repository
+- ❌ Inject backdoors or vulnerabilities
+- ❌ Leak sensitive data (API keys, tokens)
+- ❌ Trigger unauthorized deployments
+- ❌ Tamper with CI/CD pipelines
+
+---
+
+## 🧠 Key takeaway
+
+> Always use **read-only permissions by default** and only add write access when absolutely necessary.
+
+🔑 Secure pipelines = Safer applications
+
+---
+
+### Task 5: See the Full Secure Pipeline
+Look at what your pipeline does now:
+
+```
+PR opened
+  → build & test
+  → dependency vulnerability check     ← NEW (Day 49)
+  → PR checks pass or fail
+
+Merge to main
+  → build & test
+  → Docker build
+  → Trivy image scan (fail on CRITICAL) ← NEW (Day 49)
+  → Docker push (only if scan passes)
+  → deploy
+
+Always active
+  → GitHub secret scanning              ← NEW (Day 49)
+  → push protection for secrets         ← NEW (Day 49)
+```
+
+Draw this diagram in your notes. You just built a **DevSecOps pipeline** — security is now part of your automation, not an afterthought.
+
+<img width="1536" height="1024" alt="devsecops" src="https://github.com/user-attachments/assets/da1271cf-8f0a-44ba-9bd7-2fe360c75268" />
+
+---
+
+## Brownie Points (Optional — For the Curious)
+
+### Pin Actions to Commit SHAs
+Tags like `@v4` can be moved by the action author. For extra security, pin to the exact commit:
+```yaml
+# Instead of this:
+uses: actions/checkout@v4
+
+# Use this:
+uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+```
+This protects against supply chain attacks where a tag is silently changed.
+
+### Upload Scan Results to GitHub Security Tab
+Add SARIF output to Trivy and upload it — your scan results will appear in the repo's **Security** tab:
+```yaml
+- uses: aquasecurity/trivy-action@master
+  with:
+    image-ref: 'your-username/your-app:latest'
+    format: 'sarif'
+    output: 'trivy-results.sarif'
+- uses: github/codeql-action/upload-sarif@v3
+  with:
+    sarif_file: 'trivy-results.sarif'
+```
+
+### Learn About OIDC (Keyless Authentication)
+Instead of storing cloud credentials as long-lived secrets, GitHub Actions can use OIDC to get short-lived tokens automatically. Research: "GitHub Actions OIDC" — it's how production pipelines authenticate to AWS, GCP, and Azure without storing any keys.
+
+
+
 
