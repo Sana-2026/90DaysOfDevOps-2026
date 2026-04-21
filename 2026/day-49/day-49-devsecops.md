@@ -133,5 +133,25 @@ Test it:
 
 <img width="1341" height="630" alt="task3" src="https://github.com/user-attachments/assets/0443a84e-2970-4edf-8351-81d31ff8f5d7" />
 ---
+### Task 4: Add Permissions to Your Workflows
+By default, workflows get broad permissions. Lock them down.
 
+Add this block near the top of your workflow files (after `on:`):
+```yaml
+permissions:
+  contents: read
+```
+
+If a workflow needs to comment on PRs, add:
+```yaml
+permissions:
+  contents: read
+  pull-requests: write
+```
+
+Update at least 2 of your existing workflow files with a `permissions` block.
+
+Write in your notes: Why is it a good practice to limit workflow permissions? What could go wrong if a compromised action has write access to your repo?
+
+---
 
