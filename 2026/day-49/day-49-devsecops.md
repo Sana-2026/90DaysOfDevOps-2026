@@ -160,7 +160,7 @@ Write in your notes:
 - Push Protection = **prevent leaks**  
 - Always rotate exposed keys 🔑
 
-<img width="1341" height="630" alt="task3" src="https://github.com/user-attachments/assets/822e372b-2c7e-43e1-a78e-de584110312e" />
+<img width="1352" height="616" alt="task2" src="https://github.com/user-attachments/assets/d8ecbb7c-dad5-4312-9c59-1ec1681d25c9" />
 
 ---
 
