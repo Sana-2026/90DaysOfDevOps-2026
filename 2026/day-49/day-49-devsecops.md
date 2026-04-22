@@ -77,7 +77,7 @@ Write in your notes: What CVEs (if any) were found? What base image are you usin
 
 ## 📊 Summary
 
-- 🔴 Total Critical CVEs: **8 → reduced to 3 after fixes**
+- 🔴 Total Critical CVEs: **8 → reduced to 3 after fixes** later to zero
 - 🛠️ Action Taken:
   - Upgraded dependencies via `dependencyManagement`
   - Rebuilt JAR
