@@ -298,6 +298,160 @@ Add SARIF output to Trivy and upload it — your scan results will appear in the
 ### Learn About OIDC (Keyless Authentication)
 Instead of storing cloud credentials as long-lived secrets, GitHub Actions can use OIDC to get short-lived tokens automatically. Research: "GitHub Actions OIDC" — it's how production pipelines authenticate to AWS, GCP, and Azure without storing any keys.
 
+### 🚀 DevSecOps Enhancement – Docker Pipeline
+
+### 🔐 What we added
+- Integrated **Trivy vulnerability scanning** into Docker workflow  
+- Configured scan to **fail pipeline on CRITICAL CVEs** (`exit-code: 1`)  
+- Generated **SARIF security reports** from scan results  
+- Uploaded reports to **GitHub Security tab (Code Scanning Alerts)**  
+- **Pinned all GitHub Actions to commit SHAs** for supply chain security  
 
 
+---
 
+### 🔧 What we changed
+- Updated Docker workflow to include **security scan before push**
+- Modified pipeline flow to **block image push if vulnerabilities found**
+- Ensured **Trivy runs after build and before push**
+
+---
+
+### ⚙️ Updated Pipeline Flow
+
+Build Docker Image
+→ Trivy Scan (fail on CRITICAL)
+→ Upload SARIF Report
+→ Push Docker Image (only if scan passes)
+
+### 🧠 Key Concepts
+
+- **CVE (Common Vulnerabilities and Exposures)**  
+  → Publicly disclosed security vulnerabilities with unique IDs (e.g., CVE-2026-22732)  
+  → Helps identify, track, and fix known security issues in dependencies and images  
+
+- **Trivy**  
+  → Open-source security scanner for:
+    - Container images  
+    - OS packages (Alpine, Debian, etc.)  
+    - Application dependencies (Java, Node, Python)  
+  → Detects vulnerabilities, misconfigurations, and secrets  
+  → Can enforce security using `exit-code` to fail pipelines  
+
+- **SARIF (Static Analysis Results Interchange Format)**  
+  → Standard JSON format for security scan results  
+  → Enables integration with GitHub **Code Scanning (Security tab)**  
+  → Makes vulnerabilities visible, trackable, and auditable  
+
+- **Pinned Actions (Commit SHA)**  
+  → Locks GitHub Actions to a fixed commit instead of mutable tags (`@v4`, `@latest`)  
+  → Prevents **supply chain attacks** where action code could be altered  
+  → Ensures reproducible and secure CI/CD runs  
+
+- **$GITHUB_OUTPUT**  
+  → Mechanism to pass data between steps/jobs in GitHub Actions  
+  → Used to expose values like `image_url` for downstream jobs (deploy, notify, etc.)  
+
+- **Shift Left Security**  
+  → Security is applied early in the development lifecycle (CI stage)  
+  → Reduces risk, cost, and effort compared to fixing issues in production  
+
+- **Fail-Fast Principle**  
+  → Pipeline stops immediately when critical vulnerabilities are detected  
+  → Prevents insecure artifacts from progressing further (build → push → deploy)  
+
+- **DevSecOps**  
+  → Integration of **Security into DevOps pipelines**  
+  → Automates vulnerability detection, enforcement, and visibility  
+  → Ensures security is continuous, not a one-time activity  
+
+### ✅ Why this is important
+- 🚫 Prevents vulnerable Docker images from being pushed  
+- 🔐 Secures CI/CD pipeline from malicious action updates  
+- 👀 Provides visibility in GitHub **Security tab**  
+- ⚡ Automates security checks (no manual effort required)  
+
+---
+
+### 🎯 Outcome
+- Built a **secure Docker CI/CD pipeline**  
+- Implemented **DevSecOps best practices**  
+- Ensured **security is enforced automatically**  
+
+### 🔐 OIDC (Keyless Authentication) – DevSecOps Upgrade
+
+### 🚀 What is OIDC?
+**OIDC (OpenID Connect)** allows GitHub Actions to authenticate with cloud providers  
+(**AWS, GCP, Azure**) **without storing secrets**.
+
+Instead of using long-lived credentials (like API keys), it uses:
+→ **short-lived, temporary tokens**
+
+---
+
+### ⚙️ How it works
+1. GitHub workflow requests a token
+2. GitHub issues an **OIDC token**
+3. Cloud provider verifies the token
+4. Temporary credentials are granted (limited time + permissions)
+
+---
+
+### 🔄 Flow
+GitHub Action
+→ Request OIDC token
+→ Cloud Provider validates
+→ Temporary access granted
+→ Perform deployment
+
+
+---
+
+### 🔐 Why OIDC is better
+- ❌ No hardcoded secrets in repo
+- ⏳ Tokens expire automatically
+- 🔒 Reduced risk of credential leaks
+- 🎯 Fine-grained access control (IAM roles)
+- 🛡️ Industry-standard secure authentication
+
+---
+
+### ⚠️ Problem with traditional approach
+
+Store AWS keys in GitHub Secrets
+→ If leaked → Full access compromised
+
+---
+
+### ✅ OIDC Solution
+
+No stored secrets
+→ Temporary access only
+→ Automatically expires
+
+---
+
+### 🧠 Key Concepts
+- **Federated Identity** → Trust between GitHub & cloud provider  
+- **IAM Role (AWS)** → Defines what actions are allowed  
+- **Trust Policy** → Allows GitHub to assume the role  
+- **Short-lived tokens** → Valid only for a limited time  
+
+---
+
+### 🎯 Outcome
+- Eliminated need for long-lived credentials  
+- Improved pipeline security significantly  
+- Enabled **production-grade authentication mechanism**  
+
+---
+
+### 🏆 Why this matters (Real World)
+- Used in **enterprise CI/CD pipelines**
+- Required for **secure cloud deployments**
+- Core concept in **DevSecOps & Zero Trust security**
+
+---
+
+### 🚀 Final Takeaway
+👉 OIDC = **Secure, keyless, temporary authentication for CI/CD pipelines**
