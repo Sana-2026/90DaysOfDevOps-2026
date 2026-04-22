@@ -1,3 +1,4 @@
+# Day 49 – DevSecOps: Add Security to Your CI/CD Pipeline
 
 ## What is DevSecOps?
 
@@ -158,6 +159,8 @@ Write in your notes:
 - Secret Scanning = **detect leaks**  
 - Push Protection = **prevent leaks**  
 - Always rotate exposed keys 🔑
+
+<img width="1341" height="630" alt="task3" src="https://github.com/user-attachments/assets/822e372b-2c7e-43e1-a78e-de584110312e" />
 
 ---
 
