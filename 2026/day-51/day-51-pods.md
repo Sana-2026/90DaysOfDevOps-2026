@@ -208,7 +208,8 @@ kubectl apply -f nginx-pod.yaml --dry-run=client
 ### ❌ If YAML has an error (e.g., missing image):
 
 <img width="1084" height="83" alt="task4-d" src="https://github.com/user-attachments/assets/88a90309-39ba-4974-ba76-af88c936ce09" />
-##### What this does
+
+#### What this does
 + Checks syntax + basic schema validation
 + Runs locally on your machine (no API server call)
 + Does NOT create the Pod
