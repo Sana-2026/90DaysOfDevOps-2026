@@ -1,13 +1,28 @@
-# Day 54 – Kubernetes ConfigMaps and Secrets
+<img width="1352" height="669" alt="task1" src="https://github.com/user-attachments/assets/50a7b71f-20ce-4ff6-a927-c5c3a122b1a0" /># Day 54 – Kubernetes ConfigMaps and Secrets
 
 ## Challenge Tasks
 
 ### Task 1: Create a ConfigMap from Literals
-1. Use `kubectl create configmap` with `--from-literal` to create a ConfigMap called `app-config` with keys `APP_ENV=production`, `APP_DEBUG=false`, and `APP_PORT=8080`
-2. Inspect it with `kubectl describe configmap app-config` and `kubectl get configmap app-config -o yaml`
-3. Notice the data is stored as plain text — no encoding, no encryption
 
-**Verify:** Can you see all three key-value pairs?
+1. Use `kubectl create configmap` with `--from-literal` to create a ConfigMap called `app-config` with keys `APP_ENV=production`, `APP_DEBUG=false`, and `APP_PORT=8080`
+
+<img width="1352" height="669" alt="task1" src="https://github.com/user-attachments/assets/abb80fd5-2f73-43d7-be99-ac8204a7a099" />
+
+ 
+2. Inspect it with `kubectl describe configmap app-config` and `kubectl get configmap app-config -o yaml`
+
+ <img width="960" height="312" alt="task2-b" src="https://github.com/user-attachments/assets/2d6a9de4-12c0-4087-bfac-b67db1e850b3" /> 
+
+ 
+3. Notice the data is stored as plain text — no encoding, no encryption
+   
+  ConfigMap = Non-sensitive data
+
+  + env vars
+  + configs
+  + feature flags
+    
+**Verify:** Can you see all three key-value pairs? yes
 
 ---
 
