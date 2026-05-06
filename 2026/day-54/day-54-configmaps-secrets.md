@@ -1,4 +1,4 @@
-<img width="1352" height="669" alt="task1" src="https://github.com/user-attachments/assets/50a7b71f-20ce-4ff6-a927-c5c3a122b1a0" /># Day 54 – Kubernetes ConfigMaps and Secrets
+# Day 54 – Kubernetes ConfigMaps and Secrets
 
 ## Challenge Tasks
 
