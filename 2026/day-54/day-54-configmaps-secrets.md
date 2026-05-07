@@ -28,10 +28,16 @@
 
 ### Task 2: Create a ConfigMap from a File
 1. Write a custom Nginx config file that adds a `/health` endpoint returning "healthy"
-2. Create a ConfigMap from this file using `kubectl create configmap nginx-config --from-file=default.conf=<your-file>`
-3. The key name (`default.conf`) becomes the filename when mounted into a Pod
+3. Create a ConfigMap from this file using `kubectl create configmap nginx-config --from-file=default.conf=<your-file>`
+4. The key name (`default.conf`) becomes the filename when mounted into a Pod
 
-**Verify:** Does `kubectl get configmap nginx-config -o yaml` show the file contents?
+**Verify:** Does `kubectl get configmap nginx-config -o yaml` show the file contents? yes
+
+<img width="1112" height="557" alt="task2" src="https://github.com/user-attachments/assets/c714d711-a53b-4ec4-9a4f-9372385513e6" />
+
+<img width="960" height="312" alt="task2-b" src="https://github.com/user-attachments/assets/3e1b6bbc-b86c-4e8f-b6a2-8022d6f68e5a" />
+
+
 
 ---
 
@@ -43,6 +49,11 @@
 Use environment variables for simple key-value settings. Use volume mounts for full config files.
 
 **Verify:** Does the `/health` endpoint respond?
+
+<img width="729" height="172" alt="task3a" src="https://github.com/user-attachments/assets/11a1a1e5-ac73-4dfa-9156-48d790aa199e" />
+
+<img width="888" height="453" alt="task3c" src="https://github.com/user-attachments/assets/e3080e1b-eeba-4e89-a0f3-bac93d5d5af2" />
+
 
 ---
 
