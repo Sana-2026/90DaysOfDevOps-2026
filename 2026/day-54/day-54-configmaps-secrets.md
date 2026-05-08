@@ -37,7 +37,7 @@
 
 <img width="960" height="312" alt="task2-b" src="https://github.com/user-attachments/assets/3e1b6bbc-b86c-4e8f-b6a2-8022d6f68e5a" />
 
-
+<img width="1126" height="206" alt="task3-3" src="https://github.com/user-attachments/assets/e9bb8df2-eba5-4306-b331-56811e4d2421" />
 
 ---
 
@@ -54,6 +54,9 @@ Use environment variables for simple key-value settings. Use volume mounts for f
 
 <img width="888" height="453" alt="task3c" src="https://github.com/user-attachments/assets/e3080e1b-eeba-4e89-a0f3-bac93d5d5af2" />
 
+<img width="1126" height="206" alt="task3-3" src="https://github.com/user-attachments/assets/20bdf472-a0fd-4bff-afce-8bbd068edfae" />
+
+<img width="837" height="239" alt="task3-d" src="https://github.com/user-attachments/assets/589acb82-b367-423c-a74c-e989f991569f" />
 
 ---
 
