@@ -61,13 +61,123 @@ Use environment variables for simple key-value settings. Use volume mounts for f
 ---
 
 ### Task 4: Create a Secret
-1. Use `kubectl create secret generic db-credentials` with `--from-literal` to store `DB_USER=admin` and `DB_PASSWORD=s3cureP@ssw0rd`
+1. Use `kubectl create secret generic db-credentials` with `--from-literal` to store `DB_USER=admin` and `DB_PASSWORD=s3cureP@ssw0rd
+
+  
+<img width="1359" height="629" alt="task4-secrets" src="https://github.com/user-attachments/assets/82934381-993c-4660-9c6c-922f312290a9" />
+
+ <img width="1348" height="723" alt="task4b" src="https://github.com/user-attachments/assets/3c74335a-d417-41cd-92bd-8d4b0c69c0d1" />
+
+ <img width="1360" height="714" alt="task4c" src="https://github.com/user-attachments/assets/1ba66aeb-328f-465d-a93a-cbe2ea2a495c" />
+ 
 2. Inspect with `kubectl get secret db-credentials -o yaml` — the values are base64-encoded
+
 3. Decode a value: `echo '<base64-value>' | base64 --decode`
+
+
+<img width="1349" height="621" alt="TASK4-LAST" src="https://github.com/user-attachments/assets/330dd3fc-4ab3-4ac0-a408-bcf286bd1621" />
+
 
 **base64 is encoding, not encryption.** Anyone with cluster access can decode Secrets. The real advantages are RBAC separation, tmpfs storage on nodes, and optional encryption at rest.
 
-**Verify:** Can you decode the password back to plaintext?
+**Verify:** Can you decode the password back to plaintext? yes 
+
+### RBAC (Role-Based Access Control)
+
+RBAC is Kubernetes’ authorization system.
+
+It controls:
+
+WHO can do WHAT on WHICH resource
+
+#### Why RBAC Matters for Secrets
+
+Secrets contain sensitive information:
+
+Database passwords
+API tokens
+JWT secrets
+TLS certificates
+
+#### Without RBAC:
+
+Any user with cluster access could read all Secrets.
+
+That would be a huge security risk.
+
+#### RBAC Core Components
+
+Kubernetes RBAC mainly uses:
+
+| Component | Purpose |
+|---|---|
+| Role | Defines permissions inside a namespace |
+| ClusterRole | Defines cluster-wide permissions |
+| RoleBinding | Attaches a Role to a user, group, or service account |
+| ClusterRoleBinding | Attaches a ClusterRole cluster-wide |
+
+#### Service Accounts and Secrets
+
+Pods usually interact with Kubernetes using:
+
+Service Accounts
+
+Each Pod gets an identity.
+
+RBAC controls what that Pod can access.
+
+Example:
+
+Frontend Pod → cannot access DB secrets
+Backend Pod → can access DB secrets
+
+This is extremely important in production clusters.
+
+### 2) tmpfs in Kubernetes Secrets
+What is tmpfs?
+
+tmpfs is:
+
+A temporary in-memory filesystem
+
+Meaning:
+
+Stored in RAM
+Not permanently stored on disk
+
+Linux creates it dynamically.
+
+Why Kubernetes Uses tmpfs for Secrets
+
+When Secrets are mounted into Pods:
+
+Kubernetes often stores them in tmpfs on the node.
+
+Reason:
+
+Sensitive data should avoid persistent disk storage
+
+This reduces leakage risk.
+
+#### Secret Mount Flow
+Secret stored in etcd
+       ↓
+Kubelet retrieves Secret
+       ↓
+Stored temporarily in tmpfs
+       ↓
+Mounted into container
+
+#### Volatile Memory Concept
+
+RAM loses data after:
+
+Reboot
+Shutdown
+Crash
+
+That makes tmpfs safer than normal disk storage.
+
 
 ---
 
