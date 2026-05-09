@@ -185,8 +185,17 @@ That makes tmpfs safer than normal disk storage.
 1. Write a Pod manifest that injects `DB_USER` as an environment variable using `secretKeyRef`
 2. In the same Pod, mount the entire `db-credentials` Secret as a volume at `/etc/db-credentials` with `readOnly: true`
 3. Verify: each Secret key becomes a file, and the content is the decoded plaintext value
+   Yes each secret key has became a file and the the contents are plain text
 
 **Verify:** Are the mounted file values plaintext or base64?
+
+The mounted file values are plaintext, not Base64.
+
+Kubernetes automatically decodes the Secret before mounting it into the container.
+
+
+<img width="1271" height="631" alt="task5" src="https://github.com/user-attachments/assets/b713d349-dafa-43a4-bd1d-3533abc82808" />
+
 
 ---
 
