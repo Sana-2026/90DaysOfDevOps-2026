@@ -202,15 +202,51 @@ Kubernetes automatically decodes the Secret before mounting it into the containe
 ### Task 6: Update a ConfigMap and Observe Propagation
 1. Create a ConfigMap `live-config` with a key `message=hello`
 2. Write a Pod that mounts this ConfigMap as a volume and reads the file in a loop every 5 seconds
-3. Update the ConfigMap: `kubectl patch configmap live-config --type merge -p '{"data":{"message":"world"}}'`
+3. Update the ConfigMap: `kubectl patch configmap live-config --type merge -p '{"data":{"message":"world"}}'
 4. Wait 30-60 seconds — the volume-mounted value updates automatically
 5. Environment variables from earlier tasks do NOT update — they are set at pod startup only
 
+<img width="811" height="383" alt="task6a" src="https://github.com/user-attachments/assets/4396065b-d1b3-4c7d-9f01-56f6f651986b" />
+
+<img width="1336" height="624" alt="task6b" src="https://github.com/user-attachments/assets/d1e6cb43-a2ff-45a7-a2f9-4f761b31de02" />
+
+<img width="1142" height="526" alt="task6-last" src="https://github.com/user-attachments/assets/aafc280d-09a6-4933-a099-eeff4d046585" />
+
 **Verify:** Did the volume-mounted value change without a pod restart?
+Yes — the volume-mounted ConfigMap value changed without restarting the Pod.
+
+We can verify it like this.
+
+ Check Pod Restart Count
+ 
+ <img width="701" height="400" alt="task6-lasted" src="https://github.com/user-attachments/assets/f831eb28-abf5-4a6b-83a2-5953e76f1b2e" />
+
+#### Why This Happened
+Kubernetes continuously refreshes ConfigMap volume mounts through kubelet.
+
+
+application kept reading:
+
+/etc/config/message
+
+every 5 seconds.
+
+When kubelet updated mounted file:
+
+hello → world
+
+the running container immediately started reading new value.
 
 ---
 
 ### Task 7: Clean Up
 Delete all pods, ConfigMaps, and Secrets you created.
+
+<img width="726" height="150" alt="task7a" src="https://github.com/user-attachments/assets/b12162ab-149a-4be5-8f2b-78d6707d009d" />
+
+<img width="545" height="95" alt="task7b" src="https://github.com/user-attachments/assets/edce0227-070a-470a-ae9e-c11142f840ff" />
+
+<img width="637" height="579" alt="task7c" src="https://github.com/user-attachments/assets/bdd2886c-5c43-49af-9224-0b5edf5668ca" />
+
 
 ---
