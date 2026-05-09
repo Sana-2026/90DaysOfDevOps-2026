@@ -58,6 +58,10 @@ Use environment variables for simple key-value settings. Use volume mounts for f
 
 <img width="837" height="239" alt="task3-d" src="https://github.com/user-attachments/assets/589acb82-b367-423c-a74c-e989f991569f" />
 
+ <img width="1348" height="723" alt="task4b" src="https://github.com/user-attachments/assets/3c74335a-d417-41cd-92bd-8d4b0c69c0d1" />
+
+ <img width="1360" height="714" alt="task4c" src="https://github.com/user-attachments/assets/1ba66aeb-328f-465d-a93a-cbe2ea2a495c" />
+
 ---
 
 ### Task 4: Create a Secret
@@ -66,10 +70,6 @@ Use environment variables for simple key-value settings. Use volume mounts for f
   
 <img width="1359" height="629" alt="task4-secrets" src="https://github.com/user-attachments/assets/82934381-993c-4660-9c6c-922f312290a9" />
 
- <img width="1348" height="723" alt="task4b" src="https://github.com/user-attachments/assets/3c74335a-d417-41cd-92bd-8d4b0c69c0d1" />
-
- <img width="1360" height="714" alt="task4c" src="https://github.com/user-attachments/assets/1ba66aeb-328f-465d-a93a-cbe2ea2a495c" />
- 
 2. Inspect with `kubectl get secret db-credentials -o yaml` — the values are base64-encoded
 
 3. Decode a value: `echo '<base64-value>' | base64 --decode`
