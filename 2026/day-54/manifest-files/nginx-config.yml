@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-config
+spec:
+  containers:
+  - name: nginx-config-demo
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: nginx-config-volume
+      mountPath: /etc/nginx/conf.d/default.conf
+      subPath: default.conf
+  volumes:
+  - name: nginx-config-volume
+    configMap:
+      name: nginx-config
+      items:
+      - key: default.conf
+        path: default.conf
