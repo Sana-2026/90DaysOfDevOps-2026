@@ -7,7 +7,14 @@
 2. Apply it, verify the data exists with `kubectl exec`
 3. Delete the Pod, recreate it, check the file again — the old message is gone
 
-**Verify:** Is the timestamp the same or different after recreation?
+**Verify:** Is the timestamp the same or different after recreation? timestamp is different
+
+<img width="792" height="169" alt="task1-a" src="https://github.com/user-attachments/assets/0c599814-30bc-45e8-b319-43c432a0de4b" />
+
+<img width="1362" height="255" alt="task1-b" src="https://github.com/user-attachments/assets/c522557c-d136-44df-a543-3f87fd01f01a" />
+
+<img width="817" height="656" alt="task1-last" src="https://github.com/user-attachments/assets/71b58caa-e715-4f74-a0a5-1a458e300c5c" />
+
 
 ---
 
@@ -22,7 +29,10 @@ Access modes to know:
 
 `hostPath` is fine for learning, not for production.
 
-**Verify:** What is the STATUS of the PV?
+**Verify:** What is the STATUS of the PV? Available
+
+<img width="689" height="238" alt="task2-b" src="https://github.com/user-attachments/assets/8269ccef-ebf1-4de7-80bd-a52b23433ebd" />
+
 
 ---
 
