@@ -1,3 +1,4 @@
+
 # Day 55 – Persistent Volumes (PV) and Persistent Volume Claims (PVC)
 
 ## Challenge Tasks
@@ -43,6 +44,7 @@ Access modes to know:
 
 **Verify:** What does the VOLUME column in `kubectl get pvc` show?
 
+<img width="1366" height="518" alt="task3" src="https://github.com/user-attachments/assets/91505c6d-8573-49ba-b45e-fbd9a71ef1ef" />
 ---
 
 ### Task 4: Use the PVC in a Pod — Data That Survives
@@ -51,6 +53,10 @@ Access modes to know:
 3. Check the file — it should contain data from both Pods
 
 **Verify:** Does the file contain data from both the first and second Pod?
+
+<img width="1332" height="722" alt="task4" src="https://github.com/user-attachments/assets/d6bc3664-31f7-4bf0-896c-532d822931a1" />
+
+<img width="704" height="323" alt="task4-last" src="https://github.com/user-attachments/assets/297f065f-4d97-4e36-a346-4e1ec8d49036" />
 
 ---
 
