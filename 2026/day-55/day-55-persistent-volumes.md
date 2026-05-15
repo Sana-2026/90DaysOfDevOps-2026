@@ -65,7 +65,35 @@ Access modes to know:
 2. Note the provisioner, reclaim policy, and volume binding mode
 3. With dynamic provisioning, developers only create PVCs — the StorageClass handles PV creation automatically
 
-**Verify:** What is the default StorageClass in your cluster?
+In dynamic provisioning:
+
+Developer creates only a PersistentVolumeClaim (PVC)
+Kubernetes uses the StorageClass
+Storage backend automatically creates the PersistentVolume (PV)
+
+Flow:
+
+PVC  →  StorageClass  →  Dynamic PV Creation
+
+Static provisioning flow:
+
+Admin creates PV manually
+        ↓
+Developer creates PVC
+        ↓
+PVC binds to existing PV
+
+Dynamic provisioning flow:
+
+Developer creates PVC
+        ↓
+StorageClass provisioner creates PV automatically
+        ↓
+PVC binds automatically
+
+<img width="1366" height="406" alt="task5" src="https://github.com/user-attachments/assets/0f17cc94-79f1-4bac-be39-8f6cb1f073b5" />
+
+**Verify:** What is the default StorageClass in your cluster? Standard 
 
 ---
 
