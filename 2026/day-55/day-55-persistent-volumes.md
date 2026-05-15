@@ -103,6 +103,47 @@ PVC binds automatically
 3. Use this PVC in a Pod, write data, verify it works
 
 **Verify:** How many PVs exist now? Which was manual, which was dynamic?
+2 PVs 
+
+Which PV was Manual?
+hostpath-demo
+
+Why?
+
+We created it yourself using a PV manifest
+Uses:
+hostPath
+storageClassName: manual
+Static provisioning
+
+Flow:
+
+Admin creates PV manually
+        ↓
+PVC binds to existing PV
+
+Which PV was Dynamic?
+pvc-315c89ac-f8d6-4cb0-a516-39a08aa7e241
+
+Why?
+
+Kubernetes created it automatically
+Triggered by PVC using:
+storageClassName: standard
+Provisioned by:
+rancher.io/local-path
+
+Flow:
+
+PVC created
+   ↓
+StorageClass used
+   ↓
+Provisioner auto-created PV
+
+<img width="1243" height="452" alt="task6" src="https://github.com/user-attachments/assets/0a53aa6a-9fb2-404d-8375-828e71616f09" />
+
+
 
 ---
 
