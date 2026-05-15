@@ -122,6 +122,7 @@ Admin creates PV manually
         ↓
 PVC binds to existing PV
 
+
 Which PV was Dynamic?
 pvc-315c89ac-f8d6-4cb0-a516-39a08aa7e241
 
@@ -135,11 +136,13 @@ rancher.io/local-path
 
 Flow:
 
+
 PVC created
    ↓
 StorageClass used
    ↓
 Provisioner auto-created PV
+
 
 <img width="1243" height="452" alt="task6" src="https://github.com/user-attachments/assets/0a53aa6a-9fb2-404d-8375-828e71616f09" />
 
@@ -151,9 +154,81 @@ Provisioner auto-created PV
 1. Delete all pods first
 2. Delete PVCs — check `kubectl get pv` to see what happened
 3. The dynamic PV is gone (Delete reclaim policy). The manual PV shows `Released` (Retain policy).
-4. Delete the remaining PV manually
+
+What happened after deleting PVCs:
+
+Dynamic PV disappeared automatically because:
+reclaim policy = Delete
+Manual PV stayed and became:
+STATUS = Released
+
+because:
+
+reclaim policy = Retain
+
+This is expected Kubernetes behavior.
+
+5. Delete the remaining PV manually
+
+<img width="1364" height="705" alt="task7-a" src="https://github.com/user-attachments/assets/4023cbd1-f702-4db9-8761-f544c45a327a" />
+
+<img width="1366" height="343" alt="task7-c" src="https://github.com/user-attachments/assets/c786f545-3a3b-4494-b703-b6a5cfb45ea1" />
+
 
 **Verify:** Which PV was auto-deleted and which was retained? Why?
+
+
+Auto-deleted PV
+pvc-315c89ac-f8d6-4cb0-a516-39a08aa7e241
+
+This was the dynamic PV created automatically by the standard StorageClass.
+
+It was auto-deleted because its reclaim policy was:
+
+Delete
+
+Flow:
+
+PVC deleted
+   ↓
+Kubernetes automatically deleted PV
+   ↓
+Underlying storage cleaned up
+Retained PV
+hostpath-demo
+
+This was the manual/static PV you created yourself.
+
+It was retained because its reclaim policy was:
+
+Retain
+
+Flow:
+
+PVC deleted
+   ↓
+PV moved to Released state
+   ↓
+Admin must manually clean/delete it
+Why Kubernetes behaves this way
+Delete reclaim policy
+
+Used when storage can be safely removed automatically.
+
+Common for:
+
+temporary workloads
+cloud dynamic volumes
+short-lived applications
+Retain reclaim policy
+
+Used when data must be preserved even after PVC deletion.
+
+Common for:
+
+databases
+critical production data
+backup/recovery scenarios
 
 ---
 
