@@ -5,20 +5,17 @@ Deployments work great for stateless apps, but what about databases? You need st
 
 ---
 
-## Expected Output
-- A StatefulSet with 3 replicas and stable pod names
-- DNS resolution tested for individual pods
-- Data persistence verified across pod deletion
-- A markdown file: `day-56-statefulsets.md`
-
----
-
 ## Challenge Tasks
 
 ### Task 1: Understand the Problem
 1. Create a Deployment with 3 replicas using nginx
 2. Check the pod names — they are random (`app-xyz-abc`)
 3. Delete a pod and notice the replacement gets a different random name
+
+
+<img width="1002" height="379" alt="task1-a" src="https://github.com/user-attachments/assets/41e64ca5-dddb-4b50-86e3-c6dd404fcc52" />
+
+<img width="705" height="344" alt="task1-b" src="https://github.com/user-attachments/assets/bc155544-6fd6-42c5-970d-f0ca314134b0" />
 
 This is fine for web servers but not for databases where you need stable identity.
 
@@ -29,9 +26,27 @@ This is fine for web servers but not for databases where you need stable identit
 | Storage | Shared PVC | Each pod gets its own PVC |
 | Network identity | No stable hostname | Stable DNS per pod |
 
+
 Delete the Deployment before moving on.
 
 **Verify:** Why would random pod names be a problem for a database cluster?
+
+Random pod names are a problem for a database cluster because databases need stable identity, predictable hostnames, and persistent storage.
+
+When a Deployment pod is deleted, Kubernetes creates a new pod with a different random name:
+
+Before: mysql-7d8c9f4b5-abcde
+After : mysql-7d8c9f4b5-xyz12
+
+Other database nodes may be configured to communicate with the old hostname, causing replication or cluster communication issues.
+
+A database cluster needs members that can always be reached at the same address. That's why StatefulSets create pods with fixed names such as:
+
+mysql-0
+mysql-1
+mysql-2
+
+Even if mysql-1 is deleted and recreated, it comes back as mysql-1 with the same identity and storage.
 
 ---
 
@@ -43,6 +58,37 @@ Delete the Deployment before moving on.
 A Headless Service creates individual DNS entries for each pod instead of load-balancing to one IP. StatefulSets require this.
 
 **Verify:** What does the CLUSTER-IP column show?
+What does the CLUSTER-IP column show?
+
+None
+
+This confirms the Service is a Headless Service.
+
+#### Normal Service
+
+Pods
+ ↓
+Service IP (Load Balancer)
+ ↓
+Traffic distributed
+
+Clients connect to one Service IP.
+
+#### Headless Service
+
+Pod-0 → DNS record
+Pod-1 → DNS record
+Pod-2 → DNS record
+
+No Service IP is created.
+
+Each pod gets its own stable DNS name, such as:
+
+nginx-0.nginx-headless.default.svc.cluster.local
+nginx-1.nginx-headless.default.svc.cluster.local
+nginx-2.nginx-headless.default.svc.cluster.local
+
+That's exactly why StatefulSets require a Headless Service: databases need to reach specific pods, not a random pod behind a load balancer.
 
 ---
 
