@@ -104,6 +104,19 @@ Check the PVCs: `kubectl get pvc` — you should see `web-data-web-0`, `web-data
 
 **Verify:** What are the exact pod names and PVC names?
 
+nginx-stateful-0
+nginx-stateful-1
+nginx-stateful-2
+
+PVC Names:
+- web-data-nginx-stateful-0
+- web-data-nginx-stateful-1
+- web-data-nginx-stateful-2
+
+<img width="1366" height="626" alt="task3-correct" src="https://github.com/user-attachments/assets/9d38a22d-281d-47cf-8bea-0425cc60406c" />
+
+
+
 ---
 
 ### Task 4: Stable Network Identity
