@@ -135,12 +135,18 @@ Yes. The IP returned by nslookup matches the Pod IP shown by kubectl get pods -o
 This proves that the Headless Service created a stable DNS record for each StatefulSet pod:
 
 So applications can connect to a specific pod by name instead of relying on changing IP addresses. That's one of the key reasons StatefulSets are used for databases and clustered applications. 🚀
+
 ---
 
 ### Task 5: Stable Storage — Data Survives Pod Deletion
 1. Write unique data to each pod: `kubectl exec web-0 -- sh -c "echo 'Data from web-0' > /usr/share/nginx/html/index.html"`
 2. Delete `web-0`: `kubectl delete pod web-0`
 3. Wait for it to come back, then check the data — it should still be "Data from web-0"
+
+
+<img width="1018" height="313" alt="task5" src="https://github.com/user-attachments/assets/2b01772e-0c9d-46bd-8f56-d506c72049ba" />
+
+<img width="1026" height="498" alt="task5-b" src="https://github.com/user-attachments/assets/c063e1ed-7f80-4721-b6d0-87234a7715dd" />
 
 The new pod reconnected to the same PVC.
 
@@ -150,6 +156,7 @@ Yes. After deleting nginx-stateful-0, Kubernetes recreated the pod with the same
 
 
 Deployment:
+
 Delete Pod
     ↓
 New Pod
@@ -158,6 +165,7 @@ New Identity
 
 
 StatefulSet:
+
 Delete Pod
     ↓
 Same Pod Name
