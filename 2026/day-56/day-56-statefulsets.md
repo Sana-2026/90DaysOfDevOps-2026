@@ -182,7 +182,13 @@ Same Data
 2. Scale down to 3 — pods terminate in reverse order (web-4, then web-3)
 3. Check `kubectl get pvc` — all five PVCs still exist. Kubernetes keeps them on scale-down so data is preserved if you scale back up.
 
+<img width="1353" height="596" alt="task6-a" src="https://github.com/user-attachments/assets/61e6ad92-19c6-4380-897f-5de011318f56" />
+
+<img width="1363" height="479" alt="task6-b" src="https://github.com/user-attachments/assets/535e1056-9c2d-46d7-824d-48fef68ac862" />
+
 **Verify:** After scaling down, how many PVCs exist?
+
+After scaling down from 5 replicas to 3 replicas, all 5 PVCs still existed. StatefulSets retain PVCs during scale-down to preserve data and allow pods to recover their storage if scaled up again.
 
 ---
 
@@ -193,38 +199,12 @@ Same Data
 
 **Verify:** Were PVCs auto-deleted with the StatefulSet?
 
----
 
-## Hints
-- `kubectl get sts` is the short name for StatefulSets
-- `serviceName` must match an existing Headless Service
-- Pod DNS: `<pod-name>.<service-name>.<namespace>.svc.cluster.local`
-- PVC naming: `<template-name>-<statefulset-name>-<ordinal>`
-- Pods create in order (0, 1, 2) and terminate in reverse (2, 1, 0)
-- Scaling down does not delete PVCs — data is preserved
-- Deleting a StatefulSet does not delete PVCs — clean up separately
+<img width="1366" height="702" alt="task7" src="https://github.com/user-attachments/assets/f961c893-d524-4b2f-8fe6-5efd112b6d9d" />
+
+<img width="665" height="248" alt="image" src="https://github.com/user-attachments/assets/58a98665-a1a0-414f-bc5c-4bf291ab7af3" />
+
 
 ---
 
-## Documentation
-Create `day-56-statefulsets.md` with:
-- What StatefulSets are and when to use them vs Deployments
-- The comparison table
-- How Headless Services, stable DNS, and volumeClaimTemplates work
-- Screenshots of pods, PVCs, and DNS resolution
 
----
-
-## Submission
-1. Add `day-56-statefulsets.md` to `2026/day-56/`
-2. Commit and push to your fork
-
----
-
-## Learn in Public
-Share on LinkedIn: "Learned Kubernetes StatefulSets today. Stable pod names, per-pod DNS, and persistent storage that survives deletion — now I understand why databases need StatefulSets."
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
-
-Happy Learning!
-**TrainWithShubham**
