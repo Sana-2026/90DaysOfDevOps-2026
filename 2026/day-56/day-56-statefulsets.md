@@ -156,7 +156,7 @@ Yes. After deleting nginx-stateful-0, Kubernetes recreated the pod with the same
 
 
 Deployment:
-
+```
 Delete Pod
     ↓
 New Pod
@@ -174,6 +174,7 @@ Same PVC
     ↓
 Same Data
 
+```
 ---
 
 ### Task 6: Ordered Scaling
