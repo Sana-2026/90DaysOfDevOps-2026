@@ -79,7 +79,45 @@ CPU is throttled when over limit. Memory is killed — no mercy.
 
 Check `kubectl describe pod` for `Reason: OOMKilled` and `Exit Code: 137` (128 + SIGKILL).
 
-**Verify:** What exit code does an OOMKilled container have?
+<img width="1366" height="664" alt="task2" src="https://github.com/user-attachments/assets/fb3e6992-e605-4863-931f-39827274bc1a" />
+
+<img width="1366" height="734" alt="task2-a" src="https://github.com/user-attachments/assets/3c4b9f4c-dfc9-401b-8ab5-e5c00445f4be" />
+
+
+**Verify:** What exit code does an OOMKilled container have? 137
+
+#### Why Does It Happen?
+
+The container tries to allocate:
+
+200M
+
+But Kubernetes allows only:
+
+100Mi
+
+Memory usage exceeds the limit.
+
+The Linux OOM Killer terminates the process.
+
+#### Understanding Exit Code 137
+
+Linux exit codes:
+
+137 = 128 + 9
+
+Where:
+
+128 = Process terminated by signal
+9 = SIGKILL
+
+So:
+
+137 = SIGKILL
+
+An OOMKilled container almost always shows:
+
+Exit Code: 137
 
 ---
 
