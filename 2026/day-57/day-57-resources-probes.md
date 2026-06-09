@@ -9,13 +9,68 @@
 
 CPU is in millicores: `100m` = 0.1 CPU. Memory is in mebibytes: `128Mi`.
 
+<img width="1366" height="705" alt="task1" src="https://github.com/user-attachments/assets/cc993289-877c-4435-a27b-9745ffdb6c1b" />
+
+<img width="1370" height="701" alt="task1-b" src="https://github.com/user-attachments/assets/51365fda-8b58-4d71-974e-cf8c01a2b851" />
+
+
+
 **Requests** = guaranteed minimum (scheduler uses this for placement). **Limits** = maximum allowed (kubelet enforces at runtime).
 
-**Verify:** What QoS class does your Pod have?
+**Verify:** What QoS class does your Pod have? The Pod's QoS class is Burstable because requests and limits are defined but are not equal.
+
+Kubernetes automatically assigns a QoS class.
+
+#### 1. Guaranteed
+
+Requests = Limits for every resource.
+
+requests:
+  cpu: 200m
+  memory: 128Mi
+
+limits:
+  cpu: 200m
+  memory: 128Mi
+
+  Result:
+
+QoS Class: Guaranteed
+
+Highest priority during node pressure.
+
+#### 2. Burstable
+
+Requests and limits exist but are different.
+
+requests:
+  cpu: 100m
+  memory: 128Mi
+
+limits:
+  cpu: 250m
+  memory: 256Mi
+
+Result:
+
+QoS Class: Burstable
+
+#### 3. BestEffort
+
+No requests and no limits.
+
+resources: {}
+
+Result:
+
+QoS Class: BestEffort
+
+Lowest priority and first to be evicted when a node runs out of resources.
 
 ---
 
 ### Task 2: OOMKilled — Exceeding Memory Limits
+
 1. Write a Pod manifest using the `polinux/stress` image with a memory limit of `100Mi`
 2. Set the stress command to allocate 200M of memory: `command: ["stress"] args: ["--vm", "1", "--vm-bytes", "200M", "--vm-hang", "1"]`
 3. Apply and watch — the container gets killed immediately
