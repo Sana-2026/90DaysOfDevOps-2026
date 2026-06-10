@@ -138,7 +138,30 @@ Running but failing	      kubectl logs
 2. Apply and check — STATUS stays `Pending` forever
 3. Run `kubectl describe pod` and read the Events — the scheduler says exactly why: insufficient resources
 
+<img width="1381" height="753" alt="task3" src="https://github.com/user-attachments/assets/d7478ca6-5aa6-4dba-a2ce-6b0fbf124ce6" />
+
+<img width="1357" height="643" alt="tsk3-b" src="https://github.com/user-attachments/assets/994a5815-15b2-4f36-8398-e87b5f69d3bc" />
+
+
 **Verify:** What event message does the scheduler produce?
+
+Warning  FailedScheduling  default-scheduler  0/1 nodes are available: 1 Insufficient cpu, 1 Insufficient memory.
+
+Depending on your cluster size, it might be:
+
+0/2 nodes are available: 2 Insufficient cpu, 2 Insufficient memory.
+
+or
+
+0/3 nodes are available: 3 Insufficient cpu, 3 Insufficient memory.
+
+**Why?**
+
+The scheduler checks every node and asks:
+
+"Can any node provide 100 CPU cores and 128Gi RAM?"
+
+For a Kind cluster (usually 2–4 CPUs and a few GB of RAM), the answer is No, so the Pod remains Pending.
 
 ---
 
