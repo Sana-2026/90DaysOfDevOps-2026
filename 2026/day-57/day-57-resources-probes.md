@@ -119,6 +119,18 @@ An OOMKilled container almost always shows:
 
 Exit Code: 137
 
+
+#### Troubleshooting Rule
+
+When a Pod is:
+
+Status	                  First Command
+
+Pending            	      kubectl describe pod
+CrashLoopBackOff	        kubectl logs
+OOMKilled	kubectl         describe pod
+Running but failing	      kubectl logs
+
 ---
 
 ### Task 3: Pending Pod — Requesting Too Much
