@@ -172,7 +172,26 @@ A liveness probe detects stuck containers. If it fails, Kubernetes restarts the 
 2. Add a liveness probe using `exec` that runs `cat /tmp/healthy`, with `periodSeconds: 5` and `failureThreshold: 3`
 3. After the file is deleted, 3 consecutive failures trigger a restart. Watch with `kubectl get pod -w`
 
-**Verify:** How many times has the container restarted?
+
+<img width="1318" height="381" alt="task4" src="https://github.com/user-attachments/assets/264e83a3-83fd-4fbb-801f-ad1502162392" />
+
+<img width="1356" height="727" alt="task4-b" src="https://github.com/user-attachments/assets/67ccad93-cccc-45fb-b4e0-b3442c6a88e0" />
+
+
+**Verify:** How many times has the container restarted? 3 times
+If we leave the Pod running longer, the container will keep repeating the cycle:
+
+Start
+Create file
+Delete after 30s
+Fail liveness probe 3 times
+Restart
+
+So the restart count will continue increasing:
+
+1 → 2 → 3 → 4 ...
+
+This lab demonstrates the key behavior of a Liveness Probe: Kubernetes assumes the container is unhealthy and restarts it automatically when the probe fails repeatedly.
 
 ---
 
