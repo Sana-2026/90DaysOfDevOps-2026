@@ -204,7 +204,20 @@ A readiness probe controls traffic. Failure removes the Pod from Service endpoin
 4. Break the probe: `kubectl exec <pod> -- rm /usr/share/nginx/html/index.html`
 5. Wait 15 seconds — Pod shows `0/1` READY, endpoints are empty, but the container is NOT restarted
 
+<img width="638" height="94" alt="task5a" src="https://github.com/user-attachments/assets/014831b1-590c-4973-ba1d-1beb89c27fdb" />
+<img width="983" height="437" alt="task5b" src="https://github.com/user-attachments/assets/1dc5b240-6395-4d72-8279-b112d3de47bf" />
+<img width="1340" height="289" alt="task5c" src="https://github.com/user-attachments/assets/f44a00f9-cf04-408d-ac4d-c9beec2ae360" />
+
 **Verify:** When readiness failed, was the container restarted?
+
+When a readiness probe fails:
+
+- Pod becomes Not Ready (0/1)
+- Pod is removed from Service endpoints
+- Container keeps running
+- No restart occurs
+
+Only a liveness probe failure causes Kubernetes to restart the container.
 
 ---
 
