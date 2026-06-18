@@ -243,7 +243,8 @@ A startup probe gives slow-starting containers extra time. While it runs, livene
 ### Task 7: Clean Up
 Delete all pods and services you created.
 
-deleted all pods and services
+Deleted all pods and services
+
 ---
 
 ## Hints
