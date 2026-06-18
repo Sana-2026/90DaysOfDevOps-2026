@@ -228,13 +228,22 @@ A startup probe gives slow-starting containers extra time. While it runs, livene
 2. Add a `startupProbe` checking for `/tmp/started` with `periodSeconds: 5` and `failureThreshold: 12` (60 second budget)
 3. Add a `livenessProbe` that checks the same file — it only kicks in after startup succeeds
 
+<img width="615" height="132" alt="taska" src="https://github.com/user-attachments/assets/1ce4cf1b-b08d-4f25-9d83-f5d58730b9e5" />
+
+<img width="1360" height="306" alt="taskb" src="https://github.com/user-attachments/assets/a42c7263-910b-4732-b876-ae9de665da36" />
+
+<img width="658" height="268" alt="task6c" src="https://github.com/user-attachments/assets/338abe8a-c115-4ecf-acd8-29d796ecf079" />
+
 **Verify:** What would happen if `failureThreshold` were 2 instead of 12?
+
+<img width="833" height="416" alt="task6-last" src="https://github.com/user-attachments/assets/f6eae096-44f2-4b3f-be60-a01367e9d38d" />
 
 ---
 
 ### Task 7: Clean Up
 Delete all pods and services you created.
 
+deleted all pods and services
 ---
 
 ## Hints
