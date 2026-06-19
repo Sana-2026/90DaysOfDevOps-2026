@@ -27,6 +27,7 @@
 **Verify:** Which pod is using the most CPU right now? my cluster control plane pod is using the most CPU right now
 
 <img width="1372" height="710" alt="task2" src="https://github.com/user-attachments/assets/cc737535-e6cd-469d-9c3a-8e254bd5c995" />
+
 ---
 
 ### Task 3: Create a Deployment with CPU Requests
@@ -36,7 +37,23 @@
 
 Without CPU requests, HPA cannot work — this is the most common HPA setup mistake.
 
+<img width="794" height="265" alt="task3-a" src="https://github.com/user-attachments/assets/33bae8c9-b0b5-4f28-8a04-200365a3ba39" />
+
+<img width="1347" height="716" alt="task3-b" src="https://github.com/user-attachments/assets/a4773416-1e13-4e43-9e7b-0aab8522325c" />
+
+<img width="1348" height="568" alt="task3-c" src="https://github.com/user-attachments/assets/1799c208-2a5c-45ef-88ff-39f3149aafdd" />
+
 **Verify:** What is the current CPU usage of the Pod?
+
+<img width="672" height="98" alt="task3-d" src="https://github.com/user-attachments/assets/5a99e5af-998f-459b-b83f-e33a2c71c63e" />
+
+
+CPU is measured in millicores.
+
+1000m = 1 CPU core
+500m  = 0.5 CPU
+200m  = 0.2 CPU
+100m  = 0.1 CPU
 
 ---
 
