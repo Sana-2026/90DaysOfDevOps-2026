@@ -49,12 +49,13 @@ Without CPU requests, HPA cannot work — this is the most common HPA setup mist
 
 
 CPU is measured in millicores.
-
+```
 1000m = 1 CPU core
 500m  = 0.5 CPU
 200m  = 0.2 CPU
 100m  = 0.1 CPU
 
+```
 ---
 
 ### Task 4: Create an HPA (Imperative)
