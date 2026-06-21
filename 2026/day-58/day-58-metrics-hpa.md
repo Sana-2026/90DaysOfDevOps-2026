@@ -47,6 +47,15 @@ Without CPU requests, HPA cannot work — this is the most common HPA setup mist
 
 <img width="672" height="98" alt="task3-d" src="https://github.com/user-attachments/assets/5a99e5af-998f-459b-b83f-e33a2c71c63e" />
 
+The task is teaching:
+
+Metrics Server → Measures CPU
+
+Deployment → Runs Pods
+
+CPU Requests → Define "normal capacity"
+
+HPA → Compares actual usage vs requested capacity
 
 CPU is measured in millicores.
 ```
@@ -56,6 +65,7 @@ CPU is measured in millicores.
 100m  = 0.1 CPU
 
 ```
+
 ---
 
 ### Task 4: Create an HPA (Imperative)
@@ -65,7 +75,29 @@ CPU is measured in millicores.
 
 This scales up when average CPU exceeds 50% of requests, and down when it drops below.
 
-**Verify:** What does the TARGETS column show?
+<img width="1313" height="676" alt="task4" src="https://github.com/user-attachments/assets/e2a095eb-9391-4178-8469-18e371e47b72" />
+
+<img width="1333" height="728" alt="task4-b" src="https://github.com/user-attachments/assets/de6d0650-dd61-4ac6-8898-585a5f1b5147" />
+
+**Verify:** What does the TARGETS column show? cpu: 0%/50% 
+
+HPA is not magic.
+
+It constantly does:
+
+Measure CPU
+      ↓
+Compare with target
+      ↓
+Increase or decrease Pod
+
+HPA does:
+
+CPU too high?
+→ Add Pods.
+
+CPU too low?
+→ Remove Pods.
 
 ---
 
