@@ -108,7 +108,9 @@ CPU too low?
 4. Stop the load: `kubectl delete pod load-generator`
 5. Scale-down is slow (5-minute stabilization window) — you do not need to wait
 
-**Verify:** How many replicas did HPA scale to under load?
+**Verify:** How many replicas did HPA scale to under load? 1
+
+<img width="1327" height="698" alt="task5" src="https://github.com/user-attachments/assets/8eb0b084-8aa2-46fa-be96-96e98b130165" />
 
 ---
 
