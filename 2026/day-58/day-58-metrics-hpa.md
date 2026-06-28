@@ -122,12 +122,81 @@ CPU too low?
 
 `autoscaling/v2` supports multiple metrics and fine-grained scaling behavior that the imperative command cannot configure.
 
+<img width="1346" height="726" alt="task6" src="https://github.com/user-attachments/assets/06139de7-25a8-4ccb-8ca8-2f3392c8ad68" />
+
+
 **Verify:** What does the `behavior` section control?
+
+The behavior section controls how aggressively or conservatively the HPA changes the replica count.
+
+Without behavior, Kubernetes uses default scaling rules.
+
+With behavior, you can control:
+
+1. Scale-Up Behavior
+
+Controls how fast new Pods are added when load increases.
+
+scaleUp:
+  stabilizationWindowSeconds: 0
+No waiting period.
+HPA reacts immediately to high CPU usage.
+Pods can be added as soon as metrics exceed the target.
+
+Example:
+
+Current replicas: 2
+CPU utilization: 90%
+Target: 50%
+
+HPA immediately scales up.
+2. Scale-Down Behavior
+
+Controls how fast Pods are removed when load decreases.
+
+scaleDown:
+  stabilizationWindowSeconds: 300
+HPA waits 300 seconds (5 minutes) before reducing replicas.
+Prevents rapid scale-downs caused by temporary drops in traffic.
+
+Example:
+
+Current replicas: 6
+CPU drops below target
+
+HPA waits 5 minutes before removing Pods.
+
+If traffic rises again during those 5 minutes, scaling down may never happen.
+
+
+Why is this useful?
+
+Imagine traffic looks like this:
+
+High load  -> scale to 8 Pods
+Short dip  -> scale to 2 Pods
+High load  -> scale to 8 Pods again
+
+Without stabilization:
+
+8 -> 2 -> 8 -> 2
+
+This is called flapping or thrashing.
+
+With:
+
+scaleDown:
+  stabilizationWindowSeconds: 300
+
+Kubernetes waits before removing Pods, reducing unnecessary scaling actions.
 
 ---
 
 ### Task 7: Clean Up
 Delete the HPA, Service, Deployment, and load-generator pod. Leave the Metrics Server installed.
+
+<img width="911" height="336" alt="task7" src="https://github.com/user-attachments/assets/26c05362-3fac-4e97-bac5-6ced7a03b4d0" />
+
 
 ---
 
