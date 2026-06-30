@@ -199,7 +199,7 @@ Delete the HPA, Service, Deployment, and load-generator pod. Leave the Metrics S
 
 
 ---
-
+```
 Traffic increases
         │
         ▼
@@ -225,3 +225,4 @@ replica count
 Deployment creates
 or removes Pods
 
+```
