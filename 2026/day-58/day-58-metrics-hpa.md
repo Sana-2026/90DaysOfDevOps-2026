@@ -226,3 +226,9 @@ Deployment creates
 or removes Pods
 
 ```
+
+The YAML in one sentence
+scaleTargetRef → What should I scale?
+minReplicas / maxReplicas → How many Pods am I allowed to have?
+metrics → What should I monitor to decide when to scale?
+behavior → Once I've decided to scale, how quickly and how safely should I do it?
