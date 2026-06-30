@@ -200,35 +200,28 @@ Delete the HPA, Service, Deployment, and load-generator pod. Leave the Metrics S
 
 ---
 
-## Hints
-- HPA requires `resources.requests` — without them TARGETS shows `<unknown>`
-- `kubectl top` = actual usage. `kubectl describe pod` = configured requests/limits
-- HPA checks every 15 seconds. Scale-up is fast, scale-down has a 5-minute stabilization window
-- `autoscaling/v1` = CPU only. `autoscaling/v2` = CPU + memory + custom metrics
-- Formula: `desiredReplicas = ceil(currentReplicas * (currentUsage / targetUsage))`
-- HPA works with Deployments, StatefulSets, and ReplicaSets
+Traffic increases
+        │
+        ▼
+Metrics Server
+collects CPU usage
+        │
+        ▼
+Horizontal Pod Autoscaler
+checks:
+Is CPU > 50%?
+        │
+   Yes ─┴─ No
+        │
+        ▼
+Uses behavior rules
+(scaleUp/scaleDown)
+        │
+        ▼
+Updates the Deployment's
+replica count
+        │
+        ▼
+Deployment creates
+or removes Pods
 
----
-
-## Documentation
-Create `day-58-metrics-hpa.md` with:
-- What the Metrics Server is and why HPA needs it
-- How HPA calculates desired replicas
-- The difference between `autoscaling/v1` and `v2`
-- Screenshots of `kubectl top`, HPA events, and pod scaling
-
----
-
-## Submission
-1. Add `day-58-metrics-hpa.md` to `2026/day-58/`
-2. Commit and push to your fork
-
----
-
-## Learn in Public
-Share on LinkedIn: "Set up Kubernetes HPA today. Watched my app auto-scale from 1 to multiple replicas under load, then scale back down. This is how production handles variable traffic."
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
-
-Happy Learning!
-**TrainWithShubham**
