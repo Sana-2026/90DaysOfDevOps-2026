@@ -1,17 +1,6 @@
 
 # Day 59 – Helm — Kubernetes Package Manager
 
-## Task
-Over the past eight days you have written Deployments, Services, ConfigMaps, Secrets, PVCs, and more — all as individual YAML files. For a real application you might have dozens of these. Helm is the package manager for Kubernetes, like apt for Ubuntu. Today you install charts, customize them, and create your own.
-
----
-
-## Expected Output
-- Helm installed and a chart deployed from Bitnami
-- A release customized, upgraded, and rolled back
-- A custom chart created and installed
-- A markdown file: `day-59-helm.md`
-
 ---
 
 ## Challenge Tasks
@@ -26,6 +15,8 @@ Three core concepts:
 - **Repository** — a collection of charts (like a package repo)
 
 **Verify:** What version of Helm is installed?
+
+<img width="1354" height="683" alt="task1" src="https://github.com/user-attachments/assets/7955ea07-4cf8-4466-890e-a2a71acb3175" />
 
 ---
 
@@ -45,7 +36,27 @@ Three core concepts:
 
 One command replaced writing a Deployment, Service, and ConfigMap by hand.
 
+Helm created:
+
+✅ 1 Deployment
+✅ 1 ReplicaSet
+✅ 1 Pod
+✅ 1 Service (LoadBalancer)
+
 **Verify:** How many Pods are running? What Service type was created?
+
+
+<img width="1365" height="678" alt="task3-a" src="https://github.com/user-attachments/assets/bbc7e2ba-bbbe-4558-abfe-df62d5b913ec" />
+
+<img width="1349" height="483" alt="task3-b" src="https://github.com/user-attachments/assets/0871a29e-a7bb-40d2-a90a-f3d9dcd8a9ee" />
+
+<img width="1366" height="722" alt="task3-c" src="https://github.com/user-attachments/assets/96107c13-c7ef-4608-b65d-57fb0889563c" />
+
+<img width="1366" height="708" alt="task3-d" src="https://github.com/user-attachments/assets/ca4b480e-18ea-4ded-8734-0c480f73ca6a" />
+
+<img width="1365" height="117" alt="task3-e" src="https://github.com/user-attachments/assets/d24eca8b-a96a-415f-be18-70fd2047ede6" />
+
+
 
 ---
 
@@ -56,7 +67,19 @@ One command replaced writing a Deployment, Service, and ConfigMap by hand.
 4. Install another release using `-f custom-values.yaml`
 5. Check overrides: `helm get values <release-name>`
 
-**Verify:** Does the values file release have the correct replicas and service type?
+**Verify:** Does the values file release have the correct replicas and service type? yes
+
+<img width="1356" height="726" alt="task4-a" src="https://github.com/user-attachments/assets/295312ce-2183-4bff-a542-f821fad6b622" />
+
+<img width="1345" height="734" alt="task4-2-a" src="https://github.com/user-attachments/assets/821aca50-b9ec-4911-8550-2f2b12d019eb" />
+
+<img width="779" height="149" alt="task4-2-b" src="https://github.com/user-attachments/assets/42bfaec6-f993-480a-bf78-8a2c133f17ed" />
+
+
+<img width="1366" height="715" alt="task4-3-a" src="https://github.com/user-attachments/assets/21fb9908-4f2e-492d-9c4d-a2004689ec43" />
+
+<img width="1240" height="539" alt="task4-3-b" src="https://github.com/user-attachments/assets/53516551-e6ba-49dd-a756-6ec37e35221d" />
+
 
 ---
 
@@ -68,7 +91,14 @@ One command replaced writing a Deployment, Service, and ConfigMap by hand.
 
 Same concept as Deployment rollouts from Day 52, but at the full stack level.
 
-**Verify:** How many revisions after the rollback?
+**Verify:** How many revisions after the rollback? 3
+
+<img width="1366" height="725" alt="task-5-a" src="https://github.com/user-attachments/assets/92e0edf1-eab9-436e-8e5e-3170011983c0" />
+
+<img width="1366" height="184" alt="task5-1-b" src="https://github.com/user-attachments/assets/04c511eb-1df4-431c-b933-532f3e5bda1b" />
+
+<img width="1304" height="391" alt="task5-c" src="https://github.com/user-attachments/assets/8cb5d0ee-f3b8-48a7-9fc5-708e18884fdb" />
+
 
 ---
 
